@@ -49,53 +49,53 @@ var client = new carto.Client({
   username: "csis"
 });
 
-var spreadsheetID = "1k3NtTK79jZpXK3qzg53-wQFM_KeF6qhXSXzwh8E1IVk";
+// var spreadsheetID = "1k3NtTK79jZpXK3qzg53-wQFM_KeF6qhXSXzwh8E1IVk";
 
-var translationsURL =
-  "https://spreadsheets.google.com/feeds/list/" +
-  spreadsheetID +
-  "/1/public/values?alt=json";
+// var translationsURL =
+//   "https://spreadsheets.google.com/feeds/list/" +
+//   spreadsheetID +
+//   "/1/public/values?alt=json";
 
-var translations;
-var sortedTranslations;
+// var translations;
+// var sortedTranslations;
 
-if (lang) {
-  fetch(translationsURL)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (json) {
-      translations = parseData(json.feed.entry);
-      sortedTranslations = Object.keys(translations).sort(function (a, b) {
-        return b.length - a.length;
-      });
+// if (lang) {
+//   fetch(translationsURL)
+//     .then(function (response) {
+//       return response.json();
+//     })
+//     .then(function (json) {
+//       translations = parseData(json.feed.entry);
+//       sortedTranslations = Object.keys(translations).sort(function (a, b) {
+//         return b.length - a.length;
+//       });
 
-      Array.from(document.querySelectorAll(".translate")).forEach(function (
-        el,
-        i
-      ) {
-        sortedTranslations.forEach(function (t) {
-          if (Object.keys(translations[t]).length) {
-            var re = new RegExp("\\b(" + RegExp.escape(t) + ")", "gi");
-            el.innerHTML = el.innerHTML.replace(re, translations[t]);
-          }
-        });
-      });
+//       Array.from(document.querySelectorAll(".translate")).forEach(function (
+//         el,
+//         i
+//       ) {
+//         sortedTranslations.forEach(function (t) {
+//           if (Object.keys(translations[t]).length) {
+//             var re = new RegExp("\\b(" + RegExp.escape(t) + ")", "gi");
+//             el.innerHTML = el.innerHTML.replace(re, translations[t]);
+//           }
+//         });
+//       });
 
-      initResources();
-      initClaims();
+//       initResources();
+//       initClaims();
 
-      client
-        .getLeafletLayer()
-        .bringToFront()
-        .addTo(map);
+//       client
+//         .getLeafletLayer()
+//         .bringToFront()
+//         .addTo(map);
 
-      return json;
-    })
-    .catch(function (ex) {
-      console.log("mm parsing failed", ex);
-    });
-} else {
+//       return json;
+//     })
+//     .catch(function (ex) {
+//       console.log("mm parsing failed", ex);
+//     });
+// } else {
   initResources();
   initClaims();
 
@@ -103,7 +103,7 @@ if (lang) {
     .getLeafletLayer()
     .bringToFront()
     .addTo(map);
-}
+// }
 
 RegExp.escape = function (s) {
   return s.replace(/[\/\\^$*+?.()|[\]{}]/g, "\\$&");
