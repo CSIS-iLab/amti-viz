@@ -25,12 +25,12 @@ var resources;
 var claim_style;
 
 var map = L.map("map", {
-  center: [16.7237264, 120.6814572],
+  center: [16, 120.6814572],
   zoom: 5,
   maxZoom: 18,
   scrollWheelZoom: window.innerWidth < 768 ? false : true,
   minZoom: 1,
-  zoomControl: false,
+  zoomControl: true,
   layers: [basemap],
   attributionControl: false
 });
@@ -41,8 +41,6 @@ L.control
     'Data by <a href="https://amti.csis.org" target="_blank">CSIS AMTI</a>, © OpenStreetMap, Leaflet contributors, © CARTO'
   )
   .addTo(map);
-
-L.control.zoomslider().addTo(map);
 
 var client = new carto.Client({
   apiKey: "ghRTv5W5F-RzyjQokmjJMQ",
