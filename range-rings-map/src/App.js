@@ -3,8 +3,11 @@ import "./App.css";
 import mapboxgl from "mapbox-gl";
 import '@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css'
 // import ringsData from "./rings.geojson";
-import ringsData from "./rings.json";
+// import ringsData from "./rings.json";
+import carrierSam from "./Carrier SAM radius (movable).json"
+import kj500 from "./KJ-500 max.json"
 import MapboxDraw from '@mapbox/mapbox-gl-draw';
+// import _ from 'lodash';
 
 // mapboxgl.accessToken =
 //   "pk.eyJ1Ijoic21hcmFnaGkiLCJhIjoiY2thcXdnbW54MDU2bzJxcG40Z3djMHdlcCJ9.FewrNk0Daa9_fUyyGwYNTg";
@@ -33,114 +36,50 @@ class App extends React.Component {
     var Draw = new MapboxDraw();
     map.addControl(Draw, 'top-left');
 
-    map.on("move", () => {
-      this.setState({
-        lng: map.getCenter().lng.toFixed(4),
-        lat: map.getCenter().lat.toFixed(4),
-        zoom: map.getZoom().toFixed(2),
+    map.on('load', function () {
+      map.addSource('line', {
+      'type': 'geojson',
+      'data': kj500
       });
-    });
-
-  map.on('load', function () {
-    // Add a single point to the map
-    map.addSource('line', {
-    'type': 'geojson',
-    'data': ringsData
-    });
-
-
-
-    // let r = ringsData.filter(d => d.features[0].properties.capabilities === 'Radar')
-    
- 
-
-    var coordinates = document.getElementById('coordinates');
-    // console.log(coordinates)
-
-    var canvas = map.getCanvasContainer();
-
-
-    var geojson = {
-      'type': 'FeatureCollection',
-      'features': [{
-        'type': 'Feature',
-        'geometry': {
-          'type': 'MultiLineString',
-          'coordinates': [ringsData.features[0].geometry.coordinates, ringsData.features[0].geometry.coordinates]
-          }
-        }
-      ]
-      // ringsData
-    };
-
-    function onMove(e) {
-      var coords = e.lngLat;
-       
-      // Set a UI indicator for dragging.
-      canvas.style.cursor = 'grabbing';
-       
-      // Update the Point feature in `geojson` coordinates
-      // and call setData to the source layer `point` on it.
-      geojson.features[0].geometry.coordinates = [coords.lng, coords.lat];
-      map.getSource('line').setData(geojson);
-      }
-       
-      function onUp(e) {
-      var coords = e.lngLat;
-       
-      // Print the coordinates of where the point had
-      // finished being dragged to on the map.
-      coordinates.style.display = 'block';
-      coordinates.innerHTML =
-      'Longitude: ' + coords.lng + '<br />Latitude: ' + coords.lat;
-      canvas.style.cursor = '';
-       
-      // Unbind mouse/touch events
-      map.off('mousemove', onMove);
-      map.off('touchmove', onMove);
-      }
 
       map.addLayer({
-      'id': 'line',
-      'type': 'line',
-      'source': 'line',
-      'paint': {
-        // 'circle-radius': 10,
-        'line-width': 5,
-        'line-color': 'purple'
-        }
-      });
+        'id': 'line',
+        'type': 'line',
+        'source': 'line',
+        'paint': {
+          // 'circle-radius': 10,
+          'line-width': 5,
+          'line-color': 'purple'
+          }
+        });
+      // }
 
-  map.on('mouseenter', 'line', function () {
-    map.setPaintProperty('line', 'line-color', '#3bb2d0');
-    canvas.style.cursor = 'move';
-  });
-     
-  map.on('mouseleave', 'line', function () {
-    map.setPaintProperty('line', 'line-color', '#3887be');
-    canvas.style.cursor = '';
-  });
-     
-  map.on('mousedown', 'line', function (e) {
-    // Prevent the default map drag behavior.
-    e.preventDefault();
-     
-    canvas.style.cursor = 'grab';
-     
-  map.on('mousemove', onMove);
-    map.once('mouseup', onUp);
-  });
-     
-  map.on('touchstart', 'line', function (e) {
-    if (e.lines.length !== 1) return;
-     
-    // Prevent the default map drag behavior.
-    e.preventDefault();
-     
-  map.on('touchmove', onMove);
-    map.once('touchend', onUp);
-  });
-}
+
+      map.on('click', 'line', function(e) {
+        // let x = e.features[0].properties
+        let x = e.features[0]
+        // console.log(e.features[0])
+        
+        // if (x.properties.name !== 'Bomber Range') {
+        //   return
+        // }
+        console.log(carrierSam)
+
+        carrierSam.features = [] 
+        Draw.add(x)
+
+       map.getSource('line').setData(carrierSam)
+      })
+
+
+      //   map.on('click', hi) 
+
+      //   function hi(e) {
+      //     console.log(e)
+      //     console.log(ringsData)
+      //   }
+      }
+    
   )}
     
 
@@ -148,10 +87,6 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="sidebarStyle">
-          <div>
-            Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom:{" "}
-            {this.state.zoom}
-          </div>
         </div>
         <div ref={(el) => (this.mapContainer = el)} className="mapContainer" />
       </div>
