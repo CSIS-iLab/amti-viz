@@ -36,49 +36,52 @@ class App extends React.Component {
     var Draw = new MapboxDraw();
     map.addControl(Draw, 'top-left');
 
-    map.on('load', function () {
-      map.addSource('line', {
-      'type': 'geojson',
-      'data': kj500
+    // map.on('load', function () {
+    //   map.addSource('line', {
+    //   'type': 'geojson',
+    //   'data': kj500
+    //   });
+
+    //   map.addLayer({
+    //     'id': 'line',
+    //     'type': 'line',
+    //     'source': 'line',
+    //     'paint': {
+    //       'line-width': 5,
+    //       'line-color': 'purple'
+    //     }
+    //   });
+
+    map.once('load', function loaded() {
+ 
+      
+          carrierSam.forEach(function eachFilter(feature, index) {
+          
+              var id = 'feature-' + index;
+              map.addSource(id, {type: 'geojson', data: feature});
+              map.addLayer({
+                  id: id + '-line',
+                  type: 'line',
+                  source: id,
+                  paint: {'line-color': 'blue', 'line-width': 4}
+              });
+     
       });
 
-      map.addLayer({
-        'id': 'line',
-        'type': 'line',
-        'source': 'line',
-        'paint': {
-          // 'circle-radius': 10,
-          'line-width': 5,
-          'line-color': 'purple'
-          }
-        });
-      // }
 
+ 
 
-      map.on('click', 'line', function(e) {
-        // let x = e.features[0].properties
+      map.on('click', 'feature-1-line', function(e) {
         let x = e.features[0]
-        // console.log(e.features[0])
-        
-        // if (x.properties.name !== 'Bomber Range') {
-        //   return
-        // }
-        console.log(carrierSam)
+        console.log(x)
+       
 
         carrierSam.features = [] 
         Draw.add(x)
 
-       map.getSource('line').setData(carrierSam)
+        map.getSource('feature-1').setData(carrierSam[0])
       })
-
-
-      //   map.on('click', hi) 
-
-      //   function hi(e) {
-      //     console.log(e)
-      //     console.log(ringsData)
-      //   }
-      }
+    }
     
   )}
     
