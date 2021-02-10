@@ -7,6 +7,8 @@ import '@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css'
 import carrierSam from "./Carrier SAM radius (movable).json"
 import kj500 from "./KJ-500 max.json"
 import MapboxDraw from '@mapbox/mapbox-gl-draw';
+import createSupplementaryPoints from '@mapbox/mapbox-gl-draw/src/lib/create_supplementary_points';
+import { activeStates } from '@mapbox/mapbox-gl-draw/src/constants';
 // import _ from 'lodash';
 
 // mapboxgl.accessToken =
@@ -33,24 +35,42 @@ class App extends React.Component {
       zoom: this.state.zoom,
     });
 
+    
+// const DirectSelectWithoutMiddleVertexMode = MapboxDraw.modes.direct_select;
+
+// DirectSelectWithoutMiddleVertexMode.toDisplayFeatures = function (state, geojson, push) {
+//   if (state.featureId === geojson.properties.id) {
+//     geojson.properties.active = activeStates.INACTIVE;
+//     push(geojson);
+//     createSupplementaryPoints(geojson, {
+//       map: this.map,
+//       midpoints: false,
+//       selectedPaths: state.selectedCoordPaths
+//     }).forEach(push);
+//   } else {
+//     geojson.properties.active = activeStates.INACTIVE;
+//     push(geojson);
+//   }
+//   this.fireActionable(state);
+// };
+
+// export default DirectSelectWithoutMiddleVertexMode;
+
+    const drawOptions = {
+  modes: Object.assign({
+//     direct_select: DirectSelectWithoutMiddleVertexMode
+// }, MapboxDraw.modes)
+SIMPLE_SELECT : 'simple_select'
+}, MapboxDraw.modes)
+  };
+
     var Draw = new MapboxDraw();
     map.addControl(Draw, 'top-left');
 
-    // map.on('load', function () {
-    //   map.addSource('line', {
-    //   'type': 'geojson',
-    //   'data': kj500
-    //   });
 
-    //   map.addLayer({
-    //     'id': 'line',
-    //     'type': 'line',
-    //     'source': 'line',
-    //     'paint': {
-    //       'line-width': 5,
-    //       'line-color': 'purple'
-    //     }
-    //   });
+   
+ 
+    // export default DirectSelectWithoutMiddleVertexMode;
 
     map.once('load', function loaded() {
  
@@ -68,22 +88,21 @@ class App extends React.Component {
      
       });
 
-
- 
-
       map.on('click', 'feature-1-line', function(e) {
+        console.log(e)
         let x = e.features[0]
         console.log(x)
-       
-
-        carrierSam.features = [] 
+        // carrierSam.features = [] 
         Draw.add(x)
+        // Draw.getAll()
 
         map.getSource('feature-1').setData(carrierSam[0])
       })
     }
     
   )}
+
+
     
 
   render() {
