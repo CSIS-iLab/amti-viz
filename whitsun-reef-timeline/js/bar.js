@@ -36,13 +36,9 @@ Highcharts.chart('hcContainer', {
       text: "Ship Count"
     }
   },
-  xAxis: {
-    // tickInterval: 100,
-
-  },
   tooltip: {
     useHTML: true,
-    xDateFormat: '%a, %m/%Y',
+    xDateFormat: '%m/%d/%y',
   },
   // Additional Plot Options
   plotOptions:
