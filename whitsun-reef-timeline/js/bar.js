@@ -6,16 +6,14 @@ Highcharts.chart('hcContainer', {
   },
   // General Chart Options
   chart: {
-    zoomType: 'x',
+    // zoomType: 'x',
     type: 'column',
   },
   // Chart Title and Subtitle
   title: {
     text: "Number of Vessels at Whitsun Reef"
   },
-  subtitle: {
-    text: "Click and drag to zoom in"
-  },
+  subtitle: false,
 
   colors: ['#0078b2'],
 
