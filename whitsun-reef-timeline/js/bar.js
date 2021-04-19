@@ -13,7 +13,9 @@ Highcharts.chart('hcContainer', {
   title: {
     text: "Vessels at Union Banks and Whitsun Reef"
   },
-  subtitle: false,
+  subtitle: {
+    text: "As visible in Planet Labs satellite imagery"
+  },
 
   colors: ['#0078b2', '#00B29E', '#94C9FF'],
 
