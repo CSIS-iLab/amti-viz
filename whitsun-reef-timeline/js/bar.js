@@ -11,11 +11,11 @@ Highcharts.chart('hcContainer', {
   },
   // Chart Title and Subtitle
   title: {
-    text: "Number of Vessels at Whitsun Reef"
+    text: "Vessels at Union Banks and Whitsun Reef"
   },
   subtitle: false,
 
-  colors: ['#0078b2'],
+  colors: ['#0078b2', '#00B29E', '#94C9FF'],
 
   // Credits
   credits: {
@@ -26,7 +26,7 @@ Highcharts.chart('hcContainer', {
   },
   // Chart Legend
   legend: {
-    enabled: false
+    enabled: true
   },
   // Y Axis
   yAxis: {
@@ -34,6 +34,10 @@ Highcharts.chart('hcContainer', {
       text: "Ship Count"
     }
   },
+  // xAxis: {
+  //   categories: '%m/%d/%y',
+
+  // },
   tooltip: {
     useHTML: true,
     xDateFormat: '%m/%d/%y',
@@ -42,7 +46,7 @@ Highcharts.chart('hcContainer', {
   plotOptions:
   {
     column: {
-      stacking: null, // Normal bar graph
+      stacking: true, // Normal bar graph
       pointWidth: 10,
       dataLabels: {
         enabled: false
