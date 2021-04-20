@@ -6,18 +6,17 @@ Highcharts.chart('hcContainer', {
   },
   // General Chart Options
   chart: {
-    // zoomType: 'x',
     type: 'column',
   },
   // Chart Title and Subtitle
   title: {
-    text: "Vessels at Union Banks and Whitsun Reef"
+    text: "Vessels at Union Banks"
   },
   subtitle: {
     text: "As visible in Planet Labs satellite imagery"
   },
 
-  colors: ['#0078b2', '#00B29E', '#94C9FF'],
+  colors: ['#00B29E', '#0078b2'],
 
   // Credits
   credits: {
@@ -36,11 +35,8 @@ Highcharts.chart('hcContainer', {
       text: "Ship Count"
     }
   },
-  // xAxis: {
-  //   categories: '%m/%d/%y',
-
-  // },
   tooltip: {
+    shared: true,
     useHTML: true,
     xDateFormat: '%m/%d/%y',
   },
@@ -49,7 +45,7 @@ Highcharts.chart('hcContainer', {
   {
     column: {
       stacking: true, // Normal bar graph
-      pointWidth: 10,
+      pointWidth: 8,
       dataLabels: {
         enabled: false
       },
