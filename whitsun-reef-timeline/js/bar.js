@@ -27,7 +27,11 @@ Highcharts.chart('hcContainer', {
   },
   // Chart Legend
   legend: {
-    enabled: true
+    enabled: true,
+    title: {
+      text:
+        '<span style="font-size: 12px; color: #808080; font-weight: normal">(Click to hide)</span>'
+    },
   },
   // Y Axis
   yAxis: {
