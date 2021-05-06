@@ -11,22 +11,28 @@ var config = {
     footer: 'Source: Data from | ',
     chapters: [
         {
-            id: 'states1990',
+            id: 'scs-islands',
             title: 'China controls 4 bases with runways in the SCS.',
             subtitle: '',
             image: '',
             description: `China controls 4 bases with runways in the SCS.`,
             location: {
-                center: [110.09, 22.30],
-                zoom: 3.50,
+                center: [115.09, 16.30],
+                zoom: 4.50,
                 pitch: 0.00,
                 bearing: 0.00
             },
             onChapterEnter: [
-              
+               {
+                    layer: 'a-china-scs-runway-islands',
+                    opacity: 1
+                }
             ],
             onChapterExit: [
-             
+                {
+                    layer: 'a-china-scs-runway-islands',
+                    opacity: 0
+                }
             ]
         },
         {
@@ -41,16 +47,16 @@ var config = {
                 bearing: 0.00
             },
             onChapterEnter: [
-                // {
-                //     layer: 'frame0_states_2018',
-                //     opacity: 1
-                // }
+                {
+                    layer: 'b-fighter-max-combat-range',
+                    opacity: 1
+                }
             ],
             onChapterExit: [
-                // {
-                //     layer: 'frame0_states_2018',
-                //     opacity: 0
-                // }
+                {
+                    layer: 'b-fighter-max-combat-range',
+                    opacity: 0
+                }
             ]
         },
         {
@@ -66,17 +72,17 @@ var config = {
                 bearing: 0.00
             },
             onChapterEnter: [
-                // {
-                //     layer: 'counties-200-trade-sheet1-dn6e4s',
-                //     opacity: 1
-                // },
+                {
+                    layer: 'c-kj-500-under-sam-to-surface',
+                    opacity: 1
+                },
 
             ],
             onChapterExit: [
-                // {
-                //     layer: 'counties-200-trade-sheet1-dn6e4s',
-                //     opacity: 0
-                // }
+                {
+                    layer: 'c-kj-500-under-sam-to-surface',
+                    opacity: 0
+                }
             ]
         },
         {
@@ -92,20 +98,16 @@ var config = {
                 bearing: 0.00
             },
             onChapterEnter: [
-                // {
-                //     layer: 'satellite',
-                //     opacity: 0
-                // },
-                // {
-                //     layer: 'frame1_Overview',
-                //     opacity: 1
-                // },
+                {
+                    layer: 'd-kj-500-single-mischief ',
+                    opacity: 1
+                },
             ],
             onChapterExit: [
-                // {
-                //     layer: 'frame1_Overview',
-                //     opacity: 0
-                // }
+                {
+                    layer: 'd-kj-500-single-mischief ',
+                    opacity: 0
+                },
             ]
         },
         {
@@ -118,20 +120,20 @@ var config = {
                 center: [110.09, 22.30],
                 zoom: 5.13,
                 pitch: 22.50,
-                bearing: -26.92,
+                bearing: 0.00,
                 // speed: 0.05
             },
             onChapterEnter: [
-                // {
-                //     layer: 'frame1_Overview',
-                //     opacity: 1
-                // }
+                {
+                    layer: 'e-kj-500-single-from-mischief',
+                    opacity: 1
+                }
             ],
             onChapterExit: [
-                // {
-                //     layer: 'frame1_Overview',
-                //     opacity: 0
-                // }
+                {
+                    layer: 'e-kj-500-single-from-mischief',
+                    opacity: 0
+                }
             ]
         },
         {
@@ -144,19 +146,19 @@ var config = {
                 center: [110.09, 22.30],
                 zoom: 6,
                 pitch: 60,
-                bearing: -19.72,
+                bearing: 0.00,
             },
             onChapterEnter: [
-                // {
-                //     layer: 'counties_1990_manuB',
-                //     opacity: 1
-                // }
+                {
+                    layer: 'f-kj-500-max-range-from-misch',
+                    opacity: 1
+                }
             ],
             onChapterExit: [
-                // {
-                //     layer: 'counties_1990_manuB',
-                //     opacity: 0
-                // }
+                {
+                    layer: 'f-kj-500-max-range-from-misch',
+                    opacity: 0
+                }
             ]
         },
         {
@@ -169,19 +171,19 @@ var config = {
                 center: [110.09, 22.30],
                 zoom: 6,
                 pitch: 60,
-                bearing: -19.72,
+                bearing: 0.00,
             },
             onChapterEnter: [
-                // {
-                //     layer: 'counties_2018_manuB',
-                //     opacity: 1,
-                // }
+                {
+                    layer: 'g-sam-range-from-mischief',
+                    opacity: 1,
+                }
             ],
             onChapterExit: [
-                // {
-                //     layer: 'counties_2018_manuB',
-                //     opacity: 0
-                // }
+                {
+                    layer: 'g-sam-range-from-mischief',
+                    opacity: 0
+                }
             ]
         },
         {
@@ -194,7 +196,7 @@ var config = {
                 center: [110.09, 22.30],
                 zoom: 5.23,
                 pitch: 52.00,
-                bearing: 13.88,
+                bearing: 0.00,
             },
             onChapterEnter: [
                 // {
