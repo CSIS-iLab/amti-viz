@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hey friends</title>
+    <meta name="viewport" content="initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <base target="_blank" />
+
+    <script src="https://unpkg.com/babel-polyfill@6.26.0/dist/polyfill.js"></script>
+
+     <!-- Include Leaflet -->
+     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+     <link
+       href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+       rel="stylesheet"
+     />
+
+     <!-- Stylesheets -->
+
+     <link
+      rel="preconnect stylesheet"
+      href="https://use.typekit.net/ats0hoc.css"
+    />
+
+    <link href="map.css" rel="stylesheet" />
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://npmcdn.com/csv2geojson@latest/csv2geojson.js'></script>
+    <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <!-- <script src="wkx.js"></script> -->
+    
+  </head>
+
+  <body>
+    <div id="map" class="map" tabindex="0"></div>
+   
+    <script src="map.js"></script>
+  </body>
+</html>
