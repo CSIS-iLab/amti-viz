@@ -17,7 +17,7 @@ var config = {
             image: '',
             description: `China controls 4 bases with runways in the SCS.`,
             location: {
-                center: [115.09, 16.30],
+                center: [112.09, 16.30],
                 zoom: 4.50,
                 pitch: 0.00,
                 bearing: 0.00
@@ -92,20 +92,20 @@ var config = {
             image: '',
             description: `KJ-500 sensing aircraft launched from the islands have a wider sensing range than any radar facilities on the islands themselves. A KJ-500, shown here above mischief reef can sense X miles around it.`,
             location: {
-                center: [110.09, 22.30],
+                center: [110.09, 15.30],
                 zoom: 4.00,
                 pitch: 0.00,
                 bearing: 0.00
             },
             onChapterEnter: [
                 {
-                    layer: 'd-kj-500-single-mischief ',
+                    layer: 'd-kj-500-single-mischief',
                     opacity: 1
                 },
             ],
             onChapterExit: [
                 {
-                    layer: 'd-kj-500-single-mischief ',
+                    layer: 'd-kj-500-single-mischief',
                     opacity: 0
                 },
             ]
@@ -117,9 +117,9 @@ var config = {
             image: '',
             description: `The KJ-500 has a huge maximum travel range 3000km…`,
             location: {
-                center: [110.09, 22.30],
-                zoom: 5.13,
-                pitch: 22.50,
+                center: [112.09, 16.30],
+                zoom: 4.13,
+                pitch: 0.00,
                 bearing: 0.00,
                 // speed: 0.05
             },
@@ -143,9 +143,9 @@ var config = {
             image: '',
             description: `But, like the fighters, they are limited to operating within only a fraction of it. This is because they need to be covered by SAM and ASMs to defend them against potential attack.`,
             location: {
-                center: [110.09, 22.30],
-                zoom: 6,
-                pitch: 60,
+                center: [0.00, 46.50],
+                zoom: 1.18,
+                pitch: 0.00,
                 bearing: 0.00,
             },
             onChapterEnter: [
@@ -168,9 +168,9 @@ var config = {
             image: '',
             description: `This range, the estimated sensing range of KJ-500 aircraft operating within SAM coverage from the islands, represents the practical limit of power projection from the islands themselves. Combat aircraft wouldn’t be able to operate outside of this range without incurring extreme risk. `,
             location: {
-                center: [110.09, 22.30],
-                zoom: 6,
-                pitch: 60,
+                center: [110.87, 8.38],
+                zoom: 4.5,
+                pitch: 0.00,
                 bearing: 0.00,
             },
             onChapterEnter: [
@@ -194,8 +194,8 @@ var config = {
             description: `China’s aircraft carriers have the potential to unlock some of these limitations and extend China’s power projection range much further. A carrier group, including the carrier itself, bringing X number of X fighters, but also Y ship and Z has its own missile capabilities and its own sensing capabilities.`,
             location: {
                 center: [110.09, 22.30],
-                zoom: 5.23,
-                pitch: 52.00,
+                zoom: 4.23,
+                pitch: 0.00,
                 bearing: 0.00,
             },
             onChapterEnter: [
@@ -220,8 +220,8 @@ var config = {
             description: `The carrier group is limited by only one thing—the presence of a divert airfield nearby. If the carrier were to sustain damage during combat, fighters in the air would find themselves at extreme risk without the presence of a divert airfield within range. Chinese companies have been involved in a number of airport projects that have been theorized to potentially allow future access, but the four runways in the spratlys serve as permanent, reliable airfields further from the Chinese mainland.`,
             location: {
                 center: [110.09, 22.30],
-                zoom: 5.23,
-                pitch: 52.00,
+                zoom: 4.23,
+                pitch: 0.00,
                 bearing: 13.88,
             },
             onChapterEnter: [
