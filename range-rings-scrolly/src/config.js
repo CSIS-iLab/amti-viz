@@ -11,7 +11,7 @@ var config = {
     footer: 'Source: Data from | ',
     chapters: [
         {
-            id: 'scs-islands',
+            id: 'a-scs-islands',
             title: 'China controls 4 bases with runways in the SCS.',
             subtitle: '',
             image: '',
@@ -35,8 +35,33 @@ var config = {
                 }
             ]
         },
+        // {
+        //     id: 'sat-imag',
+        //     title: 'China controls 4 bases with runways in the SCS.',
+        //     subtitle: '',
+        //     image: '',
+        //     description: `China controls 4 bases with runways in the SCS.`,
+        //     location: {
+        //         center: [112.09, 16.30],
+        //         zoom: 4.50,
+        //         pitch: 0.00,
+        //         bearing: 0.00
+        //     },
+        //     onChapterEnter: [
+        //        {
+        //             layer: 'a-china-scs-runway-islands',
+        //             opacity: 1
+        //         }
+        //     ],
+        //     onChapterExit: [
+        //         {
+        //             layer: 'a-china-scs-runway-islands',
+        //             opacity: 0
+        //         }
+        //     ]
+        // },
         {
-            id: 'states2018',
+            id: 'b-fighter-range',
             title: '[map with ISLANDS(a) + FIGHTER MAX RANGE(b))',
             image: '',
             description: `The range of combat aircraft from these islands is quite far.`,
@@ -48,11 +73,19 @@ var config = {
             },
             onChapterEnter: [
                 {
+                    layer: 'a-china-scs-runway-islands',
+                    opacity: 1
+                },
+                {
                     layer: 'b-fighter-max-combat-range',
                     opacity: 1
                 }
             ],
             onChapterExit: [
+                {
+                    layer: 'a-china-scs-runway-islands',
+                    opacity: 0
+                },
                 {
                     layer: 'b-fighter-max-combat-range',
                     opacity: 0
@@ -60,7 +93,7 @@ var config = {
             ]
         },
         {
-            id: 'counties200',
+            id: 'a-c-islands',
             title: '[map with ISLANDS(a) + KJ-500 RANGE FROM ISLAND SAMS(c))',
             subtitle: '',
             image: '',
@@ -73,45 +106,28 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'c-kj-500-under-sam-to-surface',
+                    layer: 'a-china-scs-runway-islands',
+                    opacity: 1
+                },
+                {
+                    layer: 'c-kj500-under-sam-to-surface',
                     opacity: 1
                 },
 
             ],
             onChapterExit: [
                 {
-                    layer: 'c-kj-500-under-sam-to-surface',
+                    layer: 'a-china-scs-runway-islands',
+                    opacity: 0
+                },
+                {
+                    layer: 'c-kj500-under-sam-to-surface',
                     opacity: 0
                 }
             ]
         },
         {
-            id: 'counties100',
-            title: '[one KJ-500 at mischief (d) with sensing range(e)]',
-            subtitle: '',
-            image: '',
-            description: `KJ-500 sensing aircraft launched from the islands have a wider sensing range than any radar facilities on the islands themselves. A KJ-500, shown here above mischief reef can sense X miles around it.`,
-            location: {
-                center: [110.09, 15.30],
-                zoom: 4.00,
-                pitch: 0.00,
-                bearing: 0.00
-            },
-            onChapterEnter: [
-                {
-                    layer: 'd-kj-500-single-mischief',
-                    opacity: 1
-                },
-            ],
-            onChapterExit: [
-                {
-                    layer: 'd-kj-500-single-mischief',
-                    opacity: 0
-                },
-            ]
-        },
-        {
-            id: 'counties100b',
+            id: 'd-e',
             title: ' [KJ-500 maximum range(F)]',
             subtitle: '',
             image: '',
@@ -125,11 +141,19 @@ var config = {
             },
             onChapterEnter: [
                 {
+                    layer: 'd-kj500-single-subi',
+                    opacity: 1
+                },
+                {
                     layer: 'e-kj-500-single-from-mischief',
                     opacity: 1
                 }
             ],
             onChapterExit: [
+                {
+                    layer: 'd-kj500-single-subi',
+                    opacity: 0
+                },
                 {
                     layer: 'e-kj-500-single-from-mischief',
                     opacity: 0
@@ -137,11 +161,11 @@ var config = {
             ]
         },
         {
-            id: 'manuDecline3',
+            id: 'f-kj-500',
             title: `[mischief reef SAM range(G)]`,
             subtitle: '',
             image: '',
-            description: `But, like the fighters, they are limited to operating within only a fraction of it. This is because they need to be covered by SAM and ASMs to defend them against potential attack.`,
+            description: `The KJ-500 has a huge maximum travel range 3000km...`,
             location: {
                 center: [0.00, 46.50],
                 zoom: 1.18,
@@ -150,26 +174,26 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'f-kj-500-max-range-from-misch',
+                    layer: 'f-kj500-max-range-from-mischief',
                     opacity: 1
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'f-kj-500-max-range-from-misch',
+                    layer: 'f-kj500-max-range-from-mischief',
                     opacity: 0
                 }
             ]
         },
         {
-            id: 'manuDecline4',
-            title: `[KJ-500 sensing range from island SAMS(c)]`,
+            id: 'g-sam-range',
+            title: `mischief reef SAM range(G)`,
             subtitle: '',
             image: '',
-            description: `This range, the estimated sensing range of KJ-500 aircraft operating within SAM coverage from the islands, represents the practical limit of power projection from the islands themselves. Combat aircraft wouldn’t be able to operate outside of this range without incurring extreme risk. `,
+            description: `But, like the fighters, they are limited to operating within only a fraction of it. This is because they need to be covered by SAM and ASMs to defend them against potential attack.`,
             location: {
                 center: [110.87, 8.38],
-                zoom: 4.5,
+                zoom: 5,
                 pitch: 0.00,
                 bearing: 0.00,
             },
@@ -186,81 +210,124 @@ var config = {
                 }
             ]
         },
+
+
+
         {
             id: 'services5',
-            title: '[carrier group near natuns. Sam range, asm range, sensing range]',
+            title: '[KJ-500 sensing range from island SAMS(c) + fighter weapons range from island KJ-500 (S)]',
             subtitle: '',
             image: '',
-            description: `China’s aircraft carriers have the potential to unlock some of these limitations and extend China’s power projection range much further. A carrier group, including the carrier itself, bringing X number of X fighters, but also Y ship and Z has its own missile capabilities and its own sensing capabilities.`,
+            description: `This range, the estimated sensing range of KJ-500 aircraft operating within SAM coverage from the islands, represents the practical limit of power projection from the islands themselves. Combat aircraft wouldn’t be able to operate outside of this range without incurring extreme risk.`,
             location: {
-                center: [110.09, 22.30],
+                center: [110.09, 15.30],
                 zoom: 4.23,
                 pitch: 0.00,
                 bearing: 0.00,
             },
             onChapterEnter: [
-                // {
-                //     layer: 'frame_5a',
-                //     opacity: 1
-                // },
-
+                {
+                    layer: 'c-kj500-under-sam-to-surface',
+                    opacity: 1
+                },
+                {
+                    layer: 's-fighter-weapons-range-from-kj500',
+                    opacity: 1
+                }
             ],
             onChapterExit: [
-                // {
-                //     layer: 'frame_5a',
-                //     opacity: 0
-                // }
+                {
+                    layer: 'c-kj500-under-sam-to-surface',
+                    opacity: 0
+                },
+                {
+                    layer: 's-fighter-weapons-range-from-kj500',
+                    opacity: 0
+                }
             ]
         },
         {
             id: 'services6',
-            title: '[divert airfields]',
+            title: '[Carrier Group (H) Sam Range (I), ASM Range (J), Sensing Range to surface (K)]',
             subtitle: '',
             image: '',
-            description: `The carrier group is limited by only one thing—the presence of a divert airfield nearby. If the carrier were to sustain damage during combat, fighters in the air would find themselves at extreme risk without the presence of a divert airfield within range. Chinese companies have been involved in a number of airport projects that have been theorized to potentially allow future access, but the four runways in the spratlys serve as permanent, reliable airfields further from the Chinese mainland.`,
+            description: `China’s aircraft carriers have the potential to unlock some of these limitations and extend China’s power projection range much further. A carrier group, including the carrier itself, bringing X number of X fighters, but also Y ship and Z has its own missile capabilities and its own sensing capabilities.`,
             location: {
-                center: [110.09, 22.30],
+                center: [110.09, 12.30],
                 zoom: 4.23,
                 pitch: 0.00,
                 bearing: 13.88,
             },
             onChapterEnter: [
-                // {
-                //     layer: 'frame_5b',
-                //     opacity: 1
-                // }
+                {
+                    layer: 'h-carrier-group',
+                    opacity: 1
+                },
+                {
+                    layer: 'i-sam-range-from-carrier',
+                    opacity: 1
+                },
+                {
+                    layer: 'j-yj18-asm-range-from-carrier',
+                    opacity: 1
+                },
+                {
+                    layer: 'k-carrier-sensing-range-to-surface',
+                    opacity: 1
+                }
             ],
             onChapterExit: [
-                // {
-                //     layer: 'frame_5b',
-                //     opacity: 0
-                // }
+                {
+                    layer: 'h-carrier-group',
+                    opacity: 0
+                },
+                {
+                    layer: 'i-sam-range-from-carrier',
+                    opacity: 0
+                },
+                {
+                    layer: 'j-yj18-asm-range-from-carrier',
+                    opacity: 0
+                },
+                {
+                    layer: 'k-carrier-sensing-range-to-surface',
+                    opacity: 0
+                }
             ]
         },
         {
             id: 'inDepth7',
-            title: '[carrier group near natunas. Sam range, asm range, sensing range.]',
+            title: '[Islands (A) + China (L)]',
             subtitle: '',
             image: '',
-            description: `Fighter aircraft can operate from a carrier group under the radar coverage of the ships themselves, but the range is limited.`,
+            description: `The carrier group is limited by only one thing—the presence of a divert airfield nearby. If the carrier were to sustain damage during combat, fighters in the air would find themselves at extreme risk without the presence of a divert airfield within range. Chinese companies have been involved in a number of airport projects that have been theorized to potentially allow future access, but the four runways in the South China Sea serve as permanent, reliable airfields further from the Chinese mainland.`,
             location: {
-                center: [110.09, 22.30],
-                zoom: 6.72,
+                center: [97.09, 28.30],
+                zoom: 3.5,
                 pitch: 2.00,
                 bearing: 0.00
                 // speed: 0.02
             },
             onChapterEnter: [
-                // {
-                //     layer: 'frame_7',
-                //     opacity: 1
-                // }
+                {
+                    layer: 'a-china-scs-runway-islands',
+                    opacity: 1
+                },
+                {
+                    layer: 'l-mainland-china-polygon',
+                    opacity: 1
+                },
+
             ],
             onChapterExit: [
-                // {
-                //     layer: 'frame_7',
-                //     opacity: 0
-                // }
+                {
+                    layer: 'a-china-scs-runway-islands',
+                    opacity: 0
+                },
+                {
+                    layer: 'l-mainland-china-polygon',
+                    opacity: 0
+                }
             ]
         },
         {
