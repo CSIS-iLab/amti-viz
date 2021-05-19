@@ -3,7 +3,7 @@ var config = {
     accessToken: "pk.eyJ1IjoiaWxhYm1lZGlhIiwiYSI6ImNpbHYycXZ2bTAxajZ1c2tzdWU1b3gydnYifQ.AHxl8pPZsjsqoz95-604nw",
     showMarkers: false,
     alignment: 'left',
-    theme: 'dark',
+    theme: 'light',
     title: 'Range Rings Scrolly Map',
     subtitle: '',
     byline: 'Produced by CSIS iDeas Lab and the CSIS Asia Maritime Transparency Initaitve ',
@@ -100,7 +100,7 @@ var config = {
             description: `But in reality, combat aircraft are limited to operating within radar range. Without external radar coverage, they have limited awareness of their surroundings and would be vulnerable to attack.`,
             location: {
                 center: [110.09, 22.30],
-                zoom: 3.50,
+                zoom: 4.00,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -253,10 +253,10 @@ var config = {
             image: '',
             description: `China’s aircraft carriers have the potential to unlock some of these limitations and extend China’s power projection range much further. A carrier group, including the carrier itself, bringing X number of X fighters, but also Y ship and Z has its own missile capabilities and its own sensing capabilities.`,
             location: {
-                center: [110.09, 12.30],
-                zoom: 4.23,
+                center: [110.09, 10.30],
+                zoom: 4.5,
                 pitch: 0.00,
-                bearing: 13.88,
+                bearing: 0.00
             },
             onChapterEnter: [
                 {
@@ -304,7 +304,7 @@ var config = {
             location: {
                 center: [97.09, 28.30],
                 zoom: 3.5,
-                pitch: 2.00,
+                pitch: 0.00,
                 bearing: 0.00
                 // speed: 0.02
             },
@@ -332,262 +332,132 @@ var config = {
         },
         {
             id: 'inDepth8',
-            title: '[KJ 500 over the carrier group, radar range]',
+            title: '[Carrier Group (H), Sensing Range to surface (K)]',
             subtitle: '',
             image: '',
-            description: `But a KJ-500 from the islands can make use the carrier group’s missile coverage to safely provide a much wider radar radius. This extends the effective combat range of the fighters by x miles, making it possible to strike locations as far as INDONESIA? under protected radar coverage.`,
+            description: `Fighter aircraft can operate from a carrier group under the radar coverage of the ships themselves, but the range is limited.`,
             location: {
-                center: [110.09, 22.30],
-                zoom: 16,
-                pitch: 41,
-                bearing: 22.40,
+                center: [108.09, 8.00],
+                zoom: 5,
+                pitch: 0.00,
+                bearing: 0.00
                 // speed: 0.02
             },
             onChapterEnter: [
-                // {
-                //     layer: 'satellite',
-                //     opacity: 0
-                // },
-
-                // {
-                //     layer: 'satellite',
-                //     opacity: 1
-                // },
-                // {
-                //     layer: 'rutherford',
-                //     opacity: 1
-                // },
+                {
+                    layer: 'h-carrier-group',
+                    opacity: 0
+                },
+                {
+                    layer: 'k-carrier-sensing-range-to-surface',
+                    opacity: 1
+                },
             ],
             onChapterExit: [
-                // {
-                //     layer: 'satellite',
-                //     opacity: 0
-                // },
-                // {
-                //     layer: 'rutherford',
-                //     opacity: 0
-                // },
+                {
+                    layer: 'h-carrier-group',
+                    opacity: 0
+                },
+                {
+                    layer: 'k-carrier-sensing-range-to-surface',
+                    opacity: 0
+                },
             ]
         },
         {
             id: 'inDepth9',
-            title: '[divert airfields]',
+            title: '[KJ 500 over the carrier group radar range (M) + fighter weapons range from KJ-500 (O)]',
             subtitle: '',
             image: '',
-            description: `Based on divert airfields currently available for Chinese use…`,
+            description: `But a KJ-500 from the islands can make use the carrier group’s missile coverage to safely provide a much wider radar radius. This extends the effective combat range of the fighters by x miles, making it possible to strike locations as far as INDONESIA? under protected radar coverage.`,
             location: {
-                center: [110.09, 22.30],
-                zoom: 8.16,
-                pitch: 41.00,
-                bearing: 16.30,
+                center: [108.09, 8.00],
+                zoom: 3.5,
+                pitch: 0.00,
+                bearing: 0.00
                 // speed: 0.02
             },
             onChapterEnter: [
-                // {
-                //     layer: 'frame_6b',
-                //     opacity: 1
-                // },
-                // {
-                //     layer: 'frame_6b_label',
-                //     opacity: 1
-                // }
+                {
+                    layer: 'm-kj500-sensing-to-surface-from-carrier-sam',
+                    opacity: 1
+                },
+                {
+                    layer: 'o-fighter-weapons-range-from-single-carrier-kj500',
+                    opacity: 1
+                }
             ],
             onChapterExit: [
-                // {
-                //     layer: 'frame_6b',
-                //     opacity: 0
-                // },
-                // {
-                //     layer: 'frame_6b_label',
-                //     opacity: 0
-                // }
+                {
+                    layer: 'm-kj500-sensing-to-surface-from-carrier-sam',
+                    opacity: 0
+                },
+                {
+                    layer: 'o-fighter-weapons-range-from-single-carrier-kj500',
+                    opacity: 0
+                }
             ]
         },
         {
             id: 'inDepth11',
-            title: '[maximum KJ-500 sensing range from carriers]',
+            title: '[Carrier operational range 400nm from diverts (P)]',
             subtitle: ``,
             image: '',
-            description: `China’s carrier groups can enable fighter combat operations within this range.`,
+            description: `Based on divert airfields currently available for Chinese use, China’s aircraft carrier can operate within this range while maintaining a safe 400 nautical mile distance from divert airfields.`,
             location: {
-                center: [110.09, 22.30],
-                zoom: 16.30,
-                pitch: 50.00,
-                bearing: 0,
+                center: [112.09, 24.00],
+                zoom: 3.5,
+                pitch: 0.00,
+                bearing: 0.00
                 // speed: 0.02
             },
             onChapterEnter: [
-                // {
-                //     layer: 'satellite',
-                //     opacity: 0
-                // },
-                // {
-                //     layer: 'buick',
-                //     opacity: 1
-                // },
-
-                // {
-                //     layer: 'satellite',
-                //     opacity: 1
-                // },
+                {
+                    layer: 'p-carrier-operational-range',
+                    opacity: 1
+                },
             ],
             onChapterExit: [
-                // {
-                //     layer: 'satellite',
-                //     opacity: 0
-                // },
-                // {
-                //     layer: 'buick',
-                //     opacity: 0
-                // },
+                {
+                    layer: 'p-carrier-operational-range',
+                    opacity: 0
+                },
             ]
         },
         {
             id: 'inDepth12',
-            title: '',
-            subtitle: 'Monroe County, NY',
+            title: '[maximum KJ-500 sensing range from carriers (Q) and maximum fighter weapons range(R)]',
+            subtitle: '',
             image: '',
-            description: ``,
+            description: `China’s carrier groups can enable fighter combat operations within this range.`,
             location: {
-                center: [110.09, 22.30],
-                zoom: 8.07,
-                pitch: 55.00,
-                bearing: 41.60
-            },
-            onChapterEnter: [
-                // {
-                //     layer: 'monroe',
-                //     opacity: 1
-                // },
-                // {
-                //     layer: 'monroe_label',
-                //     opacity: 1
-                // }
-            ],
-            onChapterExit: [
-                // {
-                //     layer: 'monroe',
-                //     opacity: 0
-                // },
-                // {
-                //     layer: 'monroe_label',
-                //     opacity: 0
-                // }
-            ]
-        },
-        {
-            id: 'jobs13',
-            title: 'Jobs Lost, Jobs Gained',
-            subtitle: 'The New Economy',
-            image: '',
-            description: ``,
-            location: {
-                center: [110.09, 22.30],
-                zoom: 4.00,
+                center: [112.09, 24.00],
+                zoom: 3.0,
                 pitch: 0.00,
                 bearing: 0.00
             },
             onChapterEnter: [
-                // {
-                //     layer: 'frame_9',
-                //     opacity: 1
-                // }
+                {
+                    layer: 'q-kj500-sensing-to-surface-from-carrier',
+                    opacity: 1
+                },
+                {
+                    layer: 'r-fighter-weapons-range-from-kj500-sensing-range',
+                    opacity: 1
+                }
             ],
             onChapterExit: [
-                // {
-                //     layer: 'frame_9',
-                //     opacity: 0
-                // }
+                {
+                    layer: 'q-kj500-sensing-to-surface-from-carrier',
+                    opacity: 0
+                },
+                {
+                    layer: 'r-fighter-weapons-range-from-kj500-sensing-range',
+                    opacity: 0
+                }
             ]
         },
-        {
-            id: 'brightSpots14',
-            title: 'Manufacturing Bright Spots',
-            subtitle: 'Midwest Success',
-            image: '',
-            description: `Twelve of those counties had both overall employment growth and an increase in manufacturing jobs as a percent of all jobs. Ten of those counties are situated in the Midwest. Some counties, like Marathon County, WI or Shelby County, OH, manufacture a diverse range of products. Others, like Elkhart County, IN, dominate production of a single item, which in Elkhart's case is RVs.`,
-            location: {
-                center: [110.09, 22.30],
-                zoom: 6.06,
-                pitch: 0.00,
-                bearing: 0.00,
-            },
-            onChapterEnter: [
-                // {
-                //     layer: 'frame_10',
-                //     opacity: 1
-                // }
-            ],
-            onChapterExit: [
-                // {
-                //     layer: 'frame_10',
-                //     opacity: 0
-                // }
-            ]
-        },
-        {
-            id: 'snohomish',
-            title: '',
-            subtitle: 'Snohomish County, WA',
-            image: '',
-            description: `The aerospace industry contributes the most to Snohomish County’s economic success, employing 46 percent of its manufacturing workers, with over 30,000 working for Boeing alone at their Everett Factory. The largest building in the world, Boeing produces the 747, 767, 777, and 787 models here. Boeing and its suppliers have undergirded the county’s economy for decades.`,
-            location: {
-                center: [110.09, 22.30],
-                zoom: 14.00,
-                pitch: 60.00,
-                bearing: -28.80
-            },
-            onChapterEnter: [
-                // {
-                //     layer: 'satellite',
-                //     opacity: 0
-                // },
-
-                // {
-                //     layer: 'satellite',
-                //     opacity: 1
-                // },
-
-                // {
-                //     layer: 'boeing2',
-                //     opacity: 1
-                // },
-                // {
-                //     layer: 'us_states',
-                //     opacity: 0
-                // },
-            ],
-            onChapterExit: [
-                // {
-                //     layer: 'satellite',
-                //     opacity: 0
-                // },
-                // {
-                //     layer: 'boeing2',
-                //     opacity: 0
-                // },
-                // {
-                //     layer: 'us_states',
-                //     opacity: 1
-                // },
-            ]
-        },
-        {
-            id: 'blank',
-            location: {
-                center: [110.09, 22.30],
-                zoom: 4.20,
-                pitch: 0.00,
-                bearing: 0.00
-            },
-            onChapterEnter: [
-
-            ],
-            onChapterExit: [
-
-            ]
-        },
-        
+       
         {
             id: 'close',
             location: {

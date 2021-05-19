@@ -115,7 +115,7 @@ class App extends Component {
                 <div id="story">
                     {config.title &&
                         <div id="header" className={theme}>
-                            <h1>{config.title}</h1>
+                            {/* <h1>{config.title}</h1> */}
                             {config.subtitle &&
                                 <h2>{config.subtitle}</h2>
                             }
@@ -153,9 +153,9 @@ function Chapter({ id, theme, title, image, description, list1, list2, list3, li
     return (
         <div id={id} className={classList}>
             <div className={theme}>
-                {title &&
+                {/* {title &&
                     <h2 className="title">{title}</h2>
-                }
+                } */}
                 <div className="content">
                     {subtitle &&
                         <h3 className="subtitle">{subtitle}</h3>
