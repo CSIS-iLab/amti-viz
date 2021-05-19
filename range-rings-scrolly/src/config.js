@@ -133,8 +133,8 @@ var config = {
             image: '',
             description: `The KJ-500 has a huge maximum travel range 3000km…`,
             location: {
-                center: [112.09, 16.30],
-                zoom: 4.13,
+                center: [110.09, 22.30],
+                zoom: 4.00,
                 pitch: 0.00,
                 bearing: 0.00,
                 // speed: 0.05
@@ -168,7 +168,7 @@ var config = {
             description: `The KJ-500 has a huge maximum travel range 3000km...`,
             location: {
                 center: [0.00, 46.50],
-                zoom: 1.18,
+                zoom: 1.00,
                 pitch: 0.00,
                 bearing: 0.00,
             },
@@ -221,7 +221,7 @@ var config = {
             description: `This range, the estimated sensing range of KJ-500 aircraft operating within SAM coverage from the islands, represents the practical limit of power projection from the islands themselves. Combat aircraft wouldn’t be able to operate outside of this range without incurring extreme risk.`,
             location: {
                 center: [110.09, 15.30],
-                zoom: 4.23,
+                zoom: 4.00,
                 pitch: 0.00,
                 bearing: 0.00,
             },
