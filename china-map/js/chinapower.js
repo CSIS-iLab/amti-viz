@@ -54,8 +54,9 @@ _asyncToGenerator(
                 },
               },
               formatPopupContent: function formatPopupContent(feature, map) {
-                lang = lang.replace("-", "_")
                 var suffix = lang ? "_" + lang : "";
+                suffix = suffix.replace("-", "_");
+                console.log(lang)
                 var name = feature.properties["name" + suffix];
                 var description = feature.properties["description" + suffix];
                 var outpost = feature.properties.chinese_outposts;
