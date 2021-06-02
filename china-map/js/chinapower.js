@@ -54,12 +54,16 @@ _asyncToGenerator(
                 },
               },
               formatPopupContent: function formatPopupContent(feature, map) {
-                const queryString = window.location.search
-                console.log(queryString)
-                const urlParams = new URLSearchParams(queryString)
-                console.log(urlParams)
-                lang = urlParams.get('lang')
-                console.log(lang, 'lang')
+                const getPageLang = () => {
+                  const queryString = window.location.search
+                  const urlParams = new URLSearchParams(queryString)
+                  const lang = urlParams.get('lang')
+    
+                  return lang
+                }
+
+                lang = getPageLang()
+                document.documentElement.setAttribute('lang', lang)
 
                 var suffix = lang ? "_" + lang : "";
                 suffix = suffix.replace("-", "_");
