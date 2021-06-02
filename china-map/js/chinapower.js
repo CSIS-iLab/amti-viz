@@ -58,7 +58,7 @@ _asyncToGenerator(
                   const queryString = window.location.search
                   const urlParams = new URLSearchParams(queryString)
                   const lang = urlParams.get('lang')
-    
+                  console.log(lang, 'lang')
                   return lang
                 }
 
@@ -67,7 +67,6 @@ _asyncToGenerator(
 
                 var suffix = lang ? "_" + lang : "";
                 suffix = suffix.replace("-", "_");
-                console.log(suffix, 'suffix')
                 var name = feature.properties["name" + suffix];
                 var description = feature.properties["description" + suffix];
                 var outpost = feature.properties.chinese_outposts;
