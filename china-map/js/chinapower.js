@@ -55,7 +55,8 @@ _asyncToGenerator(
               },
               formatPopupContent: function formatPopupContent(feature, map) {
                 const getPageLang = () => {
-                  const queryString = window.location.search
+                  const queryString = parent.window.location.search
+                  console.log(queryString)
                   const urlParams = new URLSearchParams(queryString)
                   const lang = urlParams.get('lang')
                   console.log(lang, 'lang')
