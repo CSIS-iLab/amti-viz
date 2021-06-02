@@ -55,7 +55,13 @@ _asyncToGenerator(
               },
               formatPopupContent: function formatPopupContent(feature, map) {
                 const getPageLang = () => {
-                  const queryString = parent.window.location.search
+                  var url = (window.location != window.parent.location)
+                    ? document.referrer
+                    : document.location.href;
+
+                  console.log(url)
+                  // const queryString = parent.window.location.search
+                  const queryString = '?' + url.split('?')[1]
                   console.log(queryString)
                   const urlParams = new URLSearchParams(queryString)
                   const lang = urlParams.get('lang')
