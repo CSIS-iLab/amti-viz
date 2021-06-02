@@ -54,30 +54,32 @@ _asyncToGenerator(
                 },
               },
               formatPopupContent: function formatPopupContent(feature, map) {
-                const queryString = window.location.search
-                console.log(queryString)
-                const urlParams = new URLSearchParams(queryString)
-                console.log(urlParams)
-                lang = urlParams.get('lang')
-                console.log(lang, 'lang')
+                setTimeout(() => {
+                  const queryString = window.location.search
+                  console.log(queryString)
+                  const urlParams = new URLSearchParams(queryString)
+                  console.log(urlParams)
+                  lang = urlParams.get('lang')
+                  console.log(lang, 'lang')
 
-                var suffix = lang ? "_" + lang : "";
-                suffix = suffix.replace("-", "_");
-                console.log(suffix, 'suffix')
-                var name = feature.properties["name" + suffix];
-                var description = feature.properties["description" + suffix];
-                var outpost = feature.properties.chinese_outposts;
+                  var suffix = lang ? "_" + lang : "";
+                  suffix = suffix.replace("-", "_");
+                  console.log(suffix, 'suffix')
+                  var name = feature.properties["name" + suffix];
+                  var description = feature.properties["description" + suffix];
+                  var outpost = feature.properties.chinese_outposts;
 
-                return (
-                  '<div class="popupEntryStyle">' +
-                  (!lang ? outpost : "") +
-                  (name && outpost && !lang ? "" : "") +
-                  (name !== outpost ? name : "") +
-                  "</div>" +
-                  '<div class="popupEntryStyle">' +
-                  description +
-                  "</div>"
-                );
+                  return (
+                    '<div class="popupEntryStyle">' +
+                    (!lang ? outpost : "") +
+                    (name && outpost && !lang ? "" : "") +
+                    (name !== outpost ? name : "") +
+                    "</div>" +
+                    '<div class="popupEntryStyle">' +
+                    description +
+                    "</div>"
+                  );
+                }, 500)
               },
             });
 
