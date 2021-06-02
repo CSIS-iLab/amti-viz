@@ -54,9 +54,13 @@ _asyncToGenerator(
                 },
               },
               formatPopupContent: function formatPopupContent(feature, map) {
+                const queryString = window.location.search
+                const urlParams = new URLSearchParams(queryString)
+                lang = urlParams.get('lang')
+
+
                 var suffix = lang ? "_" + lang : "";
                 suffix = suffix.replace("-", "_");
-                console.log(lang)
                 var name = feature.properties["name" + suffix];
                 var description = feature.properties["description" + suffix];
                 var outpost = feature.properties.chinese_outposts;
