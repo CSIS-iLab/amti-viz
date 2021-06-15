@@ -457,6 +457,40 @@ var config = {
                 }
             ]
         },
+        {
+            id: 'sat',
+            title: 'satellite',
+            subtitle: 'satellite',
+            image: '',
+            description: ``,
+            location: {
+                center: [114.08, 10.93],
+                // zoom: 13.88,
+                zoom: 12.00,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            onChapterEnter: [
+                {
+                    layer: 'subi-r1c1',
+                    opacity: 1
+                },
+                {
+                    layer: 'mapbox-satellite',
+                    opacity: 1
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'subi-r1c1',
+                    opacity: 0
+                },
+                {
+                    layer: 'mapbox-satellite',
+                    opacity: 0
+                }
+            ]
+        },
        
         {
             id: 'close',
