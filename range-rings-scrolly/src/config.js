@@ -17,7 +17,7 @@ var config = {
             image: '',
             description: `China operates four large outposts with 10,000-foot runways in disputed areas of the South China Sea: Woody Island, Fiery Cross Reef, Mischief Reef, and Subi Reef.`,
             location: {
-                center: [112.09, 16.30],
+                center: [111.09, 15.30],
                 zoom: 4.50,
                 pitch: 0.00,
                 bearing: 0.00
@@ -75,7 +75,7 @@ var config = {
             image: '',
             description: `The theoretical operational range of J-15 strike-fighter aircraft from these islands is quite far.`,
             location: {
-                center: [110.09, 22.30],
+                center: [110.09, 16.30],
                 zoom: 3.50,
                 pitch: 0.00,
                 bearing: 0.00
@@ -108,8 +108,8 @@ var config = {
             image: '',
             description: `But in reality, combat aircraft are limited to operating within radar range. Without external radar coverage, they have limited awareness of their surroundings and would be vulnerable to attack.`,
             location: {
-                center: [110.09, 22.30],
-                zoom: 4.00,
+                center: [110.09, 14.30],
+                zoom: 4.50,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -142,8 +142,8 @@ var config = {
             image: '',
             description: `KJ-500 sensing aircraft launched from the islands have a wider sensing range than any radar facilities on the islands themselves. A KJ-500, shown here above Subi reef, can sense 200 nautical miles to surface targets, and up to 388 nautical miles for high-flying targets at 25,000 feet.`,
             location: {
-                center: [110.09, 22.30],
-                zoom: 4.00,
+                center: [110.09, 14.30],
+                zoom: 4.50,
                 pitch: 0.00,
                 bearing: 0.00,
             },
@@ -183,8 +183,8 @@ var config = {
             image: '',
             description: `But the KJ-500 also has limitations on its operational range. Without any defensive capabilities of its own, it relies on external protection from island-based SAM and anti-ship missiles. Outside of missile coverage, the KJ-500 would be an easy target for enemy fighters or surface combatants.`,
             location: {
-                center: [0.00, 46.50],
-                zoom: 1.00,
+                center: [110.09, 12.30],
+                zoom: 5.00,
                 pitch: 0.00,
                 bearing: 0.00,
             },
@@ -216,8 +216,8 @@ var config = {
             image: '',
             description: `This is the KJ-500’s estimated sensing range to surface-level targets while operating within both SAM and anti-ship missile coverage from the islands. Combat aircraft venturing beyond this range would be blind to surface threats and thus be incurring substantial risk.`,
             location: {
-                center: [110.87, 8.38],
-                zoom: 5,
+                center: [110.09, 12.30],
+                zoom: 4.50,
                 pitch: 0.00,
                 bearing: 0.00,
             },
@@ -274,7 +274,7 @@ var config = {
             image: '',
             description: `China’s aircraft carriers have the potential to enable combat aircraft to operate safely at much further ranges. A carrier group includes the carrier itself, bringing with it 24 to 32 J-15 fighters, but also a complement of guided-missile destroyers and frigates that provide both sensing and missile capabilities. `,
             location: {
-                center: [110.09, 10.30],
+                center: [110.09, 5.30],
                 zoom: 4.5,
                 pitch: 0.00,
                 bearing: 0.00
@@ -331,8 +331,8 @@ var config = {
             image: '',
             description: `Fighter aircraft launched from the carrier can operate and strike within the radar coverage provided by the carrier group itself, but the sensing range is limited to approximately 65 nautical miles.`,
             location: {
-                center: [97.09, 28.30],
-                zoom: 3.5,
+                center: [110.09, 5.30],
+                zoom: 5.5,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -366,7 +366,7 @@ var config = {
             description: `A KJ-500, however, can operate safely within the defensive perimeter the carrier group’s missile coverage provides. This extends sensing range out to 200 nautical miles, enabling J-15s to safely strike up to 450 nautical miles from the carrier itself.`,
             location: {
                 center: [108.09, 8.00],
-                zoom: 5,
+                zoom: 4.5,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -398,11 +398,10 @@ var config = {
             image: '',
             description: `Large patrol aircraft like the KJ-500 can’t operate from China’s carriers. That means that carriers hoping to make use of the KJ-500’s enhanced sensing capabilities will need to stay within the KJ-500’s maximum effective range from either the mainland or China’s South China Sea outposts.`,
             location: {
-                center: [108.09, 8.00],
-                zoom: 3.5,
+                center: [108.09, 50.50],
+                zoom: 2.5,
                 pitch: 0.00,
                 bearing: 0.00
-                // speed: 0.02
             },
             onChapterEnter: [
                 {
@@ -424,7 +423,7 @@ var config = {
             image: '',
             description: `But a more restrictive geographic limitation on carrier operations lies in the desire to have a divert airfield nearby. If for any reason fighters in the air were unable to return to the carrier, they would find themselves at extreme risk without a divert airfield within range. The four runways in the Paracel and Spratly Islands serve as permanent, reliable airfields further from the Chinese mainland, but Chinese companies have been involved in a number of airport projects internationally that have been theorized to potentially allow future access.`,
             location: {
-                center: [112.09, 24.00],
+                center: [95.09, 31.00],
                 zoom: 3.5,
                 pitch: 0.00,
                 bearing: 0.00
@@ -458,7 +457,7 @@ var config = {
             description: `China’s aircraft carrier can operate within this area while maintaining a safe, 400-nautical mile distance from divert airfields currently available for use.`,
             location: {
                 center: [112.09, 24.00],
-                zoom: 3.0,
+                zoom: 3.5,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -483,7 +482,7 @@ var config = {
             description: `With KJ-500 providing sensing coverage, China’s carrier groups can enable fighter combat operations within this range…`,
             location: {
                 center: [112.09, 24.00],
-                zoom: 3.0,
+                zoom: 3.5,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -508,7 +507,7 @@ var config = {
             description: `…and weapons launched from those aircraft could strike even further.`,
             location: {
                 center: [112.09, 24.00],
-                zoom: 3.0,
+                zoom: 3.5,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -528,8 +527,8 @@ var config = {
         {
             id: 'close',
             location: {
-                center: [110.09, 22.30],
-                zoom: 3.50,
+                center: [112.09, 24.00],
+                zoom: 3.5,
                 pitch: 0.00,
                 bearing: 0.00
             },
