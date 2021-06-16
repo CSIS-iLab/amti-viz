@@ -11,7 +11,7 @@ var config = {
     footer: 'Source: Data from | ',
     chapters: [
         {
-            id: 'a-scs-islands',
+            id: '1-a',
             title: 'China controls 4 bases with runways in the SCS.',
             subtitle: '',
             image: '',
@@ -36,32 +36,41 @@ var config = {
             ]
         },
         // {
-        //     id: 'sat-imag',
-        //     title: 'China controls 4 bases with runways in the SCS.',
-        //     subtitle: '',
+        //     id: '2-sat',
+        //     title: 'satellite',
+        //     subtitle: 'satellite',
         //     image: '',
-        //     description: `China controls 4 bases with runways in the SCS.`,
+        //     description: ``,
         //     location: {
-        //         center: [112.09, 16.30],
-        //         zoom: 4.50,
+        //         center: [114.08, 10.93],
+        //         // zoom: 13.88,
+        //         zoom: 12.00,
         //         pitch: 0.00,
         //         bearing: 0.00
         //     },
         //     onChapterEnter: [
-        //        {
-        //             layer: 'a-china-scs-runway-islands',
+        //         {
+        //             layer: 'subi-r1c1',
+        //             opacity: 1
+        //         },
+        //         {
+        //             layer: 'mapbox-satellite',
         //             opacity: 1
         //         }
         //     ],
         //     onChapterExit: [
         //         {
-        //             layer: 'a-china-scs-runway-islands',
+        //             layer: 'subi-r1c1',
+        //             opacity: 0
+        //         },
+        //         {
+        //             layer: 'mapbox-satellite',
         //             opacity: 0
         //         }
         //     ]
         // },
         {
-            id: 'b-fighter-range',
+            id: '3-a-b',
             title: '[map with ISLANDS(a) + FIGHTER MAX RANGE(b))',
             image: '',
             description: `The range of combat aircraft from these islands is quite far.`,
@@ -93,7 +102,7 @@ var config = {
             ]
         },
         {
-            id: 'a-c-islands',
+            id: '4-a-c',
             title: '[map with ISLANDS(a) + KJ-500 RANGE FROM ISLAND SAMS(c))',
             subtitle: '',
             image: '',
@@ -127,7 +136,7 @@ var config = {
             ]
         },
         {
-            id: 'd-e',
+            id: '5-d-e-t',
             title: ' [KJ-500 maximum range(F)]',
             subtitle: '',
             image: '',
@@ -147,6 +156,10 @@ var config = {
                 {
                     layer: 'e-kj-500-single-from-mischief',
                     opacity: 1
+                },
+                {
+                    layer: 't-kj500-from-subi-sensing-range-to-air',
+                    opacity: 1
                 }
             ],
             onChapterExit: [
@@ -157,11 +170,15 @@ var config = {
                 {
                     layer: 'e-kj-500-single-from-mischief',
                     opacity: 0
+                },
+                {
+                    layer: 't-kj500-from-subi-sensing-range-to-air',
+                    opacity: 0
                 }
             ]
         },
         {
-            id: 'f-kj-500',
+            id: '6-g-w',
             title: `[mischief reef SAM range(G)]`,
             subtitle: '',
             image: '',
@@ -174,19 +191,27 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'f-kj500-max-range-from-mischief',
+                    layer: 'g-sam-range-from-mischief',
+                    opacity: 1
+                },
+                {
+                    layer: 'w-subi-as-mrange',
                     opacity: 1
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'f-kj500-max-range-from-mischief',
+                    layer: 'g-sam-range-from-mischief',
+                    opacity: 0
+                },
+                {
+                    layer: 'w-subi-as-mrange',
                     opacity: 0
                 }
             ]
         },
         {
-            id: 'g-sam-range',
+            id: '7-c',
             title: `mischief reef SAM range(G)`,
             subtitle: '',
             image: '',
@@ -199,22 +224,19 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'g-sam-range-from-mischief',
+                    layer: 'c-kj500-under-sam-to-surface',
                     opacity: 1,
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'g-sam-range-from-mischief',
+                    layer: 'c-kj500-under-sam-to-surface',
                     opacity: 0
                 }
             ]
         },
-
-
-
         {
-            id: 'services5',
+            id: '8-c-s',
             title: '[KJ-500 sensing range from island SAMS(c) + fighter weapons range from island KJ-500 (S)]',
             subtitle: '',
             image: '',
@@ -247,7 +269,7 @@ var config = {
             ]
         },
         {
-            id: 'services6',
+            id: '9-h-i-j-k-v',
             title: '[Carrier Group (H) Sam Range (I), ASM Range (J), Sensing Range to surface (K)]',
             subtitle: '',
             image: '',
@@ -274,6 +296,10 @@ var config = {
                 {
                     layer: 'k-carrier-sensing-range-to-surface',
                     opacity: 1
+                },
+                {
+                    layer: 'v-carrier-sensing-range',
+                    opacity: 1
                 }
             ],
             onChapterExit: [
@@ -292,11 +318,15 @@ var config = {
                 {
                     layer: 'k-carrier-sensing-range-to-surface',
                     opacity: 0
+                },
+                {
+                    layer: 'v-carrier-sensing-range',
+                    opacity: 0
                 }
             ]
         },
         {
-            id: 'inDepth7',
+            id: '10-h-k',
             title: '[Islands (A) + China (L)]',
             subtitle: '',
             image: '',
@@ -306,32 +336,31 @@ var config = {
                 zoom: 3.5,
                 pitch: 0.00,
                 bearing: 0.00
-                // speed: 0.02
             },
             onChapterEnter: [
                 {
-                    layer: 'a-china-scs-runway-islands',
+                    layer: 'h-carrier-group',
                     opacity: 1
                 },
                 {
-                    layer: 'l-mainland-china-polygon',
+                    layer: 'k-carrier-sensing-range-to-surface',
                     opacity: 1
                 },
 
             ],
             onChapterExit: [
                 {
-                    layer: 'a-china-scs-runway-islands',
+                    layer: 'h-carrier-group',
                     opacity: 0
                 },
                 {
-                    layer: 'l-mainland-china-polygon',
+                    layer: 'k-carrier-sensing-range-to-surface',
                     opacity: 0
                 }
             ]
         },
         {
-            id: 'inDepth8',
+            id: '11-m-o',
             title: '[Carrier Group (H), Sensing Range to surface (K)]',
             subtitle: '',
             image: '',
@@ -341,31 +370,30 @@ var config = {
                 zoom: 5,
                 pitch: 0.00,
                 bearing: 0.00
-                // speed: 0.02
             },
             onChapterEnter: [
                 {
-                    layer: 'h-carrier-group',
+                    layer: 'm-kj500-sensing-to-surface-from-carrier-sam',
                     opacity: 0
                 },
                 {
-                    layer: 'k-carrier-sensing-range-to-surface',
+                    layer: 'o-fighter-weapons-range-from-single-carrier-kj500',
                     opacity: 1
                 },
             ],
             onChapterExit: [
                 {
-                    layer: 'h-carrier-group',
+                    layer: 'm-kj500-sensing-to-surface-from-carrier-sam',
                     opacity: 0
                 },
                 {
-                    layer: 'k-carrier-sensing-range-to-surface',
+                    layer: 'o-fighter-weapons-range-from-single-carrier-kj500',
                     opacity: 0
                 },
             ]
         },
         {
-            id: 'inDepth9',
+            id: '12-u',
             title: '[KJ 500 over the carrier group radar range (M) + fighter weapons range from KJ-500 (O)]',
             subtitle: '',
             image: '',
@@ -379,27 +407,19 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'm-kj500-sensing-to-surface-from-carrier-sam',
+                    layer: 'u-kj500-operational-range',
                     opacity: 1
                 },
-                {
-                    layer: 'o-fighter-weapons-range-from-single-carrier-kj500',
-                    opacity: 1
-                }
             ],
             onChapterExit: [
                 {
-                    layer: 'm-kj500-sensing-to-surface-from-carrier-sam',
+                    layer: 'u-kj500-operational-range',
                     opacity: 0
                 },
-                {
-                    layer: 'o-fighter-weapons-range-from-single-carrier-kj500',
-                    opacity: 0
-                }
             ]
         },
         {
-            id: 'inDepth11',
+            id: '13-a-l2',
             title: '[Carrier operational range 400nm from diverts (P)]',
             subtitle: ``,
             image: '',
@@ -413,19 +433,52 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'p-carrier-operational-range',
+                    layer: 'a-china-scs-runway-islands',
                     opacity: 1
                 },
+                {
+                    layer: 'l2-mainland-china-border',
+                    opacity: 1
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'a-china-scs-runway-islands',
+                    opacity: 0
+                },
+                {
+                    layer: 'l2-mainland-china-border',
+                    opacity: 0
+                }
+            ]
+        },
+        {
+            id: '14-p',
+            title: '[maximum KJ-500 sensing range from carriers (Q) and maximum fighter weapons range(R)]',
+            subtitle: '',
+            image: '',
+            description: `China’s carrier groups can enable fighter combat operations within this range.`,
+            location: {
+                center: [112.09, 24.00],
+                zoom: 3.0,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            onChapterEnter: [
+                {
+                    layer: 'p-carrier-operational-range',
+                    opacity: 1
+                }
             ],
             onChapterExit: [
                 {
                     layer: 'p-carrier-operational-range',
                     opacity: 0
-                },
+                }
             ]
-        },
+        }, 
         {
-            id: 'inDepth12',
+            id: '15-q',
             title: '[maximum KJ-500 sensing range from carriers (Q) and maximum fighter weapons range(R)]',
             subtitle: '',
             image: '',
@@ -440,58 +493,40 @@ var config = {
                 {
                     layer: 'q-kj500-sensing-to-surface-from-carrier',
                     opacity: 1
-                },
-                {
-                    layer: 'r-fighter-weapons-range-from-kj500-sensing-range',
-                    opacity: 1
                 }
             ],
             onChapterExit: [
                 {
                     layer: 'q-kj500-sensing-to-surface-from-carrier',
                     opacity: 0
-                },
-                {
-                    layer: 'r-fighter-weapons-range-from-kj500-sensing-range',
-                    opacity: 0
                 }
             ]
-        },
+        },   
         {
-            id: 'sat',
-            title: 'satellite',
-            subtitle: 'satellite',
+            id: '16-r',
+            title: '[maximum KJ-500 sensing range from carriers (Q) and maximum fighter weapons range(R)]',
+            subtitle: '',
             image: '',
-            description: ``,
+            description: `China’s carrier groups can enable fighter combat operations within this range.`,
             location: {
-                center: [114.08, 10.93],
-                // zoom: 13.88,
-                zoom: 12.00,
+                center: [112.09, 24.00],
+                zoom: 3.0,
                 pitch: 0.00,
                 bearing: 0.00
             },
             onChapterEnter: [
                 {
-                    layer: 'subi-r1c1',
-                    opacity: 1
-                },
-                {
-                    layer: 'mapbox-satellite',
+                    layer: 'r-fighter-weapons-range-from-kj500-sensing-range',
                     opacity: 1
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'subi-r1c1',
-                    opacity: 0
-                },
-                {
-                    layer: 'mapbox-satellite',
+                    layer: 'r-fighter-weapons-range-from-kj500-sensing-range',
                     opacity: 0
                 }
             ]
-        },
-       
+        },         
         {
             id: 'close',
             location: {
