@@ -1,5 +1,5 @@
 var config = {
-    style: "mapbox://styles/ilabmedia/ckpyjyo1d0yen17p6dvpnuxor",
+    style: "mapbox://styles/ilabmedia/ckq9ju4422de017p9rwe5klqi",
     accessToken: "pk.eyJ1IjoiaWxhYm1lZGlhIiwiYSI6ImNpbHYycXZ2bTAxajZ1c2tzdWU1b3gydnYifQ.AHxl8pPZsjsqoz95-604nw",
     showMarkers: false,
     alignment: 'left',
@@ -24,13 +24,13 @@ var config = {
             },
             onChapterEnter: [
                {
-                    layer: 'a-china-scs-runway-islands',
+                    layer: 'achinascsrunwayislands',
                     opacity: 1
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'a-china-scs-runway-islands',
+                    layer: 'achinascsrunwayislands',
                     opacity: 0
                 }
             ]
@@ -82,21 +82,29 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'a-china-scs-runway-islands',
+                    layer: 'achinascsrunwayislands',
                     opacity: 1
                 },
                 {
-                    layer: 'b-fighter-max-combat-range',
+                    layer: 'bfightermaxcombatrange',
+                    opacity: 1
+                },
+                {
+                    layer: 'bfightermaxcombatrangepg',
                     opacity: 1
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'a-china-scs-runway-islands',
+                    layer: 'achinascsrunwayislands',
                     opacity: 0
                 },
                 {
-                    layer: 'b-fighter-max-combat-range',
+                    layer: 'bfightermaxcombatrange',
+                    opacity: 0
+                },
+                {
+                    layer: 'bfightermaxcombatrangepg',
                     opacity: 0
                 }
             ]
@@ -115,24 +123,32 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'a-china-scs-runway-islands',
+                    layer: 'achinascsrunwayislands',
                     opacity: 1
                 },
                 {
-                    layer: 'c-kj500-under-sam-to-surface',
+                    layer: 'ckj500undersamtosurface',
+                    opacity: 1
+                },
+                {
+                    layer: 'ckj500undersamtosurfacepg',
                     opacity: 1
                 },
 
             ],
             onChapterExit: [
                 {
-                    layer: 'a-china-scs-runway-islands',
+                    layer: 'achinascsrunwayislands',
                     opacity: 0
                 },
                 {
-                    layer: 'c-kj500-under-sam-to-surface',
+                    layer: 'ckj500undersamtosurface',
                     opacity: 0
-                }
+                },
+                {
+                    layer: 'ckj500undersamtosurfacepg',
+                    opacity: 0
+                },
             ]
         },
         {
@@ -149,29 +165,45 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'd-kj500-single-subi',
+                    layer: 'dkj500singlesubi',
                     opacity: 1
                 },
                 {
-                    layer: 'e-kj-500-single-from-mischief',
+                    layer: 'ekj500singlefrommischiefsensingtosurface',
                     opacity: 1
                 },
                 {
-                    layer: 't-kj500-from-subi-sensing-range-to-air',
+                    layer: 'ekj500singlefromsubisensingtosurfacepg',
+                    opacity: 1
+                },
+                {
+                    layer: 'tkj500fromsubisensingrangetoair',
+                    opacity: 1
+                },
+                {
+                    layer: 'tkj500fromsubisensingrangetoairpg',
                     opacity: 1
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'd-kj500-single-subi',
+                    layer: 'dkj500singlesubi',
                     opacity: 0
                 },
                 {
-                    layer: 'e-kj-500-single-from-mischief',
+                    layer: 'ekj500singlefrommischiefsensingtosurface',
                     opacity: 0
                 },
                 {
-                    layer: 't-kj500-from-subi-sensing-range-to-air',
+                    layer: 'ekj500singlefromsubisensingtosurfacepg',
+                    opacity: 0
+                },
+                {
+                    layer: 'tkj500fromsubisensingrangetoair',
+                    opacity: 0
+                },
+                {
+                    layer: 'tkj500fromsubisensingrangetoairpg',
                     opacity: 0
                 }
             ]
@@ -190,21 +222,37 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'g-sam-range-from-mischief',
+                    layer: 'gsamrangefrommischief',
                     opacity: 1
                 },
                 {
-                    layer: 'w-subi-as-mrange',
+                    layer: 'gsamrangefromsubipg',
+                    opacity: 1
+                },
+                {
+                    layer: 'wsubiasmrange',
+                    opacity: 1
+                },
+                {
+                    layer: 'wsubiasmrangepg',
                     opacity: 1
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'g-sam-range-from-mischief',
+                    layer: 'gsamrangefrommischief',
                     opacity: 0
                 },
                 {
-                    layer: 'w-subi-as-mrange',
+                    layer: 'gsamrangefromsubipg',
+                    opacity: 0
+                },
+                {
+                    layer: 'wsubiasmrange',
+                    opacity: 0
+                },
+                {
+                    layer: 'wsubiasmrangepg',
                     opacity: 0
                 }
             ]
@@ -223,14 +271,22 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'c-kj500-under-sam-to-surface',
+                    layer: 'ckj500undersamtosurface',
+                    opacity: 1,
+                },
+                {
+                    layer: 'ckj500undersamtosurfacepg',
                     opacity: 1,
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'c-kj500-under-sam-to-surface',
+                    layer: 'ckj500undersamtosurface',
                     opacity: 0
+                },
+                {
+                    layer: 'ckj500undersamtosurfacepg',
+                    opacity: 0,
                 }
             ]
         },
@@ -248,21 +304,37 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'c-kj500-under-sam-to-surface',
+                    layer: 'ckj500undersamtosurface',
+                    opacity: 1,
+                },
+                {
+                    layer: 'ckj500undersamtosurfacepg',
+                    opacity: 1,
+                },
+                {
+                    layer: 'sfighterweaponsrangefromkj500sensingrangefromislandsams',
                     opacity: 1
                 },
                 {
-                    layer: 's-fighter-weapons-range-from-kj500',
+                    layer: 'sfighterweaponsrangefromkj500sensingrangefromislandsamspg',
                     opacity: 1
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'c-kj500-under-sam-to-surface',
+                    layer: 'ckj500undersamtosurface',
                     opacity: 0
                 },
                 {
-                    layer: 's-fighter-weapons-range-from-kj500',
+                    layer: 'ckj500undersamtosurfacepg',
+                    opacity: 0,
+                },
+                {
+                    layer: 'sfighterweaponsrangefromkj500sensingrangefromislandsams',
+                    opacity: 0
+                },
+                {
+                    layer: 'sfighterweaponsrangefromkj500sensingrangefromislandsamspg',
                     opacity: 0
                 }
             ]
@@ -281,47 +353,79 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'h-carrier-group',
+                    layer: 'hcarriergroup',
                     opacity: 1
                 },
                 {
-                    layer: 'i-sam-range-from-carrier',
+                    layer: 'isamrangefromcarrier',
                     opacity: 1
                 },
                 {
-                    layer: 'j-yj18-asm-range-from-carrier',
+                    layer: 'isamrangefromcarrierpg',
                     opacity: 1
                 },
                 {
-                    layer: 'k-carrier-sensing-range-to-surface',
+                    layer: 'jyj18asmrangefromcarrier',
                     opacity: 1
                 },
                 {
-                    layer: 'v-carrier-sensing-range',
+                    layer: 'jyj18asmrangefromcarrierpg',
                     opacity: 1
-                }
+                },
+                {
+                    layer: 'kcarriersensingrangetosurface',
+                    opacity: 1
+                },
+                {
+                    layer: 'kcarriersensingrangetosurfacepg',
+                    opacity: 1
+                },
+                {
+                    layer: 'vcarriersensingrangeto25000feetkml',
+                    opacity: 1
+                },
+                {
+                    layer: 'vcarriersensingto25000feetpg',
+                    opacity: 1
+                },
             ],
             onChapterExit: [
                 {
-                    layer: 'h-carrier-group',
+                    layer: 'hcarriergroup',
                     opacity: 0
                 },
                 {
-                    layer: 'i-sam-range-from-carrier',
+                    layer: 'isamrangefromcarrier',
                     opacity: 0
                 },
                 {
-                    layer: 'j-yj18-asm-range-from-carrier',
+                    layer: 'isamrangefromcarrierpg',
                     opacity: 0
                 },
                 {
-                    layer: 'k-carrier-sensing-range-to-surface',
+                    layer: 'jyj18asmrangefromcarrier',
                     opacity: 0
                 },
                 {
-                    layer: 'v-carrier-sensing-range',
+                    layer: 'jyj18asmrangefromcarrierpg',
                     opacity: 0
-                }
+                },
+                {
+                    layer: 'kcarriersensingrangetosurface',
+                    opacity: 0
+                },
+                {
+                    layer: 'kcarriersensingrangetosurfacepg',
+                    opacity: 0
+                },
+                {
+                    layer: 'vcarriersensingrangeto25000feetkml',
+                    opacity: 0
+                },
+                {
+                    layer: 'vcarriersensingto25000feetpg',
+                    opacity: 0
+                },
             ]
         },
         {
@@ -338,22 +442,30 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'h-carrier-group',
+                    layer: 'hcarriergroup',
                     opacity: 1
                 },
                 {
-                    layer: 'k-carrier-sensing-range-to-surface',
+                    layer: 'kcarriersensingrangetosurface',
+                    opacity: 1
+                },
+                {
+                    layer: 'kcarriersensingrangetosurfacepg',
                     opacity: 1
                 },
 
             ],
             onChapterExit: [
                 {
-                    layer: 'h-carrier-group',
+                    layer: 'hcarriergroup',
                     opacity: 0
                 },
                 {
-                    layer: 'k-carrier-sensing-range-to-surface',
+                    layer: 'kcarriersensingrangetosurface',
+                    opacity: 0
+                },
+                {
+                    layer: 'kcarriersensingrangetosurfacepg',
                     opacity: 0
                 }
             ]
@@ -372,21 +484,37 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'm-kj500-sensing-to-surface-from-carrier-sam',
-                    opacity: 0
+                    layer: 'mkj500sensingtosurfacefromcarriersambubble',
+                    opacity: 1
                 },
                 {
-                    layer: 'o-fighter-weapons-range-from-single-carrier-kj500',
+                    layer: 'mkj500sensingtosurfacefromsinglecarrierpg',
+                    opacity: 1
+                },
+                {
+                    layer: 'ofighterweaponsrangefromsinglecarrierkj500',
+                    opacity: 1
+                },
+                {
+                    layer: 'ofighterweaponsrangefromsinglecarrierkj500pg',
                     opacity: 1
                 },
             ],
             onChapterExit: [
                 {
-                    layer: 'm-kj500-sensing-to-surface-from-carrier-sam',
+                    layer: 'mkj500sensingtosurfacefromcarriersambubble',
                     opacity: 0
                 },
                 {
-                    layer: 'o-fighter-weapons-range-from-single-carrier-kj500',
+                    layer: 'mkj500sensingtosurfacefromsinglecarrierpg',
+                    opacity: 0
+                },
+                {
+                    layer: 'ofighterweaponsrangefromsinglecarrierkj500',
+                    opacity: 0
+                },
+                {
+                    layer: 'ofighterweaponsrangefromsinglecarrierkj500pg',
                     opacity: 0
                 },
             ]
@@ -405,13 +533,21 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'u-kj500-operational-range',
+                    layer: 'ukj500operationalrangefromislandsandmainland',
+                    opacity: 1
+                },
+                {
+                    layer: 'ukj500operationalrangefromislandsandmainlandpg',
                     opacity: 1
                 },
             ],
             onChapterExit: [
                 {
-                    layer: 'u-kj500-operational-range',
+                    layer: 'ukj500operationalrangefromislandsandmainland',
+                    opacity: 0
+                },
+                {
+                    layer: 'ukj500operationalrangefromislandsandmainlandpg',
                     opacity: 0
                 },
             ]
@@ -430,21 +566,21 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'a-china-scs-runway-islands',
+                    layer: 'achinascsrunwayislands',
                     opacity: 1
                 },
                 {
-                    layer: 'l2-mainland-china-border',
+                    layer: 'l2mainlandchinaborder',
                     opacity: 1
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'a-china-scs-runway-islands',
+                    layer: 'achinascsrunwayislands',
                     opacity: 0
                 },
                 {
-                    layer: 'l2-mainland-china-border',
+                    layer: 'l2mainlandchinaborder',
                     opacity: 0
                 }
             ]
@@ -463,13 +599,21 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'p-carrier-operational-range',
+                    layer: 'pcarrieroperationalrangewithapproximatechinesecoast',
+                    opacity: 1
+                },
+                {
+                    layer: 'pcarrieroperationalrangewithchinesecoastpg',
                     opacity: 1
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'p-carrier-operational-range',
+                    layer: 'pcarrieroperationalrangewithapproximatechinesecoast',
+                    opacity: 0
+                },
+                {
+                    layer: 'pcarrieroperationalrangewithchinesecoastpg',
                     opacity: 0
                 }
             ]
@@ -488,13 +632,21 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'q-kj500-sensing-to-surface-from-carrier',
+                    layer: 'qkj500sensingtosurfacefromcarriermaxoperationalrangesambubble',
+                    opacity: 1
+                },
+                {
+                    layer: 'qkj500sensingtosurfacefromcarriermaxoperationalrangesambubblepg',
                     opacity: 1
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'q-kj500-sensing-to-surface-from-carrier',
+                    layer: 'qkj500sensingtosurfacefromcarriermaxoperationalrangesambubble',
+                    opacity: 0
+                },
+                {
+                    layer: 'qkj500sensingtosurfacefromcarriermaxoperationalrangesambubblepg',
                     opacity: 0
                 }
             ]
@@ -513,13 +665,21 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'r-fighter-weapons-range-from-kj500-sensing-range',
+                    layer: 'rfighterweaponsrangefromkj500sensingrangefromcarrieroperationalrangesams',
+                    opacity: 1
+                },
+                {
+                    layer: 'rfighterweaponsrangefromkj500sensingrangefromcarrieroperationalrangepg',
                     opacity: 1
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'r-fighter-weapons-range-from-kj500-sensing-range',
+                    layer: 'rfighterweaponsrangefromkj500sensingrangefromcarrieroperationalrangesams',
+                    opacity: 0
+                },
+                {
+                    layer: 'rfighterweaponsrangefromkj500sensingrangefromcarrieroperationalrangepg',
                     opacity: 0
                 }
             ]
