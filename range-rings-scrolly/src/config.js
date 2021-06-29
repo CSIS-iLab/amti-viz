@@ -437,7 +437,7 @@ var config = {
             description: `Fighter aircraft launched from the carrier can operate and strike within the radar coverage provided by the carrier group itself, but the sensing range is limited to approximately 65 nautical miles.`,
             location: {
                 center: [110.09, 5.30],
-                zoom: 5.5,
+                zoom: 4.5,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -543,8 +543,8 @@ var config = {
             image: '',
             description: `Large patrol aircraft like the KJ-500 can’t operate from China’s carriers. That means that carriers hoping to make use of the KJ-500’s enhanced sensing capabilities will need to stay within the KJ-500’s maximum effective range from either the mainland or China’s South China Sea outposts.`,
             location: {
-                center: [108.09, 50.50],
-                zoom: 2.5,
+                center: [110.00, 15.00],
+                zoom: 3.5,
                 pitch: 0.00,
                 bearing: 0.00
             },
