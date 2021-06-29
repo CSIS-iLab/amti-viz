@@ -76,7 +76,8 @@ var config = {
             description: `The theoretical operational range of J-15 strike-fighter aircraft from these islands is quite far.`,
             location: {
                 center: [110.09, 16.30],
-                zoom: 3.50,
+                // Has to be at a zoom level of 4 for island layer
+                zoom: 4.00,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -216,7 +217,7 @@ var config = {
             description: `But the KJ-500 also has limitations on its operational range. Without any defensive capabilities of its own, it relies on external protection from island-based SAM and anti-ship missiles. Outside of missile coverage, the KJ-500 would be an easy target for enemy fighters or surface combatants.`,
             location: {
                 center: [110.09, 12.30],
-                zoom: 5.00,
+                zoom: 3.50,
                 pitch: 0.00,
                 bearing: 0.00,
             },
@@ -453,6 +454,14 @@ var config = {
                     layer: 'kcarriersensingrangetosurfacepg',
                     opacity: 1
                 },
+                {
+                    layer: 'xfighterstrikerangefromcarriersensing',
+                    opacity: 1
+                },
+                {
+                    layer: 'xfighterstrikerangefromcarriersensingpg',
+                    opacity: 1
+                },
 
             ],
             onChapterExit: [
@@ -467,7 +476,15 @@ var config = {
                 {
                     layer: 'kcarriersensingrangetosurfacepg',
                     opacity: 0
-                }
+                },
+                {
+                    layer: 'xfighterstrikerangefromcarriersensing',
+                    opacity: 0
+                },
+                {
+                    layer: 'xfighterstrikerangefromcarriersensingpg',
+                    opacity: 0
+                },
             ]
         },
         {
