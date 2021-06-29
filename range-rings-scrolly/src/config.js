@@ -11,7 +11,7 @@ var config = {
     footer: 'Source: Data from | ',
     chapters: [
         {
-            id: '1-a',
+            id: 'step1a',
             title: 'China’s Island Outposts',
             subtitle: '',
             image: '',
@@ -70,7 +70,7 @@ var config = {
         //     ]
         // },
         {
-            id: '3-a-b',
+            id: 'step3ab',
             title: 'Theoretical Operational Range of Island-based J-15 Strike-Fighters',
             image: '',
             description: `The theoretical operational range of J-15 strike-fighter aircraft from these islands is quite far.`,

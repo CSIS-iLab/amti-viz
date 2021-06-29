@@ -240,3 +240,21 @@ p {
       margin: 0 auto;
   }
 }
+
+.step#step3ab.active:after {
+  display:block;
+  content:'Images go here';
+  text-align:center;
+  width: 100%;
+  position:fixed;
+  top: 62px;
+  right: -30rem;
+  opacity: 1;
+  transition: 600ms opacity ease-in-out;
+  padding-bottom: 50px;
+}
+
+.step:after {
+  opacity:0;
+  transition: 600ms opacity ease-in-out;
+}
