@@ -37,10 +37,10 @@ var config = {
         },
         {
             id: '2sat',
-            title: 'satellite',
-            subtitle: 'satellite',
+            title: 'Subi Reef',
+            subtitle: '',
             image: '',
-            description: ``,
+            description: `China has deployed substantial military assets to these islands, including HQ-9 surface-to-air (SAM) and YJ-12B anti-ship missiles, sensing and communications facilities, and hangars capable of housing military transport, patrol, and combat aircraft.`,
             location: {
                 center: [114.08, 10.925],
                 zoom: 14,
