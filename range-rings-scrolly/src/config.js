@@ -35,40 +35,39 @@ var config = {
                 }
             ]
         },
-        // {
-        //     id: '2-sat',
-        //     title: 'satellite',
-        //     subtitle: 'satellite',
-        //     image: '',
-        //     description: ``,
-        //     location: {
-        //         center: [114.08, 10.93],
-        //         // zoom: 13.88,
-        //         zoom: 12.00,
-        //         pitch: 0.00,
-        //         bearing: 0.00
-        //     },
-        //     onChapterEnter: [
-        //         {
-        //             layer: 'subi-r1c1',
-        //             opacity: 1
-        //         },
-        //         {
-        //             layer: 'mapbox-satellite',
-        //             opacity: 1
-        //         }
-        //     ],
-        //     onChapterExit: [
-        //         {
-        //             layer: 'subi-r1c1',
-        //             opacity: 0
-        //         },
-        //         {
-        //             layer: 'mapbox-satellite',
-        //             opacity: 0
-        //         }
-        //     ]
-        // },
+        {
+            id: '2-sat',
+            title: 'satellite',
+            subtitle: 'satellite',
+            image: '',
+            description: ``,
+            location: {
+                center: [114.08, 10.925],
+                zoom: 14,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            onChapterEnter: [
+                {
+                    layer: 'ilabmedia-4wu77mzt-subi',
+                    opacity: 1
+                },
+                {
+                    layer: 'mapbox-satellite',
+                    opacity: 1
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'ilabmedia-4wu77mzt-subi',
+                    opacity: 0
+                },
+                {
+                    layer: 'mapbox-satellite',
+                    opacity: 0
+                }
+            ]
+        },
         {
             id: 'step3ab',
             title: 'Theoretical Operational Range of Island-based J-15 Strike-Fighters',
@@ -222,14 +221,14 @@ var config = {
                 bearing: 0.00,
             },
             onChapterEnter: [
-                {
-                    layer: 'gsamrangefrommischief',
-                    opacity: 1
-                },
-                {
-                    layer: 'gsamrangefromsubipg',
-                    opacity: 1
-                },
+                // {
+                //     layer: 'gsamrangefrommischief',
+                //     opacity: 1
+                // },
+                // {
+                //     layer: 'gsamrangefromsubipg',
+                //     opacity: 1
+                // },
                 {
                     layer: 'wsubiasmrange',
                     opacity: 1
