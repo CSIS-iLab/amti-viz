@@ -36,7 +36,7 @@ var config = {
             ]
         },
         {
-            id: '2-sat',
+            id: '2sat',
             title: 'satellite',
             subtitle: 'satellite',
             image: '',
@@ -110,7 +110,7 @@ var config = {
             ]
         },
         {
-            id: '4-a-c',
+            id: '4ac',
             title: 'Practical Operational Range of Island-based J-15 Strike-Fighters/KJ-500 sensing range Under Missile Coverage',
             subtitle: '',
             image: '',
