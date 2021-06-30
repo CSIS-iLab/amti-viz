@@ -221,14 +221,14 @@ var config = {
                 bearing: 0.00,
             },
             onChapterEnter: [
-                // {
-                //     layer: 'gsamrangefrommischief',
-                //     opacity: 1
-                // },
-                // {
-                //     layer: 'gsamrangefromsubipg',
-                //     opacity: 1
-                // },
+                {
+                    layer: 'gsamrangefrommischief',
+                    opacity: 1
+                },
+                {
+                    layer: 'gsamrangefromsubipg',
+                    opacity: 1
+                },
                 {
                     layer: 'wsubiasmrange',
                     opacity: 1
@@ -305,8 +305,8 @@ var config = {
             image: '',
             description: `Fighters operating from within that range could strike targets within an additional radius of 250 nautical miles with weapons such as an air-launched YJ-12 anti-ship cruise missile.`,
             location: {
-                center: [110.09, 15.30],
-                zoom: 4.00,
+                center: [110.09, 12.30],
+                zoom: 4.50,
                 pitch: 0.00,
                 bearing: 0.00,
             },
