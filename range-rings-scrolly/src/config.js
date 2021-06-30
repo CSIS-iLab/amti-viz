@@ -222,6 +222,10 @@ var config = {
             },
             onChapterEnter: [
                 {
+                    layer: 'dkj500singlesubi2',
+                    opacity: 1
+                },
+                {
                     layer: 'gsamrangefrommischief',
                     opacity: 0
                 },
@@ -239,6 +243,10 @@ var config = {
                 }
             ],
             onChapterExit: [
+                {
+                    layer: 'dkj500singlesubi2',
+                    opacity: 0
+                },
                 {
                     layer: 'gsamrangefrommischief',
                     opacity: 0
@@ -275,11 +283,7 @@ var config = {
                     opacity: 1
                 },
                 {
-                    layer: 'ckj500undersamtosurface',
-                    opacity: 0,
-                },
-                {
-                    layer: 'ckj500undersamtosurfacepg',
+                    layer: 'ckj500undersamtosurfacepg2',
                     opacity: 1,
                 }
             ],
@@ -289,11 +293,7 @@ var config = {
                     opacity: 0
                 },
                 {
-                    layer: 'ckj500undersamtosurface',
-                    opacity: 0
-                },
-                {
-                    layer: 'ckj500undersamtosurfacepg',
+                    layer: 'ckj500undersamtosurfacepg2',
                     opacity: 0,
                 }
             ]
