@@ -217,7 +217,7 @@ var config = {
             description: `But the KJ-500 also has limitations on its operational range. Without any defensive capabilities of its own, it relies on external protection from island-based SAM and anti-ship missiles. Outside of missile coverage, the KJ-500 would be an easy target for enemy fighters or surface combatants.`,
             location: {
                 center: [110.09, 12.30],
-                zoom: 3.50,
+                zoom: 4.50,
                 pitch: 0.00,
                 bearing: 0.00,
             },
@@ -272,6 +272,10 @@ var config = {
             },
             onChapterEnter: [
                 {
+                    layer: 'achinascsrunwayislands',
+                    opacity: 1
+                },
+                {
                     layer: 'ckj500undersamtosurface',
                     opacity: 1,
                 },
@@ -281,6 +285,10 @@ var config = {
                 }
             ],
             onChapterExit: [
+                {
+                    layer: 'achinascsrunwayislands',
+                    opacity: 0
+                },
                 {
                     layer: 'ckj500undersamtosurface',
                     opacity: 0
@@ -305,6 +313,10 @@ var config = {
             },
             onChapterEnter: [
                 {
+                    layer: 'achinascsrunwayislands',
+                    opacity: 1
+                },
+                {
                     layer: 'ckj500undersamtosurface',
                     opacity: 1,
                 },
@@ -322,6 +334,10 @@ var config = {
                 }
             ],
             onChapterExit: [
+                {
+                    layer: 'achinascsrunwayislands',
+                    opacity: 0
+                },
                 {
                     layer: 'ckj500undersamtosurface',
                     opacity: 0
