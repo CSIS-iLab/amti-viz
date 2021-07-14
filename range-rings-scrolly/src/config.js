@@ -602,7 +602,7 @@ var config = {
                     opacity: 1
                 },
                 {
-                    layer: 'l2mainlandchinaborder',
+                    layer: 'lgadm36-chn-0',
                     opacity: 1
                 }
             ],
@@ -612,7 +612,7 @@ var config = {
                     opacity: 0
                 },
                 {
-                    layer: 'l2mainlandchinaborder',
+                    layer: 'lgadm36-chn-0',
                     opacity: 0
                 }
             ]
