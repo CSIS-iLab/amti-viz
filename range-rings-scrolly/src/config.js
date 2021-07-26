@@ -12,7 +12,7 @@ var config = {
     chapters: [
         {
             id: 'step1a',
-            title: 'China’s Island Outposts',
+            title: 'Island Capabilities',
             subtitle: '',
             image: '',
             description: `China operates four large outposts with 10,000-foot runways in disputed areas of the South China Sea: Woody Island, Fiery Cross Reef, Mischief Reef, and Subi Reef.`,
@@ -37,7 +37,7 @@ var config = {
         },
         {
             id: '2sat',
-            title: 'Subi Reef',
+            title: '',
             subtitle: '',
             image: '',
             description: `China has deployed substantial military assets to these islands, including HQ-9 surface-to-air (SAM) and YJ-12B anti-ship missiles, sensing and communications facilities, and hangars capable of housing military transport, patrol, and combat aircraft.`,
@@ -70,7 +70,7 @@ var config = {
         },
         {
             id: 'step3ab',
-            title: 'Theoretical Operational Range of Island-based J-15 Strike-Fighters',
+            title: '',
             image: '',
             description: `The theoretical operational range of J-15 strike-fighter aircraft from these islands is quite far.`,
             location: {
@@ -111,7 +111,7 @@ var config = {
         },
         {
             id: '4ac',
-            title: 'Practical Operational Range of Island-based J-15 Strike-Fighters/KJ-500 sensing range Under Missile Coverage',
+            title: '',
             subtitle: '',
             image: '',
             description: `But in reality, combat aircraft are limited to operating within radar range. Without external radar coverage, they have limited awareness of their surroundings and would be vulnerable to attack.`,
@@ -153,7 +153,7 @@ var config = {
         },
         {
             id: '5-d-e-t',
-            title: 'Sensing Ranges from a KJ-500 over Subi Reef',
+            title: '',
             subtitle: '',
             image: '',
             description: `KJ-500 sensing aircraft launched from the islands have a wider sensing range than any radar facilities on the islands themselves. A KJ-500, shown here above Subi reef, can sense 200 nautical miles to surface targets, and up to 388 nautical miles for high-flying targets at 25,000 feet.`,
@@ -210,7 +210,7 @@ var config = {
         },
         {
             id: '6-g-w',
-            title: `HQ-9 SAM and YJ-12B anti-ship missile Ranges from Subi Reef`,
+            title: ``,
             subtitle: '',
             image: '',
             description: `But the KJ-500 also has limitations on its operational range. Without any defensive capabilities of its own, it relies on external protection from island-based SAM and anti-ship missiles. Outside of missile coverage, the KJ-500 would be an easy target for enemy fighters or surface combatants.`,
@@ -267,7 +267,7 @@ var config = {
         },
         {
             id: '7-c',
-            title: `Practical Operational Range of Island-based J-15 Strike-Fighters/KJ-500 sensing range Under Missile Coverage`,
+            title: ``,
             subtitle: '',
             image: '',
             description: `This is the KJ-500’s estimated sensing range to surface-level targets while operating within both SAM and anti-ship missile coverage from the islands. Combat aircraft venturing beyond this range would be blind to surface threats and thus be incurring substantial risk.`,
@@ -300,7 +300,7 @@ var config = {
         },
         {
             id: '8-c-s',
-            title: 'Practical Strike Range of Island-based strike-fighters',
+            title: '',
             subtitle: '',
             image: '',
             description: `Fighters operating from within that range could strike targets within an additional radius of 250 nautical miles with weapons such as an air-launched YJ-12 anti-ship cruise missile.`,
@@ -357,7 +357,7 @@ var config = {
         },
         {
             id: '9-h-i-j-k-v',
-            title: 'Sensing and Missile Ranges of a Chinese carrier Group',
+            title: 'Carrier Integration',
             subtitle: '',
             image: '',
             description: `China’s aircraft carriers have the potential to enable combat aircraft to operate safely at much further ranges. A carrier group includes the carrier itself, bringing with it 24 to 32 J-15 fighters, but also a complement of guided-missile destroyers and frigates that provide both sensing and missile capabilities. `,
@@ -446,7 +446,7 @@ var config = {
         },
         {
             id: '10-h-k',
-            title: 'Carrier-group Sensing and resulting J-15 Strike Ranges ',
+            title: '',
             subtitle: '',
             image: '',
             description: `Fighter aircraft launched from the carrier can operate and strike within the radar coverage provided by the carrier group itself, but the sensing range is limited to approximately 65 nautical miles.`,
@@ -504,7 +504,7 @@ var config = {
         },
         {
             id: '11-m-o',
-            title: 'Carrier Group Sensing and resulting J-15 Strike ranges with KJ-500',
+            title: '',
             subtitle: '',
             image: '',
             description: `A KJ-500, however, can operate safely within the defensive perimeter the carrier group’s missile coverage provides. This extends sensing range out to 200 nautical miles, enabling J-15s to safely strike up to 450 nautical miles from the carrier itself.`,
@@ -553,7 +553,7 @@ var config = {
         },
         {
             id: '12-u',
-            title: 'Operational Range of KJ-500',
+            title: 'Power Projection in the Region',
             subtitle: '',
             image: '',
             description: `Large patrol aircraft like the KJ-500 can’t operate from China’s carriers. That means that carriers hoping to make use of the KJ-500’s enhanced sensing capabilities will need to stay within the KJ-500’s maximum effective range from either the mainland or China’s South China Sea outposts.`,
@@ -586,7 +586,7 @@ var config = {
         },
         {
             id: '13-a-l2',
-            title: 'Chinese Divert Airfields',
+            title: '',
             subtitle: ``,
             image: '',
             description: `But a more restrictive geographic limitation on carrier operations lies in the desire to have a divert airfield nearby. If for any reason fighters in the air were unable to return to the carrier, they would find themselves at extreme risk without a divert airfield within range. The four runways in the Paracel and Spratly Islands serve as permanent, reliable airfields further from the Chinese mainland, but Chinese companies have been involved in a number of airport projects internationally that have been theorized to potentially allow future access.`,
@@ -619,7 +619,7 @@ var config = {
         },
         {
             id: '14-p',
-            title: 'Carrier operational area within range of divert airfields',
+            title: '',
             subtitle: '',
             image: '',
             description: `China’s aircraft carrier can operate within this area while maintaining a safe, 400-nautical mile distance from divert airfields currently available for use.`,
@@ -652,7 +652,7 @@ var config = {
         }, 
         {
             id: '15-q',
-            title: 'Practical Operational Range of Carrier-based J-15 Strike-Fighters',
+            title: '',
             subtitle: '',
             image: '',
             description: `With KJ-500 providing sensing coverage, China’s carrier groups can enable fighter combat operations within this range…`,
@@ -685,7 +685,7 @@ var config = {
         },   
         {
             id: '16-r',
-            title: 'Practical Strike Range of Carrier-based J-15 Strike-Fighters',
+            title: '',
             subtitle: '',
             image: '',
             description: `…and weapons launched from those aircraft could strike even further.`,
