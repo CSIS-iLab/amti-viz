@@ -116,6 +116,9 @@ class App extends Component {
                     {config.title &&
                         <div id="header" className={theme}>
                             <h1>{config.title}</h1>
+                            {config.image &&
+                        <img src={config.image} alt={config.title}></img>
+                    }
                             {config.subtitle &&
                                 <h2>{config.subtitle}</h2>
                             }
