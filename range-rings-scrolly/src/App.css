@@ -17,6 +17,18 @@ a, a:hover, a:visited {
   z-index: -5;
 }
 
+/* .csis-logo {
+  background-image: url('https://res.cloudinary.com/csisideaslab/image/upload/v1628110683/long.svg');
+  position: absolute;
+  display: flex;
+  justify-self: center;
+  z-index: 99999;
+  height: 75px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center; 
+} */
+
 #header {
   display: flex;
   align-items: flex-start;

@@ -32,7 +32,6 @@ class App extends Component {
         this.state = {
             currentChapter: props.chapters[0]
         };
-        // this.setState = this.setState.bind(this);
     }
 
     componentDidMount() {
@@ -67,7 +66,6 @@ class App extends Component {
                 map.setPaintProperty(layer.layer, prop, layer.opacity);
             });
         }
-
 
         const setState = this.setState.bind(this);
 
@@ -105,7 +103,12 @@ class App extends Component {
         window.addEventListener('resize', scroller.resize);
     }
 
+
+
     render() {
+        const createMarkup = (c) => {
+            return {__html: c};
+        }
         const config = this.props;
         const theme = config.theme;
         const currentChapterID = this.state.currentChapter.id;
@@ -134,13 +137,32 @@ class App extends Component {
                             )
                         }
                     </div>
-                    {config.footer && 
-                        <div id="footer" className={theme}>
-                            <p>{config.footer}</p>
-                            <a href="https://www.csis.org/tradecommission" alt="Trade Commission website"  target="_blank" rel="noopener noreferrer" className="trade-logo">
-                            </a>
-                        </div>
-                    }
+                    <div id="footer" className={theme}>
+                        {config.footerTitle &&
+                            <h2>{config.footerTitle}</h2>
+                        }
+                        {config.footerContent &&
+                            <p>{config.footerContent}</p>
+                        }
+                        {config.footerContentLink && 
+                            <p>{config.footerContentLink}</p>
+                        }
+                        {config.creditHeading && 
+                            <ul>{config.creditHeading}</ul>
+                        }
+                        {config.creditItemOne && config.creditItemTwo && config.creditItemThree && config.creditItemFour &&
+                            [config.creditItemOne, config.creditItemTwo, config.creditItemThree, config.creditItemFour].map((c, i) => {
+                                return <div index={i} dangerouslySetInnerHTML={createMarkup(c)} />
+                            })
+                        }
+                        {config.footerLogo &&
+                           
+                                <a href="https://www.csis.org/tradecommission" alt="Trade Commission website"  target="_blank" rel="noopener noreferrer" className="trade-logo"> {config.footerLogo}
+                    </a>
+                          
+                        }
+                    </div>
+                    
 
                 </div>
             </div>
