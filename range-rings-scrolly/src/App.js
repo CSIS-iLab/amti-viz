@@ -139,27 +139,34 @@ class App extends Component {
                     </div>
                     <div id="footer" className={theme}>
                         {config.footerTitle &&
-                            <h2>{config.footerTitle}</h2>
+                            <h2 class="footer__title">{config.footerTitle}</h2>
                         }
+                        <div class="content__wrapper">
                         {config.footerContent &&
-                            <p>{config.footerContent}</p>
+                            <p class=" content">{config.footerContent}</p>
                         }
                         {config.footerContentLink && 
-                            <p>{config.footerContentLink}</p>
+                            <a href="https://amti.csis.org/" alt="Asia Maritime Transparency Initiative website" class="content__link content-link">{config.footerContentLink}</a>
                         }
+                        </div>
+                        <div class="credits__container">
                         {config.creditHeading && 
-                            <ul>{config.creditHeading}</ul>
+                            <div>{config.creditHeading}</div>
                         }
+                        <ul>
                         {config.creditItemOne && config.creditItemTwo && config.creditItemThree && config.creditItemFour &&
                             [config.creditItemOne, config.creditItemTwo, config.creditItemThree, config.creditItemFour].map((c, i) => {
-                                return <div index={i} dangerouslySetInnerHTML={createMarkup(c)} />
+                                return <li index={i} dangerouslySetInnerHTML={createMarkup(c)} />
                             })
                         }
+                        </ul>
+                        </div>
                         {config.footerLogo &&
-                           
-                                <a href="https://www.csis.org/tradecommission" alt="Trade Commission website"  target="_blank" rel="noopener noreferrer" className="trade-logo"> {config.footerLogo}
-                    </a>
-                          
+                           <a href="https://www.csis.org" alt="CSIS website"  target="_blank" rel="noopener noreferrer" className="csis-logo logo">
+                           </a>
+                        }
+                        {config.byline &&
+                           <p class="footer__byline byline">{config.byline}</p>
                         }
                     </div>
                     
