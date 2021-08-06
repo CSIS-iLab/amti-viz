@@ -20,23 +20,23 @@ var config = {
     footerLogo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628110683/long.svg',
     copyright: '©2021 The Asia Maritime Transparency Initiative and The Center for Strategic and International Studies | Privacy Policy',
     chapters: [
-        {
-            id: 'stepintro',
-            title: 'Range Rings Map',
-            subtitle: '',
-            image: '',
-            description: `China’s deployment of radar, anti-ship and surface-to-air missile platforms, and combat aircraft to its outposts in the South China Sea have greatly expanded its ability to project power in waters far from its own coast. This feature will illustrate how these three capabilities are fundamentally linked, and how China’s aircraft carriers can take advantage of them to comfortably conduct operations at greater distances. `,
-            location: {
-                center: [111.09, 15.30],
-                zoom: 4.50,
-                pitch: 0.00,
-                bearing: 0.00
-            },
-            onChapterEnter: [
-            ],
-            onChapterExit: [
-            ]
-        },
+        // {
+        //     id: 'stepintro',
+        //     title: 'Range Rings Map',
+        //     subtitle: '',
+        //     image: '',
+        //     description: `China’s deployment of radar, anti-ship and surface-to-air missile platforms, and combat aircraft to its outposts in the South China Sea have greatly expanded its ability to project power in waters far from its own coast. This feature will illustrate how these three capabilities are fundamentally linked, and how China’s aircraft carriers can take advantage of them to comfortably conduct operations at greater distances. `,
+        //     location: {
+        //         center: [111.09, 15.30],
+        //         zoom: 4.50,
+        //         pitch: 0.00,
+        //         bearing: 0.00
+        //     },
+        //     onChapterEnter: [
+        //     ],
+        //     onChapterExit: [
+        //     ]
+        // },
         {
             id: 'step1a',
             title: 'Island Capabilities',

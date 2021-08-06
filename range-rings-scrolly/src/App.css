@@ -19,7 +19,7 @@ a, a:hover, a:visited {
 
 .csis-logo {
   grid-area: logo;
-  margin-top: 4rem;
+  margin-top: 0;
   background-image: url('https://res.cloudinary.com/csisideaslab/image/upload/v1628110683/long.svg');
   position: relative;
   display: flex;
@@ -29,6 +29,20 @@ a, a:hover, a:visited {
   width: 100%;
   background-repeat: no-repeat;
   background-position: center; 
+  background-size: 90%;
+}
+
+@media screen and (min-width: 768px) {
+  .csis-logo  {
+    margin-top: 2rem;
+    background-size: unset;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .csis-logo {
+    margin-top: 4rem;
+  }
 }
 
 .csis-logo:focus {
@@ -39,7 +53,7 @@ a, a:hover, a:visited {
   display: flex;
   align-items: flex-start;
   width: 100vw;
-  padding: 0rem 2vh .5vh;
+  padding: 0 0 .5vh;
   text-align: center;
   background: linear-gradient(0deg, rgba(13,15,17,0) 0%, rgba(3,15,17,1) 90%);
   color: #f3f3f3;
@@ -61,17 +75,50 @@ a, a:hover, a:visited {
 
 #footer {
   display: grid;
-  grid-template-areas: 'footer-title footer-title' 'content credits' 'content-link credits' 'logo logo' 'copyright copyright';
-   grid-template-columns: 1fr 1fr;
-   column-gap: 24px;
-  /* width: 100%; */
-  padding: 0 29vh 5vh; 
-  /* text-align: center; */
+  grid-template-areas: 'footer-title' 'content' 'credits' 'logo' 'copyright';
+  grid-template-columns: 1fr;
+  grid-template-rows:
+  max-content minmax(0, max-content) max-content minmax(0, max-content)
+  auto;
+  padding: 0 3vh;
+  margin: 0 auto 5vh;
+  min-height: 100vh;
   font-size: 13px;
   color: rgba(255, 255, 255, 0.9);
-  grid-template-rows:
-    max-content minmax(0, max-content) max-content minmax(0, max-content)
-    auto;
+  max-width: 800px;
+}
+
+@media screen and (min-width: 768px) {
+  #footer {
+    grid-template-areas: 'footer-title footer-title' 'content credits' 'content credits' 'logo logo' 'copyright copyright';
+    grid-template-columns: 1fr 1fr;
+    column-gap: 8px;
+    padding: 5vh 3vh;
+    margin-bottom: 3vh;
+    min-height: 50vh;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #footer {
+    grid-template-areas: 'footer-title footer-title' 'content credits' 'content credits' 'logo logo' 'copyright copyright';
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+    padding: 5vh 5vh; 
+    min-height: 30vh;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #footer {
+    padding: 0 10vh 5vh; 
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  #footer {
+    padding: 0 20vh 5vh; 
+  }
 }
 
 .footer__title {
@@ -85,31 +132,54 @@ a, a:hover, a:visited {
 
 .content__wrapper {
   grid-area: content;
-  padding: 0 2rem;
+  padding: 0;
   font-size: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .content__wrapper {
+    padding: 0 0.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .content__wrapper {
+    padding: 0 2rem;
+  }
 }
 
 .content__wrapper p {
   margin: 0 !important;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
+  max-width: 400px;
 }
 
-.content__wrapper:after {
-  content: "";
-  display: block;
-  position: relative;
-  top: -11rem;
-  left: 2rem;
-  border-right: 1px solid rgba(255, 255, 255, 0.3);
-  width: 100%;
-  height: 95%;
+@media screen and (min-width: 1024px) {
+  .content__wrapper p {
+    padding-bottom: 2rem;
+  }
 }
 
-.credits {
-  grid-area: credits;
-  padding-bottom: 12px;
-  font-size: 14px;
-  font-weight: bold;
+@media screen and (min-width: 768px) {
+  .content__wrapper:after  {
+    content: "";
+    display: block;
+    position: relative;
+    top: -175px;
+    right: -4px;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    width: 100%;
+    height: 95%;
+  }
+}
+
+
+@media screen and (min-width: 1024px) {
+  .content__wrapper:after {
+    top: -185px;
+    right: -30px;
+    height: 90%;
+  }
 }
 
 #footer a {
@@ -132,9 +202,9 @@ a, a:hover, a:visited {
   display: block;
   position: relative;
   height: 20px;
-  top: -21px;
-  left: 80px;
-  width: 100%;
+  top: -18px;
+  left: 260px;
+  width: 30px;
   background-image: url('/images/right.svg');
   background-repeat: no-repeat;
   background-position: center; 
@@ -152,14 +222,28 @@ a, a:hover, a:visited {
 }
 
 .credits__container {
+  grid-area: credits;
   display: grid;
   display: flex;
   flex-direction: column;
 }
 
+@media (max-width: 640px) {
+  .credits__container {
+    margin-top: 1rem;;
+  }
+}
+
 .credits__container div {
   font-weight: 800;
 }
+
+.credits {
+  padding-bottom: 12px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
 
 ul {
   margin: 0;
