@@ -18,7 +18,7 @@ var config = {
     creditItemThree: '<a href="https://www.gettyimages.com/detail/news-photo/chinas-sole-aircraft-carrier-the-liaoning-arrives-in-hong-news-photo/810023414?adppopup=true" alt="Chinas aircraft carrier the Liaoning">Liaoning aircraft carrier arrives in Hong Kong waters</a>, July 7 2017,  Photo by Anthony Wallace/AFP via Getty Images',
     creditItemFour: '<a href="https://www.flickr.com/photos/rhk111/41738071042/in/album-72157666352769197/" alt="HQ-9 SAM System Launch">HQ-9 SAM System Launch</a>, April 26 2018,  CC BY-NC-SA 2.0, eng.chinamil.com.cn / Photo by Zhu Jianghai)',
     footerLogo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628110683/long.svg',
-    byline: '©2021 The Asia Maritime Transparency Initiative and The Center for Strategic and International Studies | Privacy Policy',
+    copyright: '©2021 The Asia Maritime Transparency Initiative and The Center for Strategic and International Studies | Privacy Policy',
     chapters: [
         {
             id: 'stepintro',

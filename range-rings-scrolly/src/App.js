@@ -109,6 +109,9 @@ class App extends Component {
         const createMarkup = (c) => {
             return {__html: c};
         }
+        const createMarkup2 = (footerContent) => {
+            return {__html: footerContent};
+        }
         const config = this.props;
         const theme = config.theme;
         const currentChapterID = this.state.currentChapter.id;
@@ -125,9 +128,6 @@ class App extends Component {
                             {config.subtitle &&
                                 <h2>{config.subtitle}</h2>
                             }
-                            {config.byline && 
-                                <p>{config.byline}</p>
-                            }
                         </div>
                     }
                     <div id="features" className={alignments[config.alignment]}>
@@ -143,10 +143,12 @@ class App extends Component {
                         }
                         <div class="content__wrapper">
                         {config.footerContent &&
-                            <p class=" content">{config.footerContent}</p>
+                            // <p class="content">{config.footerContent}</p>
+                            <p class="footer__content" dangerouslySetInnerHTML={createMarkup2(config.footerContent)} />
+                            
                         }
                         {config.footerContentLink && 
-                            <a href="https://amti.csis.org/" alt="Asia Maritime Transparency Initiative website" class="content__link content-link">{config.footerContentLink}</a>
+                            <a href="https://amti.csis.org/maps/" alt="Asia Maritime Transparency Initiative maps site" class="content__link content-link">{config.footerContentLink}</a>
                         }
                         </div>
                         <div class="credits__container">
@@ -165,8 +167,8 @@ class App extends Component {
                            <a href="https://www.csis.org" alt="CSIS website"  target="_blank" rel="noopener noreferrer" className="csis-logo logo">
                            </a>
                         }
-                        {config.byline &&
-                           <p class="footer__byline byline">{config.byline}</p>
+                        {config.copyright &&
+                           <p class="footer__copyright copyright">{config.copyright}</p>
                         }
                     </div>
                     
