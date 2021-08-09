@@ -8,7 +8,7 @@ var config = {
     title: 'Asia Maritime Transparency Initaitve',
     subtitle: '',
     logo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628110683/long.svg',
-    footerTitle: 'Asia Maritime Transparency Initiative',
+    footerTitle: '<a href="https://amti.csis.org/" alt="Asia Maritime Transparency Intiative website">Asia Maritime Transparency Initiative</a>',
     footersubTitle: 'Source: Data from | ',
     footerContent: 'The Asia Maritime Transparency Initiative seeks to change this. AMTI was conceived of and designed by CSIS. It is an interactive, regularly-updated source for information, analysis, and policy exchange on maritime security issues in Asia.',
     footerContentLink: 'Explore more Maps of the Asia Pacific',
@@ -20,23 +20,22 @@ var config = {
     footerLogo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628110683/long.svg',
     copyright: '©2021 The Asia Maritime Transparency Initiative and The Center for Strategic and International Studies | Privacy Policy',
     chapters: [
-        // {
-        //     id: 'stepintro',
-        //     title: 'Range Rings Map',
-        //     subtitle: '',
-        //     image: '',
-        //     description: `China’s deployment of radar, anti-ship and surface-to-air missile platforms, and combat aircraft to its outposts in the South China Sea have greatly expanded its ability to project power in waters far from its own coast. This feature will illustrate how these three capabilities are fundamentally linked, and how China’s aircraft carriers can take advantage of them to comfortably conduct operations at greater distances. `,
-        //     location: {
-        //         center: [111.09, 15.30],
-        //         zoom: 4.50,
-        //         pitch: 0.00,
-        //         bearing: 0.00
-        //     },
-        //     onChapterEnter: [
-        //     ],
-        //     onChapterExit: [
-        //     ]
-        // },
+        {
+            id: 'stepintro',
+            title: 'By Air, Land, and Sea: China’s Maritime Power Projection Network',
+            description: `China’s deployment of radar, anti-ship and surface-to-air missile platofrms, and combat aircraft to its outposts in the South China Sea have greatly expanded its ability to project power in waters far from its own coast.  This feature will illustrate how these three capabilities are fundamentally linked, and how China’s aircraft carriers can take advantage of them to comfortably conduct operations at greater distances.`,
+            updated: 'Last Updated January 1, 2021',
+            location: {
+                center: [111.09, 15.30],
+                zoom: 4.50,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            onChapterEnter: [
+            ],
+            onChapterExit: [
+            ]
+        },
         {
             id: 'step1a',
             title: 'Island Capabilities',

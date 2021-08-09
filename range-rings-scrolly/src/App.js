@@ -106,89 +106,84 @@ class App extends Component {
 
 
     render() {
-        const createMarkup = (c) => {
-            return {__html: c};
-        }
-        const createMarkup2 = (footerContent) => {
-            return {__html: footerContent};
-        }
-        const config = this.props;
-        const theme = config.theme;
-        const currentChapterID = this.state.currentChapter.id;
-        return (
-            <div>
-                <div ref={el => this.mapContainer = el} className="absolute top right left bottom" />
-                <div id="story">
-                    {config.title &&
-                        <div id="header" className={theme}>
-                            <h1>{config.title}</h1>
-                            {config.image &&
-                        <img src={config.image} alt={config.title}></img>
-                    }
-                            {config.subtitle &&
-                                <h2>{config.subtitle}</h2>
-                            }
-                        </div>
-                    }
-                    <div id="features" className={alignments[config.alignment]}>
-                        {
-                            config.chapters.map(chapter =>
-                                <Chapter key={chapter.id} theme={theme} {...chapter} currentChapterID={currentChapterID} />
-                            )
-                        }
-                    </div>
-                    <div id="footer" className={theme}>
-                        {config.footerTitle &&
-                            <h2 class="footer__title">{config.footerTitle}</h2>
-                        }
-                        <div class="content__wrapper">
-                        {config.footerContent &&
-                            // <p class="content">{config.footerContent}</p>
-                            <p class="footer__content" dangerouslySetInnerHTML={createMarkup2(config.footerContent)} />
-                            
-                        }
-                        {config.footerContentLink && 
-                            <a href="https://amti.csis.org/maps/" alt="Asia Maritime Transparency Initiative maps site" class="content__link content-link">{config.footerContentLink}</a>
-                        }
-                        </div>
-                        <div class="credits__container">
-                        {config.creditHeading && 
-                            <div>{config.creditHeading}</div>
-                        }
-                        <ul>
-                        {config.creditItemOne && config.creditItemTwo && config.creditItemThree && config.creditItemFour &&
-                            [config.creditItemOne, config.creditItemTwo, config.creditItemThree, config.creditItemFour].map((c, i) => {
-                                return <li index={i} dangerouslySetInnerHTML={createMarkup(c)} />
-                            })
-                        }
-                        </ul>
-                        </div>
-                        {config.footerLogo &&
-                           <a href="https://www.csis.org" alt="CSIS website"  target="_blank" rel="noopener noreferrer" className="csis-logo logo">
-                           </a>
-                        }
-                        {config.copyright &&
-                           <p class="footer__copyright copyright">{config.copyright}</p>
-                        }
-                    </div>
-                    
+      const createCreditMarkup = (c) => {
+        return {__html: c};
+      }
+      const createTitleMarkup = (footerTitle) => {
+        return {__html: footerTitle};
+      }
+      const config = this.props;
+      const theme = config.theme;
+      const currentChapterID = this.state.currentChapter.id;
 
+      return (
+        <div>
+            <div ref={el => this.mapContainer = el} className="absolute top right left bottom" />
+              <div id="story">
+                {config.title &&
+                <div id="header" className={theme}>
+                  <h1>{config.title}</h1>
+                    {config.image &&
+                      <img src={config.image} alt={config.title}></img>
+                    }
                 </div>
-            </div>
-        );
-    }
+                }
+                <div id="features" className={alignments[config.alignment]}>
+                  {
+                    config.chapters.map(chapter =>
+                      <Chapter key={chapter.id} theme={theme} {...chapter} currentChapterID={currentChapterID} />
+                    )
+                  }
+                </div>
+                <div id="footer" className={theme}>
+                      {config.footerTitle &&
+                          <h2 class="footer__title" dangerouslySetInnerHTML={createTitleMarkup(config.footerTitle)} />
+                      }
+                      <div class="content__wrapper">
+                      {config.footerContent &&
+                          <p class="footer__content" >{config.footerContent}</p>
+                      }
+                      {config.footerContentLink && 
+                          <a href="https://amti.csis.org/maps/" alt="Asia Maritime Transparency Initiative maps site" class="content__link content-link">{config.footerContentLink}</a>
+                      }
+                      </div>
+                      <div class="credits__container">
+                      {config.creditHeading && 
+                          <div>{config.creditHeading}</div>
+                      }
+                      <ul>
+                      {config.creditItemOne && config.creditItemTwo && config.creditItemThree && config.creditItemFour &&
+                          [config.creditItemOne, config.creditItemTwo, config.creditItemThree, config.creditItemFour].map((c, i) => {
+                              return <li index={i} dangerouslySetInnerHTML={createCreditMarkup(c)} />
+                          })
+                      }
+                      </ul>
+                      </div>
+                      {config.footerLogo &&
+                          <a href="https://www.csis.org" alt="CSIS website"  target="_blank" rel="noopener noreferrer" className="csis-logo logo">
+                          </a>
+                      }
+                      {config.copyright &&
+                          <p class="footer__copyright copyright">{config.copyright}</p>
+                      }
+                  </div>
+                  
 
+              </div>
+          </div>
+      );
+  }
 }
 
 
 
-function Chapter({ id, theme, title, image, description, list1, list2, list3, list4, subtitle, currentChapterID }) {
+function Chapter({ id, theme, title, description, subtitle, updated, currentChapterID }) {
     const classList = id === currentChapterID ? "step active" : "step";
     return (
         <div id={id} className={classList}>
             <div className={theme}>
                 {title &&
-                    <h2 className="title">{title}</h2>
+                  <h2 className="title">{title}</h2>
                 }
                 <div className="content">
                     {subtitle &&
@@ -197,22 +192,8 @@ function Chapter({ id, theme, title, image, description, list1, list2, list3, li
                     {description &&
                         <p className="desc">{description}</p>
                     }
-                    <ul>
-                      {list1 && 
-                          <li className="list">{list1}</li>
-                      }
-                      {list2 && 
-                          <li className="list">{list2}</li>
-                      }
-                      {list3 && 
-                          <li className="list">{list3}</li>
-                      }
-                      {list4 && 
-                          <li className="list">{list4}</li>
-                      }
-                    </ul>
-                    {image &&
-                        <img src={image} alt={title}></img>
+                    {updated &&
+                      <p class="updated">{updated}</p>
                     }
                 </div>
             </div>

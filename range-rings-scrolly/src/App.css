@@ -5,10 +5,6 @@ body {
   overflow-x: hidden;
 }
 
-a, a:hover, a:visited {
-  color: #0071bc;
-}
-
 .mapboxgl-map {
   top:0; 
   height: 100vh;
@@ -130,6 +126,15 @@ a, a:hover, a:visited {
   font-weight: normal;
 }
 
+.footer__title a {
+  text-decoration: none;
+}
+
+.footer__title a:focus {
+  text-decoration: none;
+  background: unset !important;
+}
+
 .content__wrapper {
   grid-area: content;
   padding: 0;
@@ -199,12 +204,12 @@ a, a:hover, a:visited {
 
 .content__link:after {
   content: '';
-  display: block;
+  display: inline-block;
   position: relative;
   height: 20px;
-  top: -18px;
-  left: 260px;
-  width: 30px;
+  top: 6px;
+  left: 10px;
+  width: 10px;
   background-image: url('/images/right.svg');
   background-repeat: no-repeat;
   background-position: center; 
@@ -274,7 +279,6 @@ li {
 }
 
 .lefty {
-  width: 33vw;
   margin-left: 5vw;
 }
 
@@ -297,26 +301,68 @@ li {
 
 .step div {
   line-height: 25px;
-  max-width: 350px;
+}
+
+.light {
+  max-width: unset !important;
 }
 
 #stepintro {
-  position: relative;
-  left: 30vh;
+  display: flex;
+  justify-content: center;
 }
 
 #stepintro .title {
+  max-width: 800px;
   font-size: 42px;
+  line-height: 1.29;
+  text-align: center;
+  text-transform: uppercase;
+  /* color: rgba(255, 255, 255); */
 }
 
-#stepintro .title {
-  font-size: 42px;
+#stepintro .title:after {
+  display: none;
 }
 
-
-.step > div > *:not(h2) {
-  /* background-color: #474F56 */
+#stepintro .content {
+  max-width: 680px;
+  margin-top: 0;
 }
+
+/* #stepintro .content:after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  width: 4rem;
+} */
+
+#stepintro .desc {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background: unset;
+  color: rgba(255, 255, 255, 0.9);
+  opacity: unset;
+}
+
+#stepintro .updated {
+  margin: 16px 0 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+@media screen and (min-width: 768px) {
+  #stepintro .updated:before {
+    content: "";
+    position: relative;
+    top: -1rem;
+    left: 19rem;
+    display: block;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    width: 4rem;
+  }
+}
+
 
 .step > div > *:not(img):not(h2) {
   padding: 0 0px;
@@ -411,6 +457,7 @@ p {
   background: #080B0F;
   opacity: 0.7;
   font-size: 18px;
+  line-height: 1.2;
 }
 
 .subtitle + .desc {
@@ -436,13 +483,13 @@ p {
 
 .content {
   margin-top: 1.25rem;
+  max-width: 350px;
 }
 
 .title {
   margin-bottom: 0.625rem;
-  font-family: 'Frank Ruhl Libre', Georgia, serif;
-  font-weight: 500;
-  color: #f3f3f3;
+  font-weight: 400; 
+  color: rgba(255, 255, 255);
 }
 
 .subtitle {
@@ -455,12 +502,12 @@ p {
   font-weight: 600;
 }
 
-@media (max-width: 750px) {
+/* @media (max-width: 750px) {
   #features {
       width: 90vw;
       margin: 0 auto;
   }
-}
+} */
 
 .step#step3ab.active:after {
   display:block;
