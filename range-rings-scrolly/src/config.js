@@ -13,10 +13,10 @@ var config = {
     footerContent: 'The Asia Maritime Transparency Initiative seeks to change this. AMTI was conceived of and designed by CSIS. It is an interactive, regularly-updated source for information, analysis, and policy exchange on maritime security issues in Asia.',
     footerContentLink: 'Explore more Maps of the Asia Pacific',
     creditHeading: 'PHOTO CREDITS',
-    creditItemOne: '<a href="https://www.flickr.com/photos/77258709@N06/34883882343" alt="J-15 on Liaoning">J-15 on Liaoning</a>, Uploaded on July 3 2017, public domain',
+    creditItemOne: '<a href="https://www.gettyimages.com/detail/news-photo/this-photo-taken-on-april-14-2018-shows-a-j15-fighter-jet-news-photo/951606006?adppopup=true" alt="J-15 on Liaoning">J-15 on Liaoning</a>, Uploaded on April 14, 2018, AFP via Getty Images',
     creditItemTwo: '<a href="https://commons.wikimedia.org/wiki/File:KJ-500_(cropped).jpg" alt="image of a KJ-500">KJ-500</a>, October 17 2018, CC BY-SA 4.0 by Alert5',
     creditItemThree: '<a href="https://www.gettyimages.com/detail/news-photo/chinas-sole-aircraft-carrier-the-liaoning-arrives-in-hong-news-photo/810023414?adppopup=true" alt="Chinas aircraft carrier the Liaoning">Liaoning aircraft carrier arrives in Hong Kong waters</a>, July 7 2017,  Photo by Anthony Wallace/AFP via Getty Images',
-    creditItemFour: '<a href="https://www.flickr.com/photos/rhk111/41738071042/in/album-72157666352769197/" alt="HQ-9 SAM System Launch">HQ-9 SAM System Launch</a>, April 26 2018,  CC BY-NC-SA 2.0, eng.chinamil.com.cn / Photo by Zhu Jianghai)',
+    creditItemFour: '<a href="https://commons.wikimedia.org/wiki/File:Chinese_HQ-9_launcher.jpg" alt="HQ-9 SAM System Launch">HQ-9 SAM System Launch</a>, October 1 2009,  CC BY-NC-SA 2.0, eng.chinamil.com.cn / Photo by Jian Kang)',
     footerLogo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628110683/long.svg',
     copyright: '©2021 The Asia Maritime Transparency Initiative and The Center for Strategic and International Studies | Privacy Policy',
     chapters: [
