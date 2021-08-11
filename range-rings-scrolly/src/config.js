@@ -517,6 +517,10 @@ var config = {
             },
             onChapterEnter: [
                 {
+                    layer: 'hcarriergroup',
+                    opacity: 1
+                },
+                {
                     layer: 'mkj500sensingtosurfacefromcarriersambubble',
                     opacity: 0
                 },
@@ -534,6 +538,10 @@ var config = {
                 },
             ],
             onChapterExit: [
+                {
+                    layer: 'hcarriergroup',
+                    opacity: 0
+                },
                 {
                     layer: 'mkj500sensingtosurfacefromcarriersambubble',
                     opacity: 0
@@ -566,17 +574,17 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'ukj500operationalrangefromislandsandmainland',
-                    opacity: 0
+                    layer: 'new-kj-500-range-dw7r6z',
+                    opacity: 1
                 },
                 {
                     layer: 'ukj500operationalrangefromislandsandmainlandpg',
-                    opacity: 1
+                    opacity: 0
                 },
             ],
             onChapterExit: [
                 {
-                    layer: 'ukj500operationalrangefromislandsandmainland',
+                    layer: 'new-kj-500-range-dw7r6z',
                     opacity: 0
                 },
                 {
