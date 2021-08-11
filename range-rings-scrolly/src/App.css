@@ -60,6 +60,7 @@ body {
   font-size: 20px;
   font-family: PT Sans Narrow, sans-serif;
   margin: 2.5rem 3.5rem 0 3rem;
+  font-weight: 400;
 }
 
 #header img {
@@ -501,15 +502,15 @@ p {
 }
 
 .highlight--yellow {
-  color: #EFAD2E;
+  color: #FFC00D;
 }
 
 .highlight--red {
-  color: #d14f23;
+  color: #FF7040;
 }
 
 .highlight--green {
-  color: #00b39e;
+  color: #14E2CA;
 }
 
 /* Image Styling */
