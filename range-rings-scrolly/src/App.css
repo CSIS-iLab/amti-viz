@@ -303,6 +303,16 @@ li {
   line-height: 25px;
 }
 
+/* .step img {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  padding: 0px 16px;
+  position: relative;
+  bottom: 18rem;
+  margin-left: auto;
+} */
+
 .light {
   max-width: unset !important;
 }
@@ -378,12 +388,6 @@ li {
 
 .content:not(.subtitle) {
   padding-top: 0;
-}
-
-h1 {
-  font-family: 'Frank Ruhl Libre', Georgia, serif;
-  font-weight: 500;
-   margin-bottom: 0 !important;
 }
 
 h1 + h2 {
@@ -466,7 +470,7 @@ p {
 
 #footer img {
   max-width: 500px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   padding: 0 1rem;
   margin-bottom: 1rem;
 }
@@ -474,11 +478,6 @@ p {
 #footer p {
   z-index: 200;
  color:#C5C9CE;
-}
-
-.step img {
-  display: block;
-  width: 100%;
 }
 
 .content {
@@ -502,27 +501,82 @@ p {
   font-weight: 600;
 }
 
-/* @media (max-width: 750px) {
-  #features {
-      width: 90vw;
-      margin: 0 auto;
-  }
-} */
-
-.step#step3ab.active:after {
-  display:block;
-  position:fixed;
-  top: 3.875rem;
-  right: -30rem;
-  content:'Images go here';
-  width: 100%;
-  padding-bottom: 3.125rem;
-  text-align:center;
-  opacity: 1;
+/* .step.active:after {
+  position: fixed;
+  top: 3rem;
+  right: 3rem;
+  content: '';
+  padding-bottom: 4rem;
+  z-index: 99999;
+  height: 75px;
+  width: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
   transition: 600ms opacity ease-in-out;
+  opacity: 1;
 }
 
 .step:after {
   opacity:0;
   transition: 600ms opacity ease-in-out;
+} */
+
+.highlight--yellow {
+  color: #EFAD2E;
+}
+
+.highlight--red {
+  color: #d14f23;
+}
+
+.highlight--green {
+  color: #00b39e;
+}
+
+/* Image Styling */
+
+.image__container:after {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 10rem;
+  /* border-bottom: 4px solid yellow; */
+  left: 76rem;
+  /* width: 200px; */
+}
+
+.step.active:after {
+
+}
+
+/* img {
+	border-bottom: 2px solid red;
+	width: 200px;
+} */
+
+.step .image {
+  display: block;
+  top: 2rem;
+  width: 100%;
+  max-width: 200px;
+  margin-left: auto;
+  position: fixed;
+  opacity: 0;
+}
+
+.step#step5.active .image {
+  opacity: 1;
+}
+
+.step .image--one {
+  left: 75rem;
+  border-bottom: 3px solid red;
+	width: 200px;
+}
+
+.step .image--two {
+  left: 62rem;
+  border-bottom: 3px solid #EFAD2E;
+	width: 100%;
 }

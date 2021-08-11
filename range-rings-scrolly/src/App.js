@@ -131,7 +131,7 @@ class App extends Component {
                 <div id="features" className={alignments[config.alignment]}>
                   {
                     config.chapters.map(chapter =>
-                      <Chapter key={chapter.id} theme={theme} {...chapter} currentChapterID={currentChapterID} />
+                      <Chapter key={chapter.id} theme={theme} {...chapter} currentChapterID={currentChapterID} />,
                     )
                   }
                 </div>
@@ -177,11 +177,22 @@ class App extends Component {
 
 
 
-function Chapter({ id, theme, title, description, subtitle, updated, currentChapterID }) {
+function Chapter({ id, theme, image, imageTwo, title, description, legend, subtitle, updated, currentChapterID }) {
     const classList = id === currentChapterID ? "step active" : "step";
+    const createDescMarkup = (description) => {
+      return {__html: description};
+    }
     return (
         <div id={id} className={classList}>
             <div className={theme}>
+              <div class="image__container">
+                {imageTwo &&
+                <img class="image image--one" src={image} alt={title}></img>
+                  }
+                {image &&
+                <img class="image image--two" src={imageTwo} alt={title}></img>
+                  }
+              </div>
                 {title &&
                   <h2 className="title">{title}</h2>
                 }
@@ -190,7 +201,11 @@ function Chapter({ id, theme, title, description, subtitle, updated, currentChap
                         <h3 className="subtitle">{subtitle}</h3>
                     }
                     {description &&
-                        <p className="desc">{description}</p>
+                        // <p className="desc">{description}</p>
+                        <p className="desc" dangerouslySetInnerHTML={createDescMarkup(description)}></p>
+                    }
+                    {legend &&
+                      <p>{legend}</p>
                     }
                     {updated &&
                       <p class="updated">{updated}</p>
@@ -199,6 +214,25 @@ function Chapter({ id, theme, title, description, subtitle, updated, currentChap
             </div>
         </div>
     )
+}
+
+
+function ChapterHeading({ id, theme, title, image, currentChapterID }) {
+  const classList = id === currentChapterID ? "step active" : "step";
+  return (
+    <div id={id} className={classList}>
+      {title &&
+        <h2 className="title">{title}</h2>
+      }
+      <div className={theme}>
+        <div className="content">
+          {image &&
+            <img src={image} alt={title}></img>
+          }
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export default App;
