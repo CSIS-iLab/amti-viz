@@ -58,7 +58,7 @@ body {
 #header h1 {
   text-transform: uppercase;
   font-size: 20px;
-  font-family: PT Sans Narrow,Trebuchet MS,Helvetica,sans-serif;
+  font-family: PT Sans Narrow, sans-serif;
   margin: 2.5rem 3.5rem 0 3rem;
 }
 
@@ -407,7 +407,7 @@ h1 + h2 + p {
 .step h2 { 
   padding-bottom: 0.75rem;
   margin-bottom: 1rem;
-  font-family: 'Frank Ruhl Libre', Georgia, serif;
+  /* font-family: 'Frank Ruhl Libre', Georgia, serif; */
   font-weight: 400;
   font-size: 32px;
   opacity: 0.7;
@@ -470,7 +470,6 @@ p {
 
 #footer img {
   max-width: 500px;
-  /* margin: 0 auto; */
   padding: 0 1rem;
   margin-bottom: 1rem;
 }
@@ -501,27 +500,6 @@ p {
   font-weight: 600;
 }
 
-/* .step.active:after {
-  position: fixed;
-  top: 3rem;
-  right: 3rem;
-  content: '';
-  padding-bottom: 4rem;
-  z-index: 99999;
-  height: 75px;
-  width: 200px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
-  transition: 600ms opacity ease-in-out;
-  opacity: 1;
-}
-
-.step:after {
-  opacity:0;
-  transition: 600ms opacity ease-in-out;
-} */
-
 .highlight--yellow {
   color: #EFAD2E;
 }
@@ -541,42 +519,64 @@ p {
   display: block;
   position: fixed;
   top: 10rem;
-  /* border-bottom: 4px solid yellow; */
   left: 76rem;
-  /* width: 200px; */
 }
 
 .step.active:after {
 
 }
 
-/* img {
-	border-bottom: 2px solid red;
-	width: 200px;
-} */
-
 .step .image {
   display: block;
   top: 2rem;
   width: 100%;
   max-width: 200px;
+  height: 112px;
   margin-left: auto;
   position: fixed;
   opacity: 0;
 }
 
-.step#step5.active .image {
+.step#step6.active .image--one {
+  border-bottom: 3px solid #00b39e;
+  opacity: 1;
+}
+
+.step#step3.active .image--one,
+.step#step8.active .image--one,
+.step#step16.active .image--one {
+  border-bottom: 3px solid #d14f23;
+  opacity: 1;
+}
+
+.step#step5.active .image--one,
+.step#step7.active .image--one,
+.step#step9.active .image--one,
+.step#step10.active .image--one,
+.step#step11.active .image--one,
+.step#step12.active .image--one,
+.step#step15.active .image--one {
+  border-bottom: 3px solid #EFAD2E;
+  opacity: 1;
+}
+
+.step#step11.active .image--two {
+  border-bottom: 3px solid #d14f23;
+  opacity: 1;
+}
+
+.step#step9.active .image--two {
+  border-bottom: 3px solid #00b39e;
   opacity: 1;
 }
 
 .step .image--one {
-  left: 75rem;
-  border-bottom: 3px solid red;
+  left: 78rem;
 	width: 200px;
 }
 
 .step .image--two {
-  left: 62rem;
+  left: 64.5rem;
   border-bottom: 3px solid #EFAD2E;
 	width: 100%;
 }

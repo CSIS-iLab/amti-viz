@@ -167,8 +167,6 @@ class App extends Component {
                           <p class="footer__copyright copyright">{config.copyright}</p>
                       }
                   </div>
-                  
-
               </div>
           </div>
       );
@@ -186,10 +184,10 @@ function Chapter({ id, theme, image, imageTwo, title, description, legend, subti
         <div id={id} className={classList}>
             <div className={theme}>
               <div class="image__container">
-                {imageTwo &&
+                {image &&
                 <img class="image image--one" src={image} alt={title}></img>
                   }
-                {image &&
+                {imageTwo &&
                 <img class="image image--two" src={imageTwo} alt={title}></img>
                   }
               </div>
@@ -201,7 +199,6 @@ function Chapter({ id, theme, image, imageTwo, title, description, legend, subti
                         <h3 className="subtitle">{subtitle}</h3>
                     }
                     {description &&
-                        // <p className="desc">{description}</p>
                         <p className="desc" dangerouslySetInnerHTML={createDescMarkup(description)}></p>
                     }
                     {legend &&
