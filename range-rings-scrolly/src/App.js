@@ -175,7 +175,7 @@ class App extends Component {
 
 
 
-function Chapter({ id, theme, image, imageTwo, title, description, legend, subtitle, updated, currentChapterID }) {
+function Chapter({ id, theme, image, imageTwo, imageThree, title, description, legend, subtitle, updated, currentChapterID }) {
     const classList = id === currentChapterID ? "step active" : "step";
     const createDescMarkup = (description) => {
       return {__html: description};
@@ -189,6 +189,9 @@ function Chapter({ id, theme, image, imageTwo, title, description, legend, subti
                   }
                 {imageTwo &&
                 <img class="image image--two" src={imageTwo} alt={title}></img>
+                  }
+                    {imageThree &&
+                <img class="image image--three" src={imageThree} alt={title}></img>
                   }
               </div>
                 {title &&

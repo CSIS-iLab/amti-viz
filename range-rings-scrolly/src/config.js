@@ -97,7 +97,7 @@ var config = {
         {
             id: 'step3',
             title: '',
-            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628703980/amti/GettyImages-951606006.jpg',
+            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884785/amti/j-15.png',
             description: `The <span class="highlight--red">theoretical operational range</span> of J-15 strike-fighter aircraft from these islands is quite far.`,
             location: {
                 center: [110.09, 16.30],
@@ -142,8 +142,8 @@ var config = {
             id: 'step4',
             title: '',
             subtitle: '',
-            image: '',
-            description: `But in reality, combat aircraft are limited to operating within <span class="highlight-yellow">radar range</span>. Without external radar coverage, they have limited awareness of their surroundings and would be vulnerable to attack.`,
+            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884129/amti/yellow.png',
+            description: `But in reality, combat aircraft are limited to operating within <span class="highlight--yellow">radar range</span>. Without external radar coverage, they have limited awareness of their surroundings and would be vulnerable to attack.`,
             location: {
                 center: [110.09, 14.30],
                 zoom: 4.50,
@@ -159,10 +159,6 @@ var config = {
                     opacity: 1
                 },
                 {
-                    layer: 'ckj500undersamtosurface',
-                    opacity: 0
-                },
-                {
                     layer: 'ckj500undersamtosurfacepg',
                     opacity: 1,
                     duration: 100
@@ -175,10 +171,6 @@ var config = {
                     opacity: 0
                 },
                 {
-                    layer: 'ckj500undersamtosurface',
-                    opacity: 0
-                },
-                {
                     layer: 'ckj500undersamtosurfacepg',
                     opacity: 0
                 },
@@ -186,8 +178,7 @@ var config = {
         },
         {
             id: 'step5',
-            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628603996/amti/KJ-500.jpg',
-            imageTwo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628603996/amti/KJ-500.jpg',
+            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884129/amti/yellow.png',
             title: '',
             subtitle: '',
             description: `KJ-500 sensing aircraft launched from the islands have a wider sensing range than any radar facilities on the islands themselves. A KJ-500, shown here above Subi reef, can sense <span class="highlight--yellow">200 nautical miles to surface targets</span>, and up to <span class="highlight--yellow">388 nautical miles for high-flying targets at 25,000 feet</span>.`,
@@ -207,16 +198,8 @@ var config = {
                     opacity: 1
                 },
                 {
-                    layer: 'ekj500singlefrommischiefsensingtosurface',
-                    opacity: 0
-                },
-                {
                     layer: 'ekj500singlefromsubisensingtosurfacepg',
                     opacity: 1
-                },
-                {
-                    layer: 'tkj500fromsubisensingrangetoair',
-                    opacity: 0
                 },
                 {
                     layer: 'tkj500fromsubisensingrangetoairpg',
@@ -229,15 +212,7 @@ var config = {
                     opacity: 0
                 },
                 {
-                    layer: 'ekj500singlefrommischiefsensingtosurface',
-                    opacity: 0
-                },
-                {
                     layer: 'ekj500singlefromsubisensingtosurfacepg',
-                    opacity: 0
-                },
-                {
-                    layer: 'tkj500fromsubisensingrangetoair',
                     opacity: 0
                 },
                 {
@@ -250,9 +225,8 @@ var config = {
             id: 'step6',
             title: ``,
             subtitle: '',
-            // https://res.cloudinary.com/csisideaslab/image/upload/v1628703840/amti/Chinese_HQ-9_launcher.jpg
-            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628703840/amti/Chinese_HQ-9_launcher.jpg',
-            description: `But the KJ-500 also has limitations on its operational range. Without any defensive capabilities of its own, it relies on external protection from island-based <span class="highlight--green">SAM and anti-ship missiles</span>. Outside of missile coverage, the KJ-500 would be an easy target for enemy fighters or surface combatants.`,
+            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884548/amti/green.png',
+            description: `But the KJ-500 also has limitations on its operational range. Without any defensive capabilities of its own, it relies on external protection from island-based <span class="highlight--green">SAM</span> and <span class="highlight--green">anti-ship missiles</span>. Outside of missile coverage, the KJ-500 would be an easy target for enemy fighters or surface combatants.`,
             location: {
                 center: [110.09, 12.30],
                 zoom: 4.50,
@@ -265,16 +239,8 @@ var config = {
                     opacity: 1
                 },
                 {
-                    layer: 'gsamrangefrommischief',
-                    opacity: 0
-                },
-                {
                     layer: 'gsamrangefromsubipg',
                     opacity: 1
-                },
-                {
-                    layer: 'wsubiasmrange',
-                    opacity: 0
                 },
                 {
                     layer: 'wsubiasmrangepg',
@@ -287,15 +253,7 @@ var config = {
                     opacity: 0
                 },
                 {
-                    layer: 'gsamrangefrommischief',
-                    opacity: 0
-                },
-                {
                     layer: 'gsamrangefromsubipg',
-                    opacity: 0
-                },
-                {
-                    layer: 'wsubiasmrange',
                     opacity: 0
                 },
                 {
@@ -308,7 +266,7 @@ var config = {
             id: 'step7',
             title: ``,
             subtitle: '',
-            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628603996/amti/KJ-500.jpg',
+            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884129/amti/yellow.png',
             description: `This is the KJ-500’s estimated <span class="highlight--yellow">sensing range to surface-level targets</span> while operating within both SAM and anti-ship missile coverage from the islands. Combat aircraft venturing beyond this range would be blind to surface threats and thus be incurring substantial risk.`,
             location: {
                 center: [110.09, 12.30],
@@ -341,8 +299,9 @@ var config = {
             id: 'step8',
             title: '',
             subtitle: '',
-            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628703980/amti/GettyImages-951606006.jpg',
-            description: `Fighters operating from within that range could <span class="highlight--red">strike</span> targets within an additional radius of 250 nautical miles with weapons such as an air-launched YJ-12 anti-ship cruise missile.`,
+            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884785/amti/j-15.png',
+            imageTwo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884129/amti/yellow.png',
+            description: `Fighters operating from within the <span class="highlight--yellow">KJ-500's sensing range</span> could <span class="highlight--red">strike targets within an additional radius of 250 nautical miles</span> with weapons such as an air-launched YJ-12 anti-ship cruise missile.`,
             location: {
                 center: [110.09, 12.30],
                 zoom: 4.50,
@@ -355,12 +314,8 @@ var config = {
                     opacity: 1
                 },
                 {
-                    layer: 'ckj500undersamtosurfacepg2',
+                    layer: 'ckj500undersamtosurfacepg',
                     opacity: 1,
-                },
-                {
-                    layer: 'sfighterweaponsrangefromkj500sensingrangefromislandsams',
-                    opacity: 0
                 },
                 {
                     layer: 'sfighterweaponsrangefromkj500sensingrangefromislandsamspg',
@@ -373,12 +328,8 @@ var config = {
                     opacity: 0
                 },
                 {
-                    layer: 'ckj500undersamtosurfacepg2',
+                    layer: 'ckj500undersamtosurfacepg',
                     opacity: 0,
-                },
-                {
-                    layer: 'sfighterweaponsrangefromkj500sensingrangefromislandsams',
-                    opacity: 0
                 },
                 {
                     layer: 'sfighterweaponsrangefromkj500sensingrangefromislandsamspg',
@@ -390,9 +341,9 @@ var config = {
             id: 'step9',
             title: 'Carrier Integration',
             subtitle: '',
-            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628603996/amti/KJ-500.jpg',
-            imageTwo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628703840/amti/Chinese_HQ-9_launcher.jpg',
-            description: `China’s aircraft carriers have the potential to enable combat aircraft to operate safely at much further ranges. A carrier group includes the carrier itself, bringing with it 24 to 32 J-15 fighters, but also a complement of guided-missile destroyers and frigates that provide both sensing (to <span class="highlight--yellow">surface and air</span>) and missile (to <span class="highlight--green">surface and air</span>) capabilities.`,
+            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628883455/amti/white.png',
+            imageTwo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884548/amti/green.png',
+            description: `China’s aircraft carriers have the potential to enable combat aircraft to operate safely at much further ranges. A carrier group includes the carrier itself, bringing with it 24 to 32 J-15 fighters, but also a complement of guided-missile destroyers and frigates that provide both sensing (to <span class="highlight--yellow">surface</span> and <span class="highlight--yellow">air</span>) and missile (to <span class="highlight--green">surface</span> and <span class="highlight--green">air</span>) capabilities.`,
             location: {
                 center: [110.09, 5.30],
                 zoom: 4.5,
@@ -448,8 +399,9 @@ var config = {
             id: 'step10',
             title: '',
             subtitle: '',
-            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628603996/amti/KJ-500.jpg',
-            description: `Fighter aircraft launched from the carrier can operate and strike within the <span class="highlight--yellow">radar coverage</span> provided by the carrier group itself, but the sensing range is limited to approximately 65 nautical miles.`,
+            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884785/amti/j-15.png',
+            imageTwo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628883455/amti/white.png',
+            description: `Fighter aircraft launched from the carrier can operate and <span class="highlight--red">strike</span> from within the <span class="highlight--yellow">radar coverage</span> provided by the carrier group itself, but the sensing range is limited to approximately 65 nautical miles.`,
             location: {
                 center: [110.09, 5.30],
                 zoom: 4.5,
@@ -462,16 +414,8 @@ var config = {
                     opacity: 1
                 },
                 {
-                    layer: 'kcarriersensingrangetosurface',
-                    opacity: 0
-                },
-                {
                     layer: 'kcarriersensingrangetosurfacepg',
                     opacity: 1
-                },
-                {
-                    layer: 'xfighterstrikerangefromcarriersensing',
-                    opacity: 0
                 },
                 {
                     layer: 'xfighterstrikerangefromcarriersensingpg',
@@ -485,15 +429,7 @@ var config = {
                     opacity: 0
                 },
                 {
-                    layer: 'kcarriersensingrangetosurface',
-                    opacity: 0
-                },
-                {
                     layer: 'kcarriersensingrangetosurfacepg',
-                    opacity: 0
-                },
-                {
-                    layer: 'xfighterstrikerangefromcarriersensing',
                     opacity: 0
                 },
                 {
@@ -506,9 +442,9 @@ var config = {
             id: 'step11',
             title: '',
             subtitle: '',
-            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628603996/amti/KJ-500.jpg',
-            imageTwo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628703980/amti/GettyImages-951606006.jpg',
-            description: `A KJ-500, however, can operate safely within the defensive perimeter the carrier group’s missile coverage provides. This extends <span class="highlight--yellow">sensing range</span> out to 200 nautical miles, enabling J-15s to safely <span class="highlight--red">strike</span> up to 450 nautical miles from the carrier itself.`,
+            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884387/amti/yellow-air.png',
+            imageTwo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884785/amti/j-15.png',
+            description: `A KJ-500, however, can operate safely within the defensive perimeter the carrier group’s missile coverage provides. This extends <span class="highlight--yellow">sensing range out to 200 nautical miles</span>, enabling J-15s to safely <span class="highlight--red">strike up to 450 nautical miles</span> from the carrier itself.`,
             location: {
                 center: [108.09, 8.00],
                 zoom: 4.5,
@@ -521,16 +457,8 @@ var config = {
                     opacity: 1
                 },
                 {
-                    layer: 'mkj500sensingtosurfacefromcarriersambubble',
-                    opacity: 0
-                },
-                {
                     layer: 'mkj500sensingtosurfacefromsinglecarrierpg',
                     opacity: 1
-                },
-                {
-                    layer: 'ofighterweaponsrangefromsinglecarrierkj500',
-                    opacity: 0
                 },
                 {
                     layer: 'ofighterweaponsrangefromsinglecarrierkj500pg',
@@ -543,15 +471,7 @@ var config = {
                     opacity: 0
                 },
                 {
-                    layer: 'mkj500sensingtosurfacefromcarriersambubble',
-                    opacity: 0
-                },
-                {
                     layer: 'mkj500sensingtosurfacefromsinglecarrierpg',
-                    opacity: 0
-                },
-                {
-                    layer: 'ofighterweaponsrangefromsinglecarrierkj500',
                     opacity: 0
                 },
                 {
@@ -564,7 +484,7 @@ var config = {
             id: 'step12',
             title: 'Power Projection in the Region',
             subtitle: '',
-            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628603996/amti/KJ-500.jpg',
+            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884129/amti/yellow.png',
             description: `Large patrol aircraft like the KJ-500 can’t operate from China’s carriers. That means that carriers hoping to make use of the KJ-500’s enhanced sensing capabilities will need to stay within the <span class="highlight--yellow">KJ-500’s maximum effective range</span> from either the mainland or China’s South China Sea outposts.`,
             location: {
                 center: [110.00, 15.00],
@@ -577,18 +497,10 @@ var config = {
                     layer: 'new-kj-500-range-dw7r6z',
                     opacity: 1
                 },
-                {
-                    layer: 'ukj500operationalrangefromislandsandmainlandpg',
-                    opacity: 0
-                },
             ],
             onChapterExit: [
                 {
                     layer: 'new-kj-500-range-dw7r6z',
-                    opacity: 0
-                },
-                {
-                    layer: 'ukj500operationalrangefromislandsandmainlandpg',
                     opacity: 0
                 },
             ]
@@ -630,7 +542,7 @@ var config = {
             id: 'step14',
             title: '',
             subtitle: '',
-            image: '',
+            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628883455/amti/white.png',
             description: `China’s aircraft carrier can operate within this area while maintaining a safe, 400-nautical mile distance from divert airfields currently available for use.`,
             location: {
                 center: [112.09, 24.00],
@@ -655,7 +567,8 @@ var config = {
             id: 'step15',
             title: '',
             subtitle: '',
-            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628603996/amti/KJ-500.jpg',
+            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884129/amti/yellow.png',
+            imageTwo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628883455/amti/white.png',
             description: `With KJ-500 providing <span class="highlight--yellow">sensing coverage</span>, China’s carrier groups can enable fighter combat operations within this range…`,
             location: {
                 center: [112.09, 24.00],
@@ -688,7 +601,9 @@ var config = {
             id: 'step16',
             title: '',
             subtitle: '',
-            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628703980/amti/GettyImages-951606006.jpg',
+            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884785/amti/j-15.png',
+            imageTwo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884129/amti/yellow.png',
+            imageThree: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628883455/amti/white.png',
             description: `…and weapons launched from those aircraft could <span class="highlight--red">strike even further</span>.`,
             location: {
                 center: [112.09, 24.00],

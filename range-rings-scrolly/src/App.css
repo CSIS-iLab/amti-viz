@@ -137,6 +137,7 @@ body {
 }
 
 .content__wrapper {
+  position: relative;
   grid-area: content;
   padding: 0;
   font-size: 16px;
@@ -170,21 +171,11 @@ body {
   .content__wrapper:after  {
     content: "";
     display: block;
-    position: relative;
-    top: -175px;
-    right: -4px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
     border-right: 1px solid rgba(255, 255, 255, 0.3);
-    width: 100%;
-    height: 95%;
-  }
-}
-
-
-@media screen and (min-width: 1024px) {
-  .content__wrapper:after {
-    top: -185px;
-    right: -30px;
-    height: 90%;
   }
 }
 
@@ -264,9 +255,9 @@ li {
 }
 
 
-.image {
+/* .image {
   text-align: right;
-}
+} */
 
 #features {
   padding-top: 10vh;
@@ -445,10 +436,7 @@ h1 + h2 + p {
   font-size: 22px;
   letter-spacing: 0.03rem;
 }
-​
-.step h3 +img {
-  padding-top: 0.75rem;
-}
+
 ​
 p {
   font-size: 18px;
@@ -515,69 +503,23 @@ p {
 
 /* Image Styling */
 
-.image__container:after {
-  content: '';
-  display: block;
+.image__container {
   position: fixed;
-  top: 10rem;
-  left: 76rem;
-}
-
-.step.active:after {
-
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 1rem;
+  top: 1rem;
+  left: 0;
+  right: 0;
 }
 
 .step .image {
-  display: block;
-  top: 2rem;
-  width: 100%;
+  margin-right: 1rem;
   max-width: 200px;
-  height: 112px;
-  margin-left: auto;
-  position: fixed;
+  height: 150px;
   opacity: 0;
 }
 
-.step#step6.active .image--one {
-  border-bottom: 3px solid #00b39e;
+.step.active .image {
   opacity: 1;
-}
-
-.step#step3.active .image--one,
-.step#step8.active .image--one,
-.step#step16.active .image--one {
-  border-bottom: 3px solid #d14f23;
-  opacity: 1;
-}
-
-.step#step5.active .image--one,
-.step#step7.active .image--one,
-.step#step9.active .image--one,
-.step#step10.active .image--one,
-.step#step11.active .image--one,
-.step#step12.active .image--one,
-.step#step15.active .image--one {
-  border-bottom: 3px solid #EFAD2E;
-  opacity: 1;
-}
-
-.step#step11.active .image--two {
-  border-bottom: 3px solid #d14f23;
-  opacity: 1;
-}
-
-.step#step9.active .image--two {
-  border-bottom: 3px solid #00b39e;
-  opacity: 1;
-}
-
-.step .image--one {
-  left: 78rem;
-	width: 200px;
-}
-
-.step .image--two {
-  left: 64.5rem;
-  border-bottom: 3px solid #EFAD2E;
-	width: 100%;
 }
