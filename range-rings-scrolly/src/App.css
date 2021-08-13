@@ -523,3 +523,9 @@ p {
 .step.active .image {
   opacity: 1;
 }
+
+
+.circle {
+  margin-right: 4px;
+  filter: invert(43%) sepia(86%) saturate(740%) hue-rotate(132deg) brightness(100%) contrast(101%);
+}

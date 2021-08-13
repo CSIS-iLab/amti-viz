@@ -226,7 +226,7 @@ var config = {
             title: ``,
             subtitle: '',
             image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884548/amti/green.png',
-            description: `But the KJ-500 also has limitations on its operational range. Without any defensive capabilities of its own, it relies on external protection from island-based <span class="highlight--green">SAM</span> and <span class="highlight--green">anti-ship missiles</span>. Outside of missile coverage, the KJ-500 would be an easy target for enemy fighters or surface combatants.`,
+            description: `But the KJ-500 also has limitations on its operational range. Without any defensive capabilities of its own, it relies on external protection from island-based <img class="circle" src="/images/double-circle.svg" alt="circlular svg"><span class="highlight--green">SAM</span> and <img class="circle" src="/images/circle.svg" alt="circlular svg"><span class="highlight--green">anti-ship missiles</span>. Outside of missile coverage, the KJ-500 would be an easy target for enemy fighters or surface combatants.`,
             location: {
                 center: [110.09, 12.30],
                 zoom: 4.50,
