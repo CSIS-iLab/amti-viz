@@ -525,12 +525,13 @@ p {
 }
 
 
+
 .circle {
+  position: relative;
+  top: 2px;
   margin-right: 4px;
-  filter: invert(43%) sepia(86%) saturate(740%) hue-rotate(132deg) brightness(100%) contrast(101%);
 }
 
-.circle--yellow {
-  margin-right: 4px;
-  filter: invert(76%) sepia(9%) saturate(3378%) hue-rotate(354deg) brightness(95%) contrast(98%);
+.circle--green {
+  filter: invert(43%) sepia(86%) saturate(740%) hue-rotate(132deg) brightness(100%) contrast(101%);   
 }
