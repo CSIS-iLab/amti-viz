@@ -95,6 +95,22 @@ var config = {
             ]
         },
         {
+            id: 'stepEmpty',
+            title: '',
+            image: '',
+            description: ``,
+            location: {
+                center: [110.09, 16.30],
+                zoom: 4.00,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            onChapterEnter: [
+            ],
+            onChapterExit: [
+            ]
+        },
+        {
             id: 'step3',
             title: '',
             image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884785/amti/j-15.png',
@@ -110,7 +126,6 @@ var config = {
                 {
                     layer: 'achinascsrunwayislands',
                     opacity: 1,
-                    // duration: 100
                 },
                 {
                     layer: 'bfightermaxcombatrange',
