@@ -104,9 +104,7 @@ var config = {
                 // Has to be at a zoom level of 4 for island layer
                 zoom: 4.00,
                 pitch: 0.00,
-                bearing: 0.00,
-                mapAnimation: 'easeTo',
-                speed: 1
+                bearing: 0.00
             },
             onChapterEnter: [
                 {
@@ -145,7 +143,7 @@ var config = {
             image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884129/amti/yellow.png',
             description: `But in reality, combat aircraft are limited to operating within <span class="highlight--yellow">radar range</span>. Without external radar coverage, they have limited awareness of their surroundings and would be vulnerable to attack.`,
             location: {
-                center: [110.09, 14.30],
+                center: [110.09, 12.30],
                 zoom: 4.50,
                 pitch: 0.00,
                 bearing: 0.00,
@@ -184,7 +182,7 @@ var config = {
             description: `KJ-500 sensing aircraft launched from the islands have a wider sensing range than any radar facilities on the islands themselves. A KJ-500, shown here above Subi reef, can sense <img class="circle" src="images/double-circle.svg" alt="circlular svg"><span class="highlight--yellow">200 nautical miles to surface targets</span>, and up to <img class="circle" src="images/circle.svg" alt="circlular svg"><span class="highlight--yellow">388 nautical miles for high-flying targets at 25,000 feet</span>.`,
             legend: '',
             location: {
-                center: [110.09, 14.30],
+                center: [110.09, 12.30],
                 zoom: 4.50,
                 pitch: 0.00,
                 bearing: 0.00,
@@ -232,6 +230,9 @@ var config = {
                 zoom: 4.50,
                 pitch: 0.00,
                 bearing: 0.00,
+                mapAnimation: 'easeTo',
+                speed: 0.3,
+                curve: 1
             },
             onChapterEnter: [
                 {
@@ -273,6 +274,9 @@ var config = {
                 zoom: 4.50,
                 pitch: 0.00,
                 bearing: 0.00,
+                mapAnimation: 'easeTo',
+                speed: 0.3,
+                curve: 1
             },
             onChapterEnter: [
                 {
@@ -307,6 +311,9 @@ var config = {
                 zoom: 4.50,
                 pitch: 0.00,
                 bearing: 0.00,
+                mapAnimation: 'easeTo',
+                speed: 0.3,
+                curve: 1
             },
             onChapterEnter: [
                 {
@@ -344,10 +351,13 @@ var config = {
             image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884387/amti/yellow-air.png',
             description: `China’s aircraft carriers have the potential to enable combat aircraft to operate safely at much further ranges. A carrier group includes the carrier itself, bringing with it 24 to 32 J-15 fighters, but also a complement of guided-missile destroyers and frigates. This means the carrier group has its own sensing capabilities (to <img class="circle" src="images/double-circle.svg" alt="circlular svg"><span class="highlight--yellow">surface</span> and <img class="circle" src="images/circle.svg" alt="circlular svg"><span class="highlight--yellow">air</span>)... `,
             location: {
-                center: [110.09, 5.30],
+                center: [110.09, 8.30],
                 zoom: 4.5,
                 pitch: 0.00,
-                bearing: 0.00
+                bearing: 0.00,
+                mapAnimation: 'easeTo',
+                speed: 0.3,
+                curve: 1
             },
             onChapterEnter: [
                 {
@@ -386,10 +396,13 @@ var config = {
             imageTwo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884548/amti/green.png',
             description: `...and missile capabilities (to <img class="circle circle--green" src="images/circle.svg" alt="circlular svg"><span class="highlight--green">surface</span> and <img class="circle circle--green" src="images/double-circle.svg" alt="circlular svg"><span class="highlight--green">air</span>).`,
             location: {
-                center: [110.09, 5.30],
+                center: [110.09, 8.30],
                 zoom: 4.5,
                 pitch: 0.00,
-                bearing: 0.00
+                bearing: 0.00,
+                mapAnimation: 'easeTo',
+                speed: 0.3,
+                curve: 1
             },
             onChapterEnter: [
                 {
@@ -428,10 +441,13 @@ var config = {
             imageTwo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884387/amti/yellow-air.png',
             description: `Fighter aircraft launched from the carrier can operate and <span class="highlight--red">strike</span> from within the <span class="highlight--yellow">radar coverage</span> provided by the carrier group itself, but the sensing range is limited to approximately 65 nautical miles.`,
             location: {
-                center: [110.09, 5.30],
+                center: [110.09, 8.30],
                 zoom: 4.5,
                 pitch: 0.00,
-                bearing: 0.00
+                bearing: 0.00,
+                mapAnimation: 'easeTo',
+                speed: 0.3,
+                curve: 1
             },
             onChapterEnter: [
                 {
@@ -472,10 +488,13 @@ var config = {
             imageThree: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884129/amti/yellow.png',
             description: `A KJ-500, however, can operate safely within the defensive perimeter the carrier group’s missile coverage provides. This extends <span class="highlight--yellow">sensing range out to 200 nautical miles</span>, enabling J-15s to safely <span class="highlight--red">strike up to 450 nautical miles</span> from the carrier itself.`,
             location: {
-                center: [108.09, 8.00],
+                center: [110.09, 8.30],
                 zoom: 4.5,
                 pitch: 0.00,
-                bearing: 0.00
+                bearing: 0.00,
+                mapAnimation: 'easeTo',
+                speed: 0.3,
+                curve: 1
             },
             onChapterEnter: [
                 {
@@ -516,7 +535,10 @@ var config = {
                 center: [110.00, 15.00],
                 zoom: 3.5,
                 pitch: 0.00,
-                bearing: 0.00
+                bearing: 0.00,
+                mapAnimation: 'easeTo',
+                speed: 0.3,
+                curve: 1
             },
             onChapterEnter: [
                 {
@@ -541,7 +563,10 @@ var config = {
                 center: [105.00, 28.30],
                 zoom: 4,
                 pitch: 0.00,
-                bearing: 0.00
+                bearing: 0.00,
+                mapAnimation: 'easeTo',
+                speed: 0.3,
+                curve: 1
             },
             onChapterEnter: [
                 {
@@ -574,7 +599,10 @@ var config = {
                 center: [112.09, 24.00],
                 zoom: 3.5,
                 pitch: 0.00,
-                bearing: 0.00
+                bearing: 0.00,
+                mapAnimation: 'easeTo',
+                speed: 0.3,
+                curve: 1
             },
             onChapterEnter: [
                 {
@@ -600,7 +628,10 @@ var config = {
                 center: [112.09, 24.00],
                 zoom: 3.5,
                 pitch: 0.00,
-                bearing: 0.00
+                bearing: 0.00,
+                mapAnimation: 'easeTo',
+                speed: 0.3,
+                curve: 1
             },
             onChapterEnter: [
                 {
@@ -635,7 +666,10 @@ var config = {
                 center: [112.09, 24.00],
                 zoom: 3.5,
                 pitch: 0.00,
-                bearing: 0.00
+                bearing: 0.00,
+                mapAnimation: 'easeTo',
+                speed: 0.3,
+                curve: 1
             },
             onChapterEnter: [
                 {
