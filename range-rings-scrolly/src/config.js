@@ -198,7 +198,7 @@ var config = {
             legend: '',
             location: {
                 center: [110.09, 12.30],
-                zoom: 4.50,
+                zoom: 5.00,
                 pitch: 0.00,
                 bearing: 0.00,
                 mapAnimation: 'easeTo',
