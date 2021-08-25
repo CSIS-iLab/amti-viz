@@ -87,3 +87,7 @@ dialog a:hover {
 .leaflet-control-fullscreen {
   display: none;
 }
+
+.leaflet-top {
+  top: 0.5rem;
+}
