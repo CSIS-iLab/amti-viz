@@ -3,7 +3,7 @@ export async function china() {
     mapID: 'chinapower',
     center: [13.7237264, 110.6814572],
     fullscreen: true,
-    zoom: 4,
+    zoom: 5,
     maxZoom: 6,
     minZoom: 0,
     clusterDistance: 15,
