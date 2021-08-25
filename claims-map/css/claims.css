@@ -6,7 +6,7 @@ dialog #dialogContent,
 h1,
 h2,
 h3 {
-  font-family: 'PT Sans Narrow';
+  font-family: "PT Sans Narrow";
 }
 
 dialog a {
@@ -88,11 +88,14 @@ dialog a:hover {
 }
 
 #reset-btn {
-font-family: Open-Sans, sans-serif;
-font-size: 12px;
-padding: 3.75px;
-border-color: rgba(2, 57, 80, 0.5);
-border-radius: 4px;
-box-shadow: 0 0 4px rgba(0,0,0,.25);
-margin-bottom: 10px;
+  margin-top: 4px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+}
+
+.leaflet-control-fullscreen {
+  display: none;
+}
+
+.leaflet-top {
+  top: 0.5rem;
 }
