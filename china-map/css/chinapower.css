@@ -6,7 +6,7 @@ dialog #dialogContent,
 h1,
 h2,
 h3 {
-  font-family: 'PT Sans Narrow';
+  font-family: "PT Sans Narrow";
 }
 
 dialog a {
@@ -82,4 +82,8 @@ dialog a:hover {
   #dialogTitle {
     text-align: center;
   }
+}
+
+.leaflet-control-fullscreen {
+  display: none;
 }
