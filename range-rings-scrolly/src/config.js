@@ -365,7 +365,7 @@ var config = {
             id: 'step9a',
             title: 'Carrier Operations',
             subtitle: '',
-            image: '',
+            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1630002548/amti/carrier-green.png',
             description: `China’s aircraft carriers have the potential to enable combat aircraft to operate safely at much further ranges. A carrier group includes the carrier itself, 24 to 32 fighter aircraft, and an escort of guided-missile destroyers and frigates. The carrier group has its own <img class="circle circle--outer circle--green" src="images/circle-outer.svg" alt="circlular svg"><span class="highlight--green">anti-air</span> and <img class="circle circle--inner circle--green" src="images/circle-inner.svg" alt="circlular svg"><span class="highlight--green">anti-ship missiles</span>...`,
             location: {
                 center: [110.09, 8.30],
