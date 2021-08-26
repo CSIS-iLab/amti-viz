@@ -194,7 +194,7 @@ var config = {
             image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884129/amti/yellow.png',
             title: '',
             subtitle: '',
-            description: `KJ-500 sensing aircraft launched from the islands have a wider sensing range than any radar facilities on the islands themselves. A KJ-500, shown here above Subi reef, can sense <img class="circle" src="images/double-circle.svg" alt="circlular svg"><span class="highlight--yellow">200 nautical miles to surface targets</span>, and up to <img class="circle" src="images/circle.svg" alt="circlular svg"><span class="highlight--yellow">388 nautical miles for high-flying targets at 25,000 feet</span>.`,
+            description: `KJ-500 sensing aircraft launched from the islands have a wider sensing range than any radar facilities on the islands themselves. A KJ-500, shown here above Subi reef, can sense <img class="circle circle--inner" src="images/circle-inner.svg" alt="circlular svg" /><span class="highlight--yellow">200 nautical miles to surface targets</span>, and up to <img class="circle circle--outer" src="images/circle-outer.svg" alt="circlular svg" /><span class="highlight--yellow">388 nautical miles for high-flying targets at 25,000 feet</span>.`,
             legend: '',
             location: {
                 center: [110.09, 12.30],
@@ -239,7 +239,7 @@ var config = {
             title: ``,
             subtitle: '',
             image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884548/amti/green.png',
-            description: `But the KJ-500 also has limitations on its operational range. Without any defensive capabilities of its own, it relies on external protection from island-based <img class="circle circle--green" src="images/double-circle.svg" alt="circlular svg"><span class="highlight--green">SAM</span> and <img class="circle circle--green" src="images/circle.svg" alt="circlular svg"><span class="highlight--green">anti-ship missiles</span>. Outside of missile coverage, the KJ-500 would be an easy target for enemy fighters or surface combatants.`,
+            description: `But the KJ-500 also has limitations on its operational range. Without any defensive capabilities of its own, it relies on external protection from island-based <img class="circle circle--green circle-outer" src="images/circle-outer.svg" alt="circlular svg" /><span class="highlight--green">SAM</span> and <img class="circle circle--green circle--inner" src="images/circle-inner.svg" alt="circlular svg" /><span class="highlight--green">anti-ship missiles</span>. Outside of missile coverage, the KJ-500 would be an easy target for enemy fighters or surface combatants.`,
             location: {
                 center: [110.09, 12.30],
                 zoom: 4.50,
@@ -364,7 +364,7 @@ var config = {
             title: 'Carrier Integration',
             subtitle: '',
             image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884387/amti/yellow-air.png',
-            description: `China’s aircraft carriers have the potential to enable combat aircraft to operate safely at much further ranges. A carrier group includes the carrier itself, bringing with it 24 to 32 J-15 fighters, but also a complement of guided-missile destroyers and frigates. This means the carrier group has its own sensing capabilities (to <img class="circle" src="images/double-circle.svg" alt="circlular svg"><span class="highlight--yellow">surface</span> and <img class="circle" src="images/circle.svg" alt="circlular svg"><span class="highlight--yellow">air</span>)... `,
+            description: `China’s aircraft carriers have the potential to enable combat aircraft to operate safely at much further ranges. A carrier group includes the carrier itself, bringing with it 24 to 32 J-15 fighters, but also a complement of guided-missile destroyers and frigates. This means the carrier group has its own sensing capabilities (to <img class="circle" src="images/circle-outer.svg" alt="circlular svg"><span class="highlight--yellow">surface</span> and <img class="circle" src="images/circle-inner.svg" alt="circlular svg"><span class="highlight--yellow">air</span>)... `,
             location: {
                 center: [110.09, 8.30],
                 zoom: 4.5,
@@ -409,7 +409,7 @@ var config = {
             subtitle: '',
             image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628883455/amti/white.png',
             imageTwo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884548/amti/green.png',
-            description: `...and missile capabilities (to <img class="circle circle--green" src="images/circle.svg" alt="circlular svg"><span class="highlight--green">surface</span> and <img class="circle circle--green" src="images/double-circle.svg" alt="circlular svg"><span class="highlight--green">air</span>).`,
+            description: `...and missile capabilities (to <img class="circle circle--green" src="images/circle-inner.svg" alt="circlular svg"><span class="highlight--green">surface</span> and <img class="circle circle--green" src="images/circle-outer.svg" alt="circlular svg"><span class="highlight--green">air</span>).`,
             location: {
                 center: [110.09, 8.30],
                 zoom: 4.5,
