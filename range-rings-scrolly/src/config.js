@@ -10,7 +10,7 @@ var config = {
     logo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628110683/long.svg',
     footerTitle: '<a href="https://amti.csis.org/" alt="Asia Maritime Transparency Intiative website">Asia Maritime Transparency Initiative</a>',
     footersubTitle: 'Source: Data from | ',
-    footerContent: 'The Asia Maritime Transparency Initiative seeks to change this. AMTI was conceived of and designed by CSIS. It is an interactive, regularly-updated source for information, analysis, and policy exchange on maritime security issues in Asia.',
+    footerContent: 'We can just go with “The Asia Maritime Transparency Initiative was conceived of and designed by CSIS. It is an interactive, regularly-updated source for information, analysis, and policy exchange on maritime security issues in Asia. AMTI aims to promote transparency in the Indo-Pacific to dissuade assertive behavior and conflict and generate opportunities for cooperation and confidence building.',
     footerContentLink: 'Explore more Maps of the Asia Pacific',
     creditHeading: 'PHOTO CREDITS',
     creditItemOne: '<a href="https://www.gettyimages.com/detail/news-photo/this-photo-taken-on-april-14-2018-shows-a-j15-fighter-jet-news-photo/951606006?adppopup=true" alt="J-15 on Liaoning">J-15 on Liaoning</a>, Uploaded on April 14, 2018, AFP via Getty Images',
@@ -23,7 +23,7 @@ var config = {
         {
             id: 'stepintro',
             title: 'By Air, Land, and Sea: China’s Maritime Power Projection Network',
-            description: `China’s deployment of radar, anti-ship and surface-to-air missile platofrms, and combat aircraft to its outposts in the South China Sea have greatly expanded its ability to project power in waters far from its own coast.  This feature will illustrate how these three capabilities are fundamentally linked, and how China’s aircraft carriers can take advantage of them to comfortably conduct operations at greater distances.`,
+            description: `China’s deployment of radar, anti-ship and surface-to-air missile platforms, and combat aircraft to its outposts in the South China Sea have greatly expanded its ability to project power in waters far from its own coast.  This feature will illustrate how these three capabilities are fundamentally linked, and how China’s aircraft carriers can take advantage of them to comfortably conduct operations at greater distances.`,
             updated: 'Last Updated January 1, 2021',
             location: {
                 center: [111.09, 15.30],
@@ -66,7 +66,7 @@ var config = {
             title: '',
             subtitle: '',
             image: '',
-            description: `China has deployed substantial military assets to these islands, including HQ-9 surface-to-air (SAM) and YJ-12B anti-ship missiles, sensing and communications facilities, and hangars capable of housing military transport, patrol, and combat aircraft.`,
+            description: `China has deployed substantial military assets to these islands, including HQ-9 anti-air and YJ-12B anti-ship missiles, sensing and communications facilities, and hangars capable of housing military transport, patrol, and combat aircraft.`,
             location: {
                 center: [114.08, 10.925],
                 zoom: 14,
@@ -114,7 +114,7 @@ var config = {
             id: 'step3',
             title: '',
             image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884785/amti/j-15.png',
-            description: `The <span class="highlight--red">theoretical operational range</span> of J-15 strike-fighter aircraft from these islands is quite far.`,
+            description: `The <span class="highlight--red">operational range</span> of Chinese fighter aircraft such as the J-15 from these islands is, in theory, quite far.`,
             location: {
                 center: [110.09, 16.30],
                 // Has to be at a zoom level of 4 for island layer
@@ -156,7 +156,7 @@ var config = {
             title: '',
             subtitle: '',
             image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884129/amti/yellow.png',
-            description: `But in reality, combat aircraft are limited to operating within <span class="highlight--yellow">radar range</span>. Without external radar coverage, they have limited awareness of their surroundings and would be vulnerable to attack.`,
+            description: `But, in reality, combat aircraft can only effectively operate within <span class="highlight--yellow">the range of available radar and sensing platforms</span>. Without external radar coverage, they have limited awareness of their surroundings.`,
             location: {
                 center: [110.09, 12.30],
                 zoom: 4.50,
@@ -194,7 +194,7 @@ var config = {
             image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884129/amti/yellow.png',
             title: '',
             subtitle: '',
-            description: `KJ-500 sensing aircraft launched from the islands have a wider sensing range than any radar facilities on the islands themselves. A KJ-500, shown here above Subi reef, can sense <img class="circle circle--inner" src="images/circle-inner.svg" alt="circlular svg" /><span class="highlight--yellow">200 nautical miles to surface targets</span>, and up to <img class="circle circle--outer" src="images/circle-outer.svg" alt="circlular svg" /><span class="highlight--yellow">388 nautical miles for high-flying targets at 25,000 feet</span>.`,
+            description: `Airborne early warning and control (AEW&C) aircraft, like the KJ-500 known operate from the islands, provide greater radar coverage than any ground-based sensors. A KJ-500 shown here above Subi Reef, can sense <img class="circle circle--inner" src="images/circle-inner.svg" alt="circlular svg" /><span class="highlight--yellow"> surface targets at up to 200 nautical miles </span> and <img class="circle circle--outer" src="images/circle-outer.svg" alt="circlular svg" /><span class="highlight--yellow">high-flying targets at 25,000 feet at up to 388 nautical miles</span>.`,
             legend: '',
             location: {
                 center: [110.09, 12.30],
@@ -239,7 +239,7 @@ var config = {
             title: ``,
             subtitle: '',
             image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884548/amti/green.png',
-            description: `But the KJ-500 also has limitations on its operational range. Without any defensive capabilities of its own, it relies on external protection from island-based <img class="circle circle--green circle-outer" src="images/circle-outer.svg" alt="circlular svg" /><span class="highlight--green">SAM</span> and <img class="circle circle--green circle--inner" src="images/circle-inner.svg" alt="circlular svg" /><span class="highlight--green">anti-ship missiles</span>. Outside of missile coverage, the KJ-500 would be an easy target for enemy fighters or surface combatants.`,
+            description: `But AEW&C aircraft also have limitations on their operational range. Without any defensive capabilities of their own, they rely on external protection, such as that of ground-based <img class="circle circle--green circle-outer" src="images/circle-outer.svg" alt="circlular svg" /><span class="highlight--green">anti-air</span> and <img class="circle circle--green circle--inner" src="images/circle-inner.svg" alt="circlular svg" /><span class="highlight--green">anti-ship</span> missiles on China’s outposts. Outside of missile coverage, a KJ-500 would be an easy target for enemy fighters or surface combatants.`,
             location: {
                 center: [110.09, 12.30],
                 zoom: 4.50,
@@ -283,7 +283,7 @@ var config = {
             title: ``,
             subtitle: '',
             image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884129/amti/yellow.png',
-            description: `This is the KJ-500’s estimated <span class="highlight--yellow">sensing range to surface-level targets</span> while operating within both SAM and anti-ship missile coverage from the islands. Combat aircraft venturing beyond this range would be blind to surface threats and thus be incurring substantial risk.`,
+            description: `This is a KJ-500’s estimated <span class="highlight--yellow">radar range to surface-level targets</span> while operating within both anti-air and anti-ship missile coverage from the islands. Combat aircraft venturing beyond this range would be blind to surface threats and thus be incurring substantial risk.`,
             location: {
                 center: [110.09, 12.30],
                 zoom: 4.50,
@@ -320,7 +320,7 @@ var config = {
             subtitle: '',
             image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884785/amti/j-15.png',
             imageTwo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884129/amti/yellow.png',
-            description: `Fighters operating from within the <span class="highlight--yellow">KJ-500's sensing range</span> could <span class="highlight--red">strike targets within an additional radius of 250 nautical miles</span> with weapons such as an air-launched YJ-12 anti-ship cruise missile.`,
+            description: `Fighters operating from within the <span class="highlight--yellow">KJ-500’s radar range</span> could <span class="highlight--red">strike targets within an additional radius of 250 nautical miles</span> wwith weapons such as an air-launched YJ-12 anti-ship cruise missile. This range, 550 nautical miles from China’s island outposts, is the realistic strike range for combat aircraft operating from the bases without naval support.`,
             location: {
                 center: [110.09, 12.30],
                 zoom: 4.50,
@@ -361,10 +361,10 @@ var config = {
         },
         {
             id: 'step9a',
-            title: 'Carrier Integration',
+            title: 'Carrier Operations',
             subtitle: '',
             image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884387/amti/yellow-air.png',
-            description: `China’s aircraft carriers have the potential to enable combat aircraft to operate safely at much further ranges. A carrier group includes the carrier itself, bringing with it 24 to 32 J-15 fighters, but also a complement of guided-missile destroyers and frigates. This means the carrier group has its own sensing capabilities (to <img class="circle" src="images/circle-outer.svg" alt="circlular svg"><span class="highlight--yellow">surface</span> and <img class="circle" src="images/circle-inner.svg" alt="circlular svg"><span class="highlight--yellow">air</span>)... `,
+            description: `China’s aircraft carriers have the potential to enable combat aircraft to operate safely at much further ranges. A carrier group includes the carrier itself, 24 to 32 fighter aircraft, and an escort of guided-missile destroyers and frigates. The carrier group has its own <img class="circle circle--outer" src="images/circle-outer.svg" alt="circlular svg"><span class="highlight--yellow">anti-air</span> and <img class="circle circle--inner" src="images/circle-inner.svg" alt="circlular svg"><span class="highlight--yellow">anti-ship missiles</span>...`,
             location: {
                 center: [110.09, 8.30],
                 zoom: 4.5,
@@ -409,7 +409,7 @@ var config = {
             subtitle: '',
             image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628883455/amti/white.png',
             imageTwo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884548/amti/green.png',
-            description: `...and missile capabilities (to <img class="circle circle--green" src="images/circle-inner.svg" alt="circlular svg"><span class="highlight--green">surface</span> and <img class="circle circle--green" src="images/circle-outer.svg" alt="circlular svg"><span class="highlight--green">air</span>).`,
+            description: `…as well as radar that can detect <br/><img class="circle circle--inner circle--green" src="images/circle-inner.svg" alt="circlular svg"><span class="highlight--green">surface</span> and <img class="circle circle--outer circle--green" src="images/circle-outer.svg" alt="circlular svg"><span class="highlight--green">air targets</span>.`,
             location: {
                 center: [110.09, 8.30],
                 zoom: 4.5,
@@ -454,7 +454,7 @@ var config = {
             subtitle: '',
             image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884785/amti/j-15.png',
             imageTwo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884387/amti/yellow-air.png',
-            description: `Fighter aircraft launched from the carrier can operate and <span class="highlight--red">strike</span> from within the <span class="highlight--yellow">radar coverage</span> provided by the carrier group itself, but the sensing range is limited to approximately 65 nautical miles.`,
+            description: `A carrier group’s <span class="highlight--yellow">radar range</span> to surface targets is limited to approximately 65 nautical miles. This limits the strike range of combat aircraft launched from the carrier, which, without other support, can only safely operate within that radius.`,
             location: {
                 center: [110.09, 8.30],
                 zoom: 4.5,
@@ -501,7 +501,7 @@ var config = {
             image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628883455/amti/white.png',
             imageTwo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884785/amti/j-15.png',
             imageThree: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884129/amti/yellow.png',
-            description: `A KJ-500, however, can operate safely within the defensive perimeter the carrier group’s missile coverage provides. This extends <span class="highlight--yellow">sensing range out to 200 nautical miles</span>, enabling J-15s to safely <span class="highlight--red">strike up to 450 nautical miles</span> from the carrier itself.`,
+            description: `These ranges can be extended, however, by patrol aircraft operating within the defensive perimeter of the carrier group’s missiles. This extends the <span class="highlight--yellow">radar range out to 300 nautical miles</span>, enabling J-15s to <span class="highlight--red">strike up to 550 nautical miles</span> from the carrier group.`,
             location: {
                 center: [110.09, 8.30],
                 zoom: 4.5,
@@ -545,7 +545,7 @@ var config = {
             title: 'Power Projection in the Region',
             subtitle: '',
             image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884129/amti/yellow.png',
-            description: `Large patrol aircraft like the KJ-500 can’t operate from China’s carriers. That means that carriers hoping to make use of the KJ-500’s enhanced sensing capabilities will need to stay within the <span class="highlight--yellow">KJ-500’s maximum effective range</span> from either the mainland or China’s South China Sea outposts.`,
+            description: `Large patrol aircraft like the KJ-500 can’t launch from China’s existing aircraft carriers. In order to make use of a KJ-500’s sensing capabilities, carriers need to stay within the aircraft’s <span class="highlight--yellow"> maximum range </span>from Chinese runways on the mainland or in the South China Sea. `,
             location: {
                 center: [110.00, 15.00],
                 zoom: 3.5,
@@ -573,7 +573,7 @@ var config = {
             title: '',
             subtitle: ``,
             image: '',
-            description: `But a more restrictive geographic limitation on carrier operations lies in the desire to have a divert airfield nearby. If for any reason fighters in the air were unable to return to the carrier, they would find themselves at extreme risk without a divert airfield within range. The four runways in the Paracel and Spratly Islands serve as permanent, reliable airfields further from the Chinese mainland, but Chinese companies have been involved in a number of airport projects internationally that have been theorized to potentially allow future access.`,
+            description: `Another limitation on carrier operations is the need for divert airfields. To operate safely, combat aircraft need to have a divert airfield within range in case they are unable to return to the carrier for any reason. The only runways in the region to which Chinese combat aircraft can reliably divert are those on the Chinese mainland and on China’s island outposts.`,
             location: {
                 center: [105.00, 28.30],
                 zoom: 4,
@@ -638,7 +638,7 @@ var config = {
             subtitle: '',
             image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884129/amti/yellow.png',
             imageTwo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628883455/amti/white.png',
-            description: `With KJ-500 providing <span class="highlight--yellow">sensing coverage</span>, China’s carrier groups can enable fighter combat operations within this range…`,
+            description: `Carrier groups operating within that range can provide protection for ground-launched AEW&C aircraft. The <span class="highlight--yellow">radar range of those aircraft</span>, 700 nautical miles from either the Chinese mainland or China’s island outposts, is the effective range of China’s carrier-launched fighters.`,
             location: {
                 center: [112.09, 24.00],
                 zoom: 3.5,
@@ -676,7 +676,7 @@ var config = {
             image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884785/amti/j-15.png',
             imageTwo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884129/amti/yellow.png',
             imageThree: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628883455/amti/white.png',
-            description: `…and weapons launched from those aircraft could <span class="highlight--red">strike even further</span>.`,
+            description: `And weapons launched from those fighters could <span class="highlight--red">strike even further</span>, up to 950 nautical miles from Chinese airfields.`,
             location: {
                 center: [112.09, 24.00],
                 zoom: 3.5,
