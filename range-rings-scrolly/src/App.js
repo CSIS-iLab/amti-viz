@@ -152,8 +152,8 @@ class App extends Component {
                           <div>{config.creditHeading}</div>
                       }
                       <ul>
-                      {config.creditItemOne && config.creditItemTwo && config.creditItemThree && config.creditItemFour &&
-                          [config.creditItemOne, config.creditItemTwo, config.creditItemThree, config.creditItemFour].map((c, i) => {
+                      {config.creditItemOne && config.creditItemTwo && config.creditItemThree && config.creditItemFour && config.creditItemFive &&
+                          [config.creditItemOne, config.creditItemTwo, config.creditItemThree, config.creditItemFour, config.creditItemFive].map((c, i) => {
                               return <li index={i} dangerouslySetInnerHTML={createCreditMarkup(c)} />
                           })
                       }

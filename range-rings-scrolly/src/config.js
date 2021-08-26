@@ -17,6 +17,7 @@ var config = {
     creditItemTwo: '<a href="https://commons.wikimedia.org/wiki/File:KJ-500_(cropped).jpg" alt="image of a KJ-500">KJ-500</a>, October 17 2018, CC BY-SA 4.0 by Alert5',
     creditItemThree: '<a href="https://www.gettyimages.com/detail/news-photo/chinas-sole-aircraft-carrier-the-liaoning-arrives-in-hong-news-photo/810023414?adppopup=true" alt="Chinas aircraft carrier the Liaoning">Liaoning aircraft carrier arrives in Hong Kong waters</a>, July 7 2017,  Photo by Anthony Wallace/AFP via Getty Images',
     creditItemFour: '<a href="https://commons.wikimedia.org/wiki/File:Chinese_HQ-9_launcher.jpg" alt="HQ-9 SAM System Launch">HQ-9 SAM System Launch</a>, October 1 2009,  CC BY-NC-SA 2.0, eng.chinamil.com.cn / Photo by Jian Kang)',
+    creditItemFive: '<a href="https://commons.wikimedia.org/wiki/File:YJ-62A_Ground-to-Ship_Missile_20170919.jpg" alt="YJ-62A Ground to Ship Missile">YJ-62A Ground to Ship Missile</a>, September 19, 2017,  CC BY-NC-SA 2.0, eng.chinamil.com.cn / Photo by Tyg728)',
     footerLogo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628110683/long.svg',
     copyright: '©2021 The Asia Maritime Transparency Initiative and The Center for Strategic and International Studies | Privacy Policy',
     chapters: [
