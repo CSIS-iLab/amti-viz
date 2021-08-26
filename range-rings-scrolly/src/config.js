@@ -238,7 +238,8 @@ var config = {
             id: 'step6',
             title: ``,
             subtitle: '',
-            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884548/amti/green.png',
+            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1629999834/amti/YJ62A.png',
+            imageTwo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1629999834/amti/HQ-green.png',
             description: `But AEW&C aircraft also have limitations on their operational range. Without any defensive capabilities of their own, they rely on external protection, such as that of ground-based <img class="circle circle--green circle-outer" src="images/circle-outer.svg" alt="circlular svg" /><span class="highlight--green">anti-air</span> and <img class="circle circle--green circle--inner" src="images/circle-inner.svg" alt="circlular svg" /><span class="highlight--green">anti-ship</span> missiles on China’s outposts. Outside of missile coverage, a KJ-500 would be an easy target for enemy fighters or surface combatants.`,
             location: {
                 center: [110.09, 12.30],
@@ -363,8 +364,8 @@ var config = {
             id: 'step9a',
             title: 'Carrier Operations',
             subtitle: '',
-            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884387/amti/yellow-air.png',
-            description: `China’s aircraft carriers have the potential to enable combat aircraft to operate safely at much further ranges. A carrier group includes the carrier itself, 24 to 32 fighter aircraft, and an escort of guided-missile destroyers and frigates. The carrier group has its own <img class="circle circle--outer" src="images/circle-outer.svg" alt="circlular svg"><span class="highlight--yellow">anti-air</span> and <img class="circle circle--inner" src="images/circle-inner.svg" alt="circlular svg"><span class="highlight--yellow">anti-ship missiles</span>...`,
+            image: '',
+            description: `China’s aircraft carriers have the potential to enable combat aircraft to operate safely at much further ranges. A carrier group includes the carrier itself, 24 to 32 fighter aircraft, and an escort of guided-missile destroyers and frigates. The carrier group has its own <img class="circle circle--outer circle--green" src="images/circle-outer.svg" alt="circlular svg"><span class="highlight--green">anti-air</span> and <img class="circle circle--inner circle--green" src="images/circle-inner.svg" alt="circlular svg"><span class="highlight--green">anti-ship missiles</span>...`,
             location: {
                 center: [110.09, 8.30],
                 zoom: 4.5,
@@ -380,11 +381,11 @@ var config = {
                     opacity: 1
                 },
                 {
-                    layer: 'kcarriersensingrangetosurfacepg',
+                    layer: 'isamrangefromcarrierpg',
                     opacity: 1
                 },
                 {
-                    layer: 'vcarriersensingto25000feetpg',
+                    layer: 'jyj18asmrangefromcarrierpg',
                     opacity: 1
                 },
             ],
@@ -394,11 +395,11 @@ var config = {
                     opacity: 0
                 },
                 {
-                    layer: 'kcarriersensingrangetosurfacepg',
+                    layer: 'isamrangefromcarrierpg',
                     opacity: 0
                 },
                 {
-                    layer: 'vcarriersensingto25000feetpg',
+                    layer: 'jyj18asmrangefromcarrierpg',
                     opacity: 0
                 },
             ]
@@ -407,9 +408,8 @@ var config = {
             id: 'step9b',
             title: '',
             subtitle: '',
-            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628883455/amti/white.png',
-            imageTwo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884548/amti/green.png',
-            description: `…as well as radar that can detect <br/><img class="circle circle--inner circle--green" src="images/circle-inner.svg" alt="circlular svg"><span class="highlight--green">surface</span> and <img class="circle circle--outer circle--green" src="images/circle-outer.svg" alt="circlular svg"><span class="highlight--green">air targets</span>.`,
+            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1629999834/amti/aircraft-yellow.png',
+            description: `…as well as radar that can detect <br/><img class="circle circle--inner" src="images/circle-inner.svg" alt="circlular svg"><span class="highlight--yellow">surface</span> and <img class="circle circle--outer" src="images/circle-outer.svg" alt="circlular svg"><span class="highlight--yellow">air targets</span>.`,
             location: {
                 center: [110.09, 8.30],
                 zoom: 4.5,
@@ -425,11 +425,11 @@ var config = {
                     opacity: 1
                 },
                 {
-                    layer: 'isamrangefromcarrierpg',
+                    layer: 'kcarriersensingrangetosurfacepg',
                     opacity: 1
                 },
                 {
-                    layer: 'jyj18asmrangefromcarrierpg',
+                    layer: 'vcarriersensingto25000feetpg',
                     opacity: 1
                 },
             ],
@@ -439,11 +439,11 @@ var config = {
                     opacity: 0
                 },
                 {
-                    layer: 'isamrangefromcarrierpg',
+                    layer: 'kcarriersensingrangetosurfacepg',
                     opacity: 0
                 },
                 {
-                    layer: 'jyj18asmrangefromcarrierpg',
+                    layer: 'vcarriersensingto25000feetpg',
                     opacity: 0
                 },
             ]
@@ -452,8 +452,8 @@ var config = {
             id: 'step10',
             title: '',
             subtitle: '',
-            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884785/amti/j-15.png',
-            imageTwo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884387/amti/yellow-air.png',
+            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1629999834/amti/aircraft-yellow.png',
+            imageTwo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884785/amti/j-15.png',
             description: `A carrier group’s <span class="highlight--yellow">radar range</span> to surface targets is limited to approximately 65 nautical miles. This limits the strike range of combat aircraft launched from the carrier, which, without other support, can only safely operate within that radius.`,
             location: {
                 center: [110.09, 8.30],
@@ -498,9 +498,8 @@ var config = {
             id: 'step11',
             title: '',
             subtitle: '',
-            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628883455/amti/white.png',
-            imageTwo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884785/amti/j-15.png',
-            imageThree: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884129/amti/yellow.png',
+            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884785/amti/j-15.png',
+            imageTwo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884129/amti/yellow.png',
             description: `These ranges can be extended, however, by patrol aircraft operating within the defensive perimeter of the carrier group’s missiles. This extends the <span class="highlight--yellow">radar range out to 300 nautical miles</span>, enabling J-15s to <span class="highlight--red">strike up to 550 nautical miles</span> from the carrier group.`,
             location: {
                 center: [110.09, 8.30],
@@ -547,8 +546,8 @@ var config = {
             image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884129/amti/yellow.png',
             description: `Large patrol aircraft like the KJ-500 can’t launch from China’s existing aircraft carriers. In order to make use of a KJ-500’s sensing capabilities, carriers need to stay within the aircraft’s <span class="highlight--yellow"> maximum range </span>from Chinese runways on the mainland or in the South China Sea. `,
             location: {
-                center: [110.00, 15.00],
-                zoom: 3.5,
+                center: [120.00, 18.00],
+                zoom: 3,
                 pitch: 0.00,
                 bearing: 0.00,
                 mapAnimation: 'easeTo',
@@ -608,7 +607,7 @@ var config = {
             id: 'step14',
             title: '',
             subtitle: '',
-            image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628883455/amti/white.png',
+            image: '',
             description: `China’s aircraft carriers can operate within this area while maintaining a safe, 400-nautical mile distance from divert airfields currently available for use.`,
             location: {
                 center: [112.09, 24.00],
@@ -637,7 +636,7 @@ var config = {
             title: '',
             subtitle: '',
             image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884129/amti/yellow.png',
-            imageTwo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628883455/amti/white.png',
+            imageTwo: '',
             description: `Carrier groups operating within that range can provide protection for ground-launched AEW&C aircraft. The <span class="highlight--yellow">radar range of those aircraft</span>, 700 nautical miles from either the Chinese mainland or China’s island outposts, is the effective range of China’s carrier-launched fighters.`,
             location: {
                 center: [112.09, 24.00],
@@ -675,7 +674,7 @@ var config = {
             subtitle: '',
             image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884785/amti/j-15.png',
             imageTwo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884129/amti/yellow.png',
-            imageThree: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628883455/amti/white.png',
+            imageThree: '',
             description: `And weapons launched from those fighters could <span class="highlight--red">strike even further</span>, up to 950 nautical miles from Chinese airfields.`,
             location: {
                 center: [112.09, 24.00],

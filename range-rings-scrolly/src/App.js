@@ -137,17 +137,17 @@ class App extends Component {
                 </div>
                 <div id="footer" className={theme}>
                       {config.footerTitle &&
-                          <h2 class="footer__title" dangerouslySetInnerHTML={createTitleMarkup(config.footerTitle)} />
+                          <h2 className="footer__title" dangerouslySetInnerHTML={createTitleMarkup(config.footerTitle)} />
                       }
-                      <div class="content__wrapper">
+                      <div className="content__wrapper">
                       {config.footerContent &&
-                          <p class="footer__content" >{config.footerContent}</p>
+                          <p className="footer__content" >{config.footerContent}</p>
                       }
                       {config.footerContentLink && 
-                          <a href="https://amti.csis.org/maps/" alt="Asia Maritime Transparency Initiative maps site" class="content__link content-link">{config.footerContentLink}</a>
+                          <a href="https://amti.csis.org/maps/" alt="Asia Maritime Transparency Initiative maps site" className="content__link content-link">{config.footerContentLink}</a>
                       }
                       </div>
-                      <div class="credits__container">
+                      <div className="credits__container">
                       {config.creditHeading && 
                           <div>{config.creditHeading}</div>
                       }
@@ -164,7 +164,7 @@ class App extends Component {
                           </a>
                       }
                       {config.copyright &&
-                          <p class="footer__copyright copyright">{config.copyright}</p>
+                          <p className="footer__copyright copyright">{config.copyright}</p>
                       }
                   </div>
               </div>
@@ -183,15 +183,15 @@ function Chapter({ id, theme, image, imageTwo, imageThree, title, description, l
     return (
         <div id={id} className={classList}>
             <div className={theme}>
-              <div class="image__container">
+              <div className="image__container">
                 {image &&
-                <img class="image image--one" src={image} alt={title}></img>
+                <img className="image image--one" src={image} alt={title}></img>
                   }
                 {imageTwo &&
-                <img class="image image--two" src={imageTwo} alt={title}></img>
+                <img className="image image--two" src={imageTwo} alt={title}></img>
                   }
                     {imageThree &&
-                <img class="image image--three" src={imageThree} alt={title}></img>
+                <img className="image image--three" src={imageThree} alt={title}></img>
                   }
               </div>
                 {title &&
@@ -208,7 +208,7 @@ function Chapter({ id, theme, image, imageTwo, imageThree, title, description, l
                       <p>{legend}</p>
                     }
                     {updated &&
-                      <p class="updated">{updated}</p>
+                      <p className="updated">{updated}</p>
                     }
                 </div>
             </div>
