@@ -533,11 +533,11 @@ p {
 
 .circle--inner {
   top: 2px;
-  opacity: 0.6;
+  opacity: 1;
 }
 
 .circle--outer {
-  opacity: 1;
+  opacity: 0.6;
 }
 
 .circle--green {
