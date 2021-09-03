@@ -7,6 +7,8 @@ import mapboxgl from 'mapbox-gl'
 import { polyfill } from 'es6-promise'
 polyfill()
 import { fetch as fetchPolyfill } from 'whatwg-fetch'
+import * as d3Fetch from 'd3-fetch'
+
 
 import './scss/main.scss'
 
@@ -15,22 +17,37 @@ const spreadsheetID = '1gLJo_Bniuy1RoMJCxO_Bj0pOCLLC12mkrCg67m1QTcY'
 window.useLeaflet =
   /*@cc_on!@*/ false || !!document.documentMode || !mapboxgl.supported()
 
-let chapterURL =
-  'https://spreadsheets.google.com/feeds/list/' +
-  spreadsheetID +
-  '/2/public/values?alt=json'
 
-if (window.useLeaflet) {
-  chapterURL =
-    'https://spreadsheets.google.com/feeds/list/' +
-    spreadsheetID +
-    '/4/public/values?alt=json'
-} else {
-  chapterURL =
-    'https://spreadsheets.google.com/feeds/list/' +
-    spreadsheetID +
-    '/3/public/values?alt=json'
-}
+
+  const chaptersPorts = d3Fetch.csv('./data/chapter-ports-2.csv')
+  const chaptersWebgl = d3Fetch.csv('./data/chapters-webgl-3.csv')
+  const chaptersLeaflet = d3Fetch.csv('./data/chapters-leaflet-4.csv')
+
+//   const queryString = window.location.search;
+// const urlParams = new URLSearchParams(queryString);
+// window.lang = urlParams.get('lang') ? urlParams.get('lang') : 'en'
+// console.log(urlParams.get('lang'));
+
+
+
+
+
+// let chapterURL =
+//   'https://spreadsheets.google.com/feeds/list/' +
+//   spreadsheetID +
+//   '/2/public/values?alt=json'
+
+// if (window.useLeaflet) {
+//   chapterURL =
+//     'https://spreadsheets.google.com/feeds/list/' +
+//     spreadsheetID +
+//     '/4/public/values?alt=json'
+// } else {
+//   chapterURL =
+//     'https://spreadsheets.google.com/feeds/list/' +
+//     spreadsheetID +
+//     '/3/public/values?alt=json'
+// }
 
 const container = document.getElementById('scrolly-island-interactive')
 
@@ -54,15 +71,21 @@ const init = () => {
     return
   }
 
-  fetchPolyfill(chapterURL)
-    .then(function(response) {
-      return response.json()
-    })
-    .then(function(json) {
-      window.isMobile = window.innerWidth < 1040
-      window.stepActions = parseChapterData(json.feed.entry)
 
-      countryColors = window.stepActions
+let dataset = Promise.all([chaptersLeaflet, chaptersWebgl, chaptersPorts]).then(res => {
+  const [dataLeaflet, dataWebgl, dataPorts] = res
+
+  let chapterData = dataWebgl
+  console.log(chapterData)
+
+  if (window.useLeaflet) {
+    chapterData = dataLeaflet
+  }
+
+  window.isMobile = window.innerWidth < 1040
+  window.stepActions = parseChapterData(chapterData)
+
+  countryColors = window.stepActions
         .filter(c => !(exclude.indexOf(c.name) > -1))
         .map(c => [c.name, c.color])
         .reduce((a, b) => a.concat(b))
@@ -71,36 +94,88 @@ const init = () => {
         .concat(countryColors)
         .concat(['#e06b91'])
 
-      return json
-    })
-    .then(function(ex) {
-      let values = Object.keys(window.stepActions).map(function(key) {
-        return window.stepActions[key]
+        
+
+
+  // console.log(window.stepActions)
+    return {dataLeaflet, dataWebgl, dataPorts}
+  }).then(function(ex) {
+    console.log(ex)
+        let values = Object.keys(window.stepActions).map(function(key) {
+          return window.stepActions[key]
+        })
+  // console.log(window.stepActions)
+        interactiveSetup({
+          container: container,
+          initialDesc: `${
+            window.stepActions[0]
+              ? `${window.stepActions[0][`text${window.lang}`]}`
+              : ``
+          }`,
+          steps: values
+        })
+  
+        Scrolling({ stepActions: window.stepActions })
+  
+        if (window.useLeaflet) {
+          makeLLMap()
+        } else {
+          makeGLMap(ex.dataPorts)
+        }
+        window.addEventListener('resize', resize)
+        return ex
+      })
+      .catch(function(ex) {
+        console.log('i parsing failed', ex)
       })
 
-      interactiveSetup({
-        container: container,
-        initialDesc: `${
-          window.stepActions[0]
-            ? `${window.stepActions[0][`text${window.lang}`]}`
-            : ``
-        }`,
-        steps: values
-      })
+  // fetchPolyfill(chapterURL)
+  //   .then(function(response) {
+  //     return response.json()
+  //   })
+  //   .then(function(json) {
+  //     // window.isMobile = window.innerWidth < 1040
+  //     // window.stepActions = parseChapterData(json.feed.entry)
 
-      Scrolling({ stepActions: window.stepActions })
+  //     // countryColors = window.stepActions
+  //     //   .filter(c => !(exclude.indexOf(c.name) > -1))
+  //     //   .map(c => [c.name, c.color])
+  //     //   .reduce((a, b) => a.concat(b))
 
-      if (window.useLeaflet) {
-        makeLLMap()
-      } else {
-        makeGLMap()
-      }
-      window.addEventListener('resize', resize)
-      return ex
-    })
-    .catch(function(ex) {
-      console.log('i parsing failed', ex)
-    })
+  //     // paintMap = ['match', ['get', 'country']]
+  //     //   .concat(countryColors)
+  //     //   .concat(['#e06b91'])
+
+  //     return json
+  //   })
+  //   .then(function(ex) {
+  //     let values = Object.keys(window.stepActions).map(function(key) {
+  //       return window.stepActions[key]
+  //     })
+
+  //     interactiveSetup({
+  //       container: container,
+  //       initialDesc: `${
+  //         window.stepActions[0]
+  //           ? `${window.stepActions[0][`text${window.lang}`]}`
+  //           : ``
+  //       }`,
+  //       steps: values
+  //     })
+
+  //     Scrolling({ stepActions: window.stepActions })
+
+  //     if (window.useLeaflet) {
+  //       makeLLMap()
+  //     } else {
+  //       makeGLMap()
+  //     }
+  //     window.addEventListener('resize', resize)
+  //     return ex
+  //   })
+  //   .catch(function(ex) {
+  //     console.log('i parsing failed', ex)
+  //   })
 }
 
 init()
@@ -109,17 +184,10 @@ const resize = () => {
   window.stepActions[currentStep].fly()
 }
 
-const parseChapterData = rawData => {
-  let d = rawData.map(r => {
-    let row = r
-    let chapterData = {}
-    Object.keys(row).forEach((c, i) => {
-      let column = c
-      if (column.indexOf('gsx$') > -1) {
-        let columnName = column.replace('gsx$', '')
-        chapterData[columnName] = row[column]['$t']
-      }
-    })
+const parseChapterData = (rawData) => {
+  let d = rawData.map(item => {
+
+    let chapterData = {name: item.name}
 
     let latKey, lngKey
 
@@ -129,27 +197,28 @@ const parseChapterData = rawData => {
     } else {
       latKey = 'mobile-latitude'
       lngKey = 'mobile-longitude'
-      chapterData.zoom = chapterData['mobile-zoom']
+      chapterData.zoom = item['mobile-zoom']
     }
 
-    chapterData.lng =
-      parseFloat(chapterData[lngKey]) < 0 && window.useLeaflet
-        ? 360 + parseFloat(chapterData[lngKey])
-        : parseFloat(chapterData[lngKey])
 
-    chapterData.lat = parseFloat(chapterData[latKey])
+    chapterData.lng =
+      parseFloat(item[lngKey]) < 0 && window.useLeaflet
+        ? 360 + parseFloat(item[lngKey])
+        : parseFloat(item[lngKey])
+
+    chapterData.lat = parseFloat(item[latKey])
 
     chapterData.center = [chapterData.lng, chapterData.lat]
 
     chapterData.text = `<h3 class="title">${
-      chapterData[`title${window.lang}`]
+      item[`title_${window.lang}`]
     }</h3>
-<p class="story">${chapterData[`text${window.lang}`]}</p>`
+<p class="story">${item[`text_${window.lang}`]}</p>`
 
     chapterData.fly = () => {
       fly(chapterData)
 
-      window.nation = chapterData.name
+      window.nation = item.name
 
       if (window.useLeaflet) {
         highlightLLChapter(chapterData)
@@ -161,7 +230,7 @@ const parseChapterData = rawData => {
         }
       }
     }
-
+    console.log(chapterData)
     return chapterData
   })
   return d
@@ -186,6 +255,7 @@ const setLLPopup = chapterData => {
 
 const setGLPopup = chapterData => {
   let chapterName = chapterData.name
+
 
   let features = window.map.getSource('interests')._data.features
 
