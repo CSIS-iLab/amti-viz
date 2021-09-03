@@ -17,37 +17,9 @@ const spreadsheetID = '1gLJo_Bniuy1RoMJCxO_Bj0pOCLLC12mkrCg67m1QTcY'
 window.useLeaflet =
   /*@cc_on!@*/ false || !!document.documentMode || !mapboxgl.supported()
 
-
-
   const chaptersPorts = d3Fetch.csv('./data/chapter-ports-2.csv')
   const chaptersWebgl = d3Fetch.csv('./data/chapters-webgl-3.csv')
   const chaptersLeaflet = d3Fetch.csv('./data/chapters-leaflet-4.csv')
-
-//   const queryString = window.location.search;
-// const urlParams = new URLSearchParams(queryString);
-// window.lang = urlParams.get('lang') ? urlParams.get('lang') : 'en'
-// console.log(urlParams.get('lang'));
-
-
-
-
-
-// let chapterURL =
-//   'https://spreadsheets.google.com/feeds/list/' +
-//   spreadsheetID +
-//   '/2/public/values?alt=json'
-
-// if (window.useLeaflet) {
-//   chapterURL =
-//     'https://spreadsheets.google.com/feeds/list/' +
-//     spreadsheetID +
-//     '/4/public/values?alt=json'
-// } else {
-//   chapterURL =
-//     'https://spreadsheets.google.com/feeds/list/' +
-//     spreadsheetID +
-//     '/3/public/values?alt=json'
-// }
 
 const container = document.getElementById('scrolly-island-interactive')
 
@@ -109,7 +81,7 @@ let dataset = Promise.all([chaptersLeaflet, chaptersWebgl, chaptersPorts]).then(
           container: container,
           initialDesc: `${
             window.stepActions[0]
-              ? `${window.stepActions[0][`text${window.lang}`]}`
+              ? `${window.stepActions[0][`text_${window.lang}`]}`
               : ``
           }`,
           steps: values
@@ -118,7 +90,7 @@ let dataset = Promise.all([chaptersLeaflet, chaptersWebgl, chaptersPorts]).then(
         Scrolling({ stepActions: window.stepActions })
   
         if (window.useLeaflet) {
-          makeLLMap()
+          makeLLMap(ex.dataWebgl)
         } else {
           makeGLMap(ex.dataPorts)
         }
@@ -187,7 +159,9 @@ const resize = () => {
 const parseChapterData = (rawData) => {
   let d = rawData.map(item => {
 
-    let chapterData = {name: item.name}
+    let chapterData = {name: item.name }
+
+    // color: window.stepActions.chapterData ? transparent : '#e06b91'
 
     let latKey, lngKey
 
@@ -222,7 +196,7 @@ const parseChapterData = (rawData) => {
 
       if (window.useLeaflet) {
         highlightLLChapter(chapterData)
-        // setLLPopup(chapterData)
+        setLLPopup(chapterData)
       } else {
         if (window.map.getSource('United States_clusters')) {
           highlightGLChapter(chapterData)
@@ -230,7 +204,7 @@ const parseChapterData = (rawData) => {
         }
       }
     }
-    console.log(chapterData)
+    // console.log(chapterData)
     return chapterData
   })
   return d
@@ -266,8 +240,8 @@ const setGLPopup = chapterData => {
   if (feature) {
     let properties = feature.properties
     let allowedHeaders = [
-      `port-or-base${window.lang}`,
-      `description${window.lang}`
+      `port-or-base_${window.lang}`,
+      `description_${window.lang}`
     ]
 
     let description = Object.keys(properties)
@@ -305,10 +279,10 @@ const fly = chapterData => {
 
 const chapterColors = {
   'United States': `#6688b9`,
-  France: `#f89c74`,
+  'France': `#f89c74`,
   'New Zealand': `#00ad3b`,
-  Australia: `#f6cf71`,
-  China: '#e06b91'
+  'Australia': `#f6cf71`,
+  'China': '#e06b91'
 }
 
 const highlightLLChapter = chapterData => {
@@ -343,11 +317,13 @@ const highlightLLChapter = chapterData => {
 }
 
 const highlightGLChapter = chapterData => {
+ 
   let chapterName =
     chapterData.name.indexOf('-') > -1
       ? chapterData.name.substring(0, chapterData.name.indexOf('-'))
       : chapterData.name
-
+ 
+      console.log(window.stepActions.find(c => c.name === chapterName))
   if (!(exclude.indexOf(chapterName) > -1)) {
     let newFillMap = !(chapterName.indexOf('China') > -1)
       ? [
@@ -363,13 +339,14 @@ const highlightGLChapter = chapterData => {
       ? ['match', ['get', 'country'], `${chapterName}`, '#fff', 'transparent']
       : ['match', ['get', 'chinese-involvement'], '', 'transparent', '#fff']
 
+    
     nations.forEach(nation => {
       if (nation === chapterName && nations.indexOf(chapterName) > -1) {
-        window.map.setPaintProperty(
-          `${nation}_clusters`,
-          'circle-color',
-          newFillMap
-        )
+        // window.map.setPaintProperty(
+        //   `${nation}_clusters`,
+        //   'circle-color',
+        //   newFillMap
+        // )
 
         window.map.setPaintProperty(
           `${nation}_clusters`,

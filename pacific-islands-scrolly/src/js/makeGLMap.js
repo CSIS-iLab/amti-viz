@@ -14,7 +14,7 @@ let map,
   spiderifier,
   exclude = ['Introduction', 'Conclusion'],
   nations = ['United States', 'Australia', 'New Zealand', 'France', 'China'],
-  allowedContent = [`port-or-base${window.lang}`, `description${window.lang}`]
+  allowedContent = [`port-or-base_${window.lang}`, `description_${window.lang}`]
 
 const chapterColors = {
   'United States': `#6688b9`,
