@@ -20,7 +20,7 @@ window.useLeaflet =
   let dataDir = '/data'
 
   if (window.location.href.indexOf('localhost') != -1) {
-    dataDir = '../features/pacific-islands-scrolly'
+    dataDir = '../pacific-islands-scrolly/dist/data'
   }
 
   console.log(window.location.href.indexOf('amti') != -1)
