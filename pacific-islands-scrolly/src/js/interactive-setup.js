@@ -2,8 +2,10 @@ var url =
   window.location != window.parent.location
     ? document.referrer
     : document.location.href
-var href = /lang=([^&]+)/.exec(url)
-window.lang = href ? href[1].split('#')[0] : 'en'
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+window.lang = urlParams.get('lang') ? urlParams.get('lang') : 'en'
 
 let i = 0
 

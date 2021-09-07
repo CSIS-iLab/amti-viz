@@ -14,7 +14,7 @@ let map,
   spiderifier,
   exclude = ['Introduction', 'Conclusion'],
   nations = ['United States', 'Australia', 'New Zealand', 'France', 'China'],
-  allowedContent = [`port-or-base${window.lang}`, `description${window.lang}`]
+  allowedContent = [`port-or-base_${window.lang}`, `description_${window.lang}`]
 
 const chapterColors = {
   'United States': `#6688b9`,
@@ -24,24 +24,10 @@ const chapterColors = {
   China: `#e06b91`
 }
 
-const spreadsheetID = '1gLJo_Bniuy1RoMJCxO_Bj0pOCLLC12mkrCg67m1QTcY'
-
-const islandURL =
-  'https://spreadsheets.google.com/feeds/list/' +
-  spreadsheetID +
-  '/2/public/values?alt=json'
-
-const makeMap = () => {
-  //
+const makeMap = (dataPorts) => {
   window.map.on('load', function() {
-    fetch(islandURL)
-      .then(function(response) {
-        return response.json()
-      })
-      .then(json => {
-        interestsData = parseInterestsData(json.feed.entry)
-        initIslands()
-      })
+    interestsData = parseInterestsData(dataPorts)
+    initIslands()
   })
 
   return map
@@ -300,17 +286,7 @@ const clickInterests = e => {
 }
 
 function parseInterestsData(rawData) {
-  let featureData = rawData.map(r => {
-    let row = r
-    let islandData = {}
-    Object.keys(row).forEach(c => {
-      let column = c
-      if (column.includes('gsx$')) {
-        let columnName = column.replace('gsx$', '')
-        islandData[columnName] = row[column]['$t']
-      }
-    })
-
+  let featureData = rawData.map(islandData => {
     let islandDataSansCoordinates = Object.assign({}, islandData)
     delete islandDataSansCoordinates.latitude
     delete islandDataSansCoordinates.longitude

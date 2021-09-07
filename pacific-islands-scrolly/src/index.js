@@ -7,6 +7,8 @@ import mapboxgl from 'mapbox-gl'
 import { polyfill } from 'es6-promise'
 polyfill()
 import { fetch as fetchPolyfill } from 'whatwg-fetch'
+import * as d3Fetch from 'd3-fetch'
+
 
 import './scss/main.scss'
 
@@ -15,22 +17,9 @@ const spreadsheetID = '1gLJo_Bniuy1RoMJCxO_Bj0pOCLLC12mkrCg67m1QTcY'
 window.useLeaflet =
   /*@cc_on!@*/ false || !!document.documentMode || !mapboxgl.supported()
 
-let chapterURL =
-  'https://spreadsheets.google.com/feeds/list/' +
-  spreadsheetID +
-  '/2/public/values?alt=json'
-
-if (window.useLeaflet) {
-  chapterURL =
-    'https://spreadsheets.google.com/feeds/list/' +
-    spreadsheetID +
-    '/4/public/values?alt=json'
-} else {
-  chapterURL =
-    'https://spreadsheets.google.com/feeds/list/' +
-    spreadsheetID +
-    '/3/public/values?alt=json'
-}
+  const chaptersPorts = d3Fetch.csv('./data/chapter-ports-2.csv')
+  const chaptersWebgl = d3Fetch.csv('./data/chapters-webgl-3.csv')
+  const chaptersLeaflet = d3Fetch.csv('./data/chapters-leaflet-4.csv')
 
 const container = document.getElementById('scrolly-island-interactive')
 
@@ -54,53 +43,56 @@ const init = () => {
     return
   }
 
-  fetchPolyfill(chapterURL)
-    .then(function(response) {
-      return response.json()
-    })
-    .then(function(json) {
-      window.isMobile = window.innerWidth < 1040
-      window.stepActions = parseChapterData(json.feed.entry)
 
-      countryColors = window.stepActions
+let dataset = Promise.all([chaptersLeaflet, chaptersWebgl, chaptersPorts]).then(res => {
+  const [dataLeaflet, dataWebgl, dataPorts] = res
+
+  let chapterData = dataWebgl
+
+  if (window.useLeaflet) {
+    chapterData = dataLeaflet
+  }
+
+  window.isMobile = window.innerWidth < 1040
+  window.stepActions = parseChapterData(chapterData)
+
+  countryColors = window.stepActions
         .filter(c => !(exclude.indexOf(c.name) > -1))
         .map(c => [c.name, c.color])
         .reduce((a, b) => a.concat(b))
 
-      paintMap = ['match', ['get', 'country']]
-        .concat(countryColors)
-        .concat(['#e06b91'])
+  paintMap = ['match', ['get', 'country']]
+    .concat(countryColors)
+    .concat(['#e06b91'])
 
-      return json
+    return {dataLeaflet, dataWebgl, dataPorts}
+  }).then(function(ex) {
+    let values = Object.keys(window.stepActions).map(function(key) {
+      return window.stepActions[key]
     })
-    .then(function(ex) {
-      let values = Object.keys(window.stepActions).map(function(key) {
-        return window.stepActions[key]
-      })
+  interactiveSetup({
+    container: container,
+    initialDesc: `${
+      window.stepActions[0]
+        ? `${window.stepActions[0][`text_${window.lang}`]}`
+        : ``
+    }`,
+    steps: values
+  })
 
-      interactiveSetup({
-        container: container,
-        initialDesc: `${
-          window.stepActions[0]
-            ? `${window.stepActions[0][`text${window.lang}`]}`
-            : ``
-        }`,
-        steps: values
-      })
+    Scrolling({ stepActions: window.stepActions })
 
-      Scrolling({ stepActions: window.stepActions })
-
-      if (window.useLeaflet) {
-        makeLLMap()
-      } else {
-        makeGLMap()
-      }
-      window.addEventListener('resize', resize)
-      return ex
-    })
-    .catch(function(ex) {
-      console.log('i parsing failed', ex)
-    })
+    if (window.useLeaflet) {
+      makeLLMap(ex.dataWebgl)
+    } else {
+      makeGLMap(ex.dataPorts)
+    }
+    window.addEventListener('resize', resize)
+    return ex
+  })
+  .catch(function(ex) {
+    console.log('i parsing failed', ex)
+  })
 }
 
 init()
@@ -109,17 +101,10 @@ const resize = () => {
   window.stepActions[currentStep].fly()
 }
 
-const parseChapterData = rawData => {
-  let d = rawData.map(r => {
-    let row = r
-    let chapterData = {}
-    Object.keys(row).forEach((c, i) => {
-      let column = c
-      if (column.indexOf('gsx$') > -1) {
-        let columnName = column.replace('gsx$', '')
-        chapterData[columnName] = row[column]['$t']
-      }
-    })
+const parseChapterData = (rawData) => {
+  let d = rawData.map(item => {
+
+    let chapterData = {name: item.name, color: '#e06b91' }
 
     let latKey, lngKey
 
@@ -129,31 +114,31 @@ const parseChapterData = rawData => {
     } else {
       latKey = 'mobile-latitude'
       lngKey = 'mobile-longitude'
-      chapterData.zoom = chapterData['mobile-zoom']
+      chapterData.zoom = item['mobile-zoom']
     }
 
     chapterData.lng =
-      parseFloat(chapterData[lngKey]) < 0 && window.useLeaflet
-        ? 360 + parseFloat(chapterData[lngKey])
-        : parseFloat(chapterData[lngKey])
+      parseFloat(item[lngKey]) < 0 && window.useLeaflet
+        ? 360 + parseFloat(item[lngKey])
+        : parseFloat(item[lngKey])
 
-    chapterData.lat = parseFloat(chapterData[latKey])
+    chapterData.lat = parseFloat(item[latKey])
 
     chapterData.center = [chapterData.lng, chapterData.lat]
 
     chapterData.text = `<h3 class="title">${
-      chapterData[`title${window.lang}`]
+      item[`title_${window.lang}`]
     }</h3>
-<p class="story">${chapterData[`text${window.lang}`]}</p>`
+    <p class="story">${item[`text_${window.lang}`]}</p>`
 
     chapterData.fly = () => {
       fly(chapterData)
 
-      window.nation = chapterData.name
+      window.nation = item.name
 
       if (window.useLeaflet) {
         highlightLLChapter(chapterData)
-        // setLLPopup(chapterData)
+        setLLPopup(chapterData)
       } else {
         if (window.map.getSource('United States_clusters')) {
           highlightGLChapter(chapterData)
@@ -187,6 +172,7 @@ const setLLPopup = chapterData => {
 const setGLPopup = chapterData => {
   let chapterName = chapterData.name
 
+
   let features = window.map.getSource('interests')._data.features
 
   let feature = features.find(f => {
@@ -196,8 +182,8 @@ const setGLPopup = chapterData => {
   if (feature) {
     let properties = feature.properties
     let allowedHeaders = [
-      `port-or-base${window.lang}`,
-      `description${window.lang}`
+      `port-or-base_${window.lang}`,
+      `description_${window.lang}`
     ]
 
     let description = Object.keys(properties)
@@ -235,10 +221,10 @@ const fly = chapterData => {
 
 const chapterColors = {
   'United States': `#6688b9`,
-  France: `#f89c74`,
+  'France': `#f89c74`,
   'New Zealand': `#00ad3b`,
-  Australia: `#f6cf71`,
-  China: '#e06b91'
+  'Australia': `#f6cf71`,
+  'China': '#e06b91'
 }
 
 const highlightLLChapter = chapterData => {
@@ -273,11 +259,12 @@ const highlightLLChapter = chapterData => {
 }
 
 const highlightGLChapter = chapterData => {
+ 
   let chapterName =
     chapterData.name.indexOf('-') > -1
       ? chapterData.name.substring(0, chapterData.name.indexOf('-'))
       : chapterData.name
-
+ 
   if (!(exclude.indexOf(chapterName) > -1)) {
     let newFillMap = !(chapterName.indexOf('China') > -1)
       ? [
@@ -293,6 +280,7 @@ const highlightGLChapter = chapterData => {
       ? ['match', ['get', 'country'], `${chapterName}`, '#fff', 'transparent']
       : ['match', ['get', 'chinese-involvement'], '', 'transparent', '#fff']
 
+    
     nations.forEach(nation => {
       if (nation === chapterName && nations.indexOf(chapterName) > -1) {
         window.map.setPaintProperty(
