@@ -17,7 +17,7 @@ const spreadsheetID = '1gLJo_Bniuy1RoMJCxO_Bj0pOCLLC12mkrCg67m1QTcY'
 window.useLeaflet =
   /*@cc_on!@*/ false || !!document.documentMode || !mapboxgl.supported()
 
-  const chaptersPorts = d3Fetch.csv('./data/chapter-ports-2.csv')
+  const chaptersPorts = d3Fetch.csv('/data/chapter-ports-2.csv')
   const chaptersWebgl = d3Fetch.csv('./data/chapters-webgl-3.csv')
   const chaptersLeaflet = d3Fetch.csv('./data/chapters-leaflet-4.csv')
 
@@ -91,7 +91,7 @@ let dataset = Promise.all([chaptersLeaflet, chaptersWebgl, chaptersPorts]).then(
     return ex
   })
   .catch(function(ex) {
-    console.log('i parsing failed', ex)
+    console.log('parsing failed', ex)
   })
 }
 
