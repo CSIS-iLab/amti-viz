@@ -20,7 +20,7 @@ window.useLeaflet =
   let dataDir = './data'
 
   if (window.location.href.indexOf('amti') != -1) {
-    dataDir = './dist/data'
+    dataDir = './data'
   }
 
   console.log(window.location.href.indexOf('amti') != -1)
