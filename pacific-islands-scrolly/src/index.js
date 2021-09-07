@@ -48,7 +48,6 @@ let dataset = Promise.all([chaptersLeaflet, chaptersWebgl, chaptersPorts]).then(
   const [dataLeaflet, dataWebgl, dataPorts] = res
 
   let chapterData = dataWebgl
-  console.log(chapterData)
 
   if (window.useLeaflet) {
     chapterData = dataLeaflet
@@ -62,92 +61,38 @@ let dataset = Promise.all([chaptersLeaflet, chaptersWebgl, chaptersPorts]).then(
         .map(c => [c.name, c.color])
         .reduce((a, b) => a.concat(b))
 
-      paintMap = ['match', ['get', 'country']]
-        .concat(countryColors)
-        .concat(['#e06b91'])
+  paintMap = ['match', ['get', 'country']]
+    .concat(countryColors)
+    .concat(['#e06b91'])
 
-        
-
-
-  // console.log(window.stepActions)
     return {dataLeaflet, dataWebgl, dataPorts}
   }).then(function(ex) {
-    console.log(ex)
-        let values = Object.keys(window.stepActions).map(function(key) {
-          return window.stepActions[key]
-        })
-  // console.log(window.stepActions)
-        interactiveSetup({
-          container: container,
-          initialDesc: `${
-            window.stepActions[0]
-              ? `${window.stepActions[0][`text_${window.lang}`]}`
-              : ``
-          }`,
-          steps: values
-        })
-  
-        Scrolling({ stepActions: window.stepActions })
-  
-        if (window.useLeaflet) {
-          makeLLMap(ex.dataWebgl)
-        } else {
-          makeGLMap(ex.dataPorts)
-        }
-        window.addEventListener('resize', resize)
-        return ex
-      })
-      .catch(function(ex) {
-        console.log('i parsing failed', ex)
-      })
+    let values = Object.keys(window.stepActions).map(function(key) {
+      return window.stepActions[key]
+    })
+  interactiveSetup({
+    container: container,
+    initialDesc: `${
+      window.stepActions[0]
+        ? `${window.stepActions[0][`text_${window.lang}`]}`
+        : ``
+    }`,
+    steps: values
+  })
 
-  // fetchPolyfill(chapterURL)
-  //   .then(function(response) {
-  //     return response.json()
-  //   })
-  //   .then(function(json) {
-  //     // window.isMobile = window.innerWidth < 1040
-  //     // window.stepActions = parseChapterData(json.feed.entry)
+    Scrolling({ stepActions: window.stepActions })
 
-  //     // countryColors = window.stepActions
-  //     //   .filter(c => !(exclude.indexOf(c.name) > -1))
-  //     //   .map(c => [c.name, c.color])
-  //     //   .reduce((a, b) => a.concat(b))
-
-  //     // paintMap = ['match', ['get', 'country']]
-  //     //   .concat(countryColors)
-  //     //   .concat(['#e06b91'])
-
-  //     return json
-  //   })
-  //   .then(function(ex) {
-  //     let values = Object.keys(window.stepActions).map(function(key) {
-  //       return window.stepActions[key]
-  //     })
-
-  //     interactiveSetup({
-  //       container: container,
-  //       initialDesc: `${
-  //         window.stepActions[0]
-  //           ? `${window.stepActions[0][`text${window.lang}`]}`
-  //           : ``
-  //       }`,
-  //       steps: values
-  //     })
-
-  //     Scrolling({ stepActions: window.stepActions })
-
-  //     if (window.useLeaflet) {
-  //       makeLLMap()
-  //     } else {
-  //       makeGLMap()
-  //     }
-  //     window.addEventListener('resize', resize)
-  //     return ex
-  //   })
-  //   .catch(function(ex) {
-  //     console.log('i parsing failed', ex)
-  //   })
+    if (window.useLeaflet) {
+      makeLLMap(ex.dataWebgl)
+    } else {
+      makeGLMap(ex.dataPorts)
+    }
+    window.addEventListener('resize', resize)
+    return ex
+  })
+  .catch(function(ex) {
+    console.log('i parsing failed', ex)
+  })
 }
 
 init()
@@ -159,9 +104,7 @@ const resize = () => {
 const parseChapterData = (rawData) => {
   let d = rawData.map(item => {
 
-    let chapterData = {name: item.name }
-
-    // color: window.stepActions.chapterData ? transparent : '#e06b91'
+    let chapterData = {name: item.name, color: '#e06b91' }
 
     let latKey, lngKey
 
@@ -173,7 +116,6 @@ const parseChapterData = (rawData) => {
       lngKey = 'mobile-longitude'
       chapterData.zoom = item['mobile-zoom']
     }
-
 
     chapterData.lng =
       parseFloat(item[lngKey]) < 0 && window.useLeaflet
@@ -187,7 +129,7 @@ const parseChapterData = (rawData) => {
     chapterData.text = `<h3 class="title">${
       item[`title_${window.lang}`]
     }</h3>
-<p class="story">${item[`text_${window.lang}`]}</p>`
+    <p class="story">${item[`text_${window.lang}`]}</p>`
 
     chapterData.fly = () => {
       fly(chapterData)
@@ -204,7 +146,7 @@ const parseChapterData = (rawData) => {
         }
       }
     }
-    // console.log(chapterData)
+
     return chapterData
   })
   return d
@@ -323,7 +265,6 @@ const highlightGLChapter = chapterData => {
       ? chapterData.name.substring(0, chapterData.name.indexOf('-'))
       : chapterData.name
  
-      console.log(window.stepActions.find(c => c.name === chapterName))
   if (!(exclude.indexOf(chapterName) > -1)) {
     let newFillMap = !(chapterName.indexOf('China') > -1)
       ? [
@@ -342,11 +283,11 @@ const highlightGLChapter = chapterData => {
     
     nations.forEach(nation => {
       if (nation === chapterName && nations.indexOf(chapterName) > -1) {
-        // window.map.setPaintProperty(
-        //   `${nation}_clusters`,
-        //   'circle-color',
-        //   newFillMap
-        // )
+        window.map.setPaintProperty(
+          `${nation}_clusters`,
+          'circle-color',
+          newFillMap
+        )
 
         window.map.setPaintProperty(
           `${nation}_clusters`,

@@ -18,25 +18,10 @@ const chapterColors = {
   China: `#e06b91`
 }
 
-// const spreadsheetID = '1gLJo_Bniuy1RoMJCxO_Bj0pOCLLC12mkrCg67m1QTcY'
-
-// let islandURL =
-//   'https://spreadsheets.google.com/feeds/list/' +
-//   spreadsheetID +
-//   '/2/public/values?alt=json'
-
 const makeMap = (dataWebgl) => {
   window.map.on('load', function() {
     interestsData = parseInterestsData(dataWebgl)
     initIslands()
-    // fetchPolyfill(islandURL)
-    //   .then(function(response) {
-    //     return response.json()
-    //   })
-    //   .then(function(json) {
-    //     interestsData = parseInterestsData(json.feed.entry)
-    //     initIslands()
-    //   })
   })
   window.map.setView([-12, 180], 4)
 
@@ -169,25 +154,14 @@ function pointOnCircle(loc = 0) {
 function parseInterestsData(rawData) {
   let featureData = rawData.map(islandData => {
     console.log(islandData)
-    // let row = r
-    // let islandData = {}
-    // Object.keys(row).forEach(c => {
-    //   let column = c
-    //   if (column.indexOf('gsx$') > -1) {
-    //     let columnName = column.replace('gsx$', '')
-    //     islandData[columnName] = row[column]['$t']
-    //   }
-    // })
+    let objs = [{}, islandData]
+    let islandDataSansCoordinates = objs.reduce(function(r, o) {
+      Object.keys(o).forEach(function(k) {
+        r[k] = o[k]
+      })
+      return r
+    }, {})
 
-    // let objs = [{}, islandData]
-    // let islandDataSansCoordinates = objs.reduce(function(r, o) {
-    //   Object.keys(o).forEach(function(k) {
-    //     r[k] = o[k]
-    //   })
-    //   return r
-    // }, {})
-
-    let islandDataSansCoordinates = Object.assign({}, islandData)
     delete islandDataSansCoordinates.latitude
     delete islandDataSansCoordinates.longitude
 
