@@ -17,9 +17,15 @@ const spreadsheetID = '1gLJo_Bniuy1RoMJCxO_Bj0pOCLLC12mkrCg67m1QTcY'
 window.useLeaflet =
   /*@cc_on!@*/ false || !!document.documentMode || !mapboxgl.supported()
 
-  const chaptersPorts = d3Fetch.csv('/data/chapter-ports-2.csv')
-  const chaptersWebgl = d3Fetch.csv('./data/chapters-webgl-3.csv')
-  const chaptersLeaflet = d3Fetch.csv('./data/chapters-leaflet-4.csv')
+  let dataDir = '/data'
+
+  if (window.location.href.indexOf('chinapower') != -1) {
+    dataDir = '/challenging-pacific-powers-china-strategic-inroads/data'
+  }
+
+  const chaptersPorts = d3Fetch.csv(`${dataDir}/chapter-ports-2.csv`)
+  const chaptersWebgl = d3Fetch.csv(`${dataDir}/chapters-webgl-3.csv`)
+  const chaptersLeaflet = d3Fetch.csv(`${dataDir}/chapters-leaflet-4.csv`)
 
 const container = document.getElementById('scrolly-island-interactive')
 
