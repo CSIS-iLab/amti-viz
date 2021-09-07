@@ -19,7 +19,7 @@ window.useLeaflet =
 
   let dataDir = '/data'
 
-  if (window.location.href.indexOf('chinapower') != -1) {
+  if (window.location.href.indexOf('amti') != -1) {
     dataDir = '/challenging-pacific-powers-china-strategic-inroads/data'
   }
 
