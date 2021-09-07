@@ -19,9 +19,9 @@ window.useLeaflet =
 
   let dataDir = './data'
 
-  // if (window.location.href.indexOf('amti') != -1) {
-  //   dataDir = '../pacific-islands-scrolly/dist/data'
-  // }
+  if (window.location.href.indexOf('amti') != -1) {
+    dataDir = './dist/data'
+  }
 
   console.log(window.location.href.indexOf('amti') != -1)
 
