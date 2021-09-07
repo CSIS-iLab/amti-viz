@@ -17,10 +17,10 @@ const spreadsheetID = '1gLJo_Bniuy1RoMJCxO_Bj0pOCLLC12mkrCg67m1QTcY'
 window.useLeaflet =
   /*@cc_on!@*/ false || !!document.documentMode || !mapboxgl.supported()
 
-  let dataDir = '/data'
+  let dataDir = '/challenging-pacific-powers-china-strategic-inroads/data'
 
   if (window.location.href.indexOf('amti') != -1) {
-    dataDir = '/challenging-pacific-powers-china-strategic-inroads/data'
+    dataDir = '/data'
   }
 
   const chaptersPorts = d3Fetch.csv(`${dataDir}/chapter-ports-2.csv`)
