@@ -17,11 +17,11 @@ const spreadsheetID = '1gLJo_Bniuy1RoMJCxO_Bj0pOCLLC12mkrCg67m1QTcY'
 window.useLeaflet =
   /*@cc_on!@*/ false || !!document.documentMode || !mapboxgl.supported()
 
-  let dataDir = '/data'
+  let dataDir = './data'
 
-  if (window.location.href.indexOf('localhost') != -1) {
-    dataDir = '../pacific-islands-scrolly/dist/data'
-  }
+  // if (window.location.href.indexOf('amti') != -1) {
+  //   dataDir = '../pacific-islands-scrolly/dist/data'
+  // }
 
   console.log(window.location.href.indexOf('amti') != -1)
 
