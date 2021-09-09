@@ -10,7 +10,7 @@ var config = {
     logo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628110683/long.svg',
     footerTitle: '<a href="https://amti.csis.org/" alt="Asia Maritime Transparency Intiative website">Asia Maritime Transparency Initiative</a>',
     footersubTitle: 'Source: Data from | ',
-    footerContent: 'We can just go with “The Asia Maritime Transparency Initiative was conceived of and designed by CSIS. It is an interactive, regularly-updated source for information, analysis, and policy exchange on maritime security issues in Asia. AMTI aims to promote transparency in the Indo-Pacific to dissuade assertive behavior and conflict and generate opportunities for cooperation and confidence building.',
+    footerContent: 'The Asia Maritime Transparency Initiative was conceived of and designed by CSIS. It is an interactive, regularly-updated source for information, analysis, and policy exchange on maritime security issues in Asia. AMTI aims to promote transparency in the Indo-Pacific to dissuade assertive behavior and conflict and generate opportunities for cooperation and confidence building.',
     footerContentLink: 'Explore more Maps of the Asia Pacific',
     creditHeading: 'PHOTO CREDITS',
     creditItemOne: '<a href="https://www.gettyimages.com/detail/news-photo/this-photo-taken-on-april-14-2018-shows-a-j15-fighter-jet-news-photo/951606006?adppopup=true" alt="J-15 on Liaoning">J-15 on Liaoning</a>, Uploaded on April 14, 2018, AFP via Getty Images',
@@ -24,7 +24,7 @@ var config = {
         {
             id: 'stepintro',
             title: 'By Air, Land, and Sea: China’s Maritime Power Projection Network',
-            description: `China’s deployment of radar, anti-ship and anti-air missile platforms, and combat aircraft to its outposts in the South China Sea have greatly expanded its ability to project power in waters far from its own coast.  This feature will illustrate how these three capabilities are fundamentally linked, and how China’s aircraft carriers can take advantage of them to comfortably conduct operations at greater distances.`,
+            description: `China’s deployment of radar, anti-ship and anti-air missile platforms, and combat aircraft to its outposts in the South China Sea has greatly expanded its ability to project power in waters far from its own coast.  This feature will illustrate how these three capabilities are fundamentally linked, and how China’s aircraft carriers can take advantage of them to comfortably conduct operations at greater distances.`,
             updated: 'Last Updated January 1, 2021',
             location: {
                 center: [111.09, 15.30],
@@ -195,7 +195,7 @@ var config = {
             image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884129/amti/yellow.png',
             title: '',
             subtitle: '',
-            description: `Airborne early warning and control (AEW&C) aircraft, like the KJ-500 known operate from the islands, provide greater radar coverage than any ground-based sensors. A KJ-500 shown here above Subi Reef, can sense <img class="circle circle--inner" src="images/circle-inner.svg" alt="circlular svg" /><span class="highlight--yellow"> surface targets at up to 200 nautical miles </span> and <img class="circle circle--outer" src="images/circle-outer.svg" alt="circlular svg" /><span class="highlight--yellow">high-flying targets at 25,000 feet at up to 388 nautical miles</span>.`,
+            description: `Airborne early warning and control (AEW&C) aircraft, like the KJ-500 known to operate from the islands, provide greater radar coverage than any ground-based sensors. A KJ-500 shown here above Subi Reef, can sense <img class="circle circle--inner" src="images/circle-inner.svg" alt="circlular svg" /><span class="highlight--yellow"> surface targets at up to 200 nautical miles </span> and <img class="circle circle--outer" src="images/circle-outer.svg" alt="circlular svg" /><span class="highlight--yellow">high-flying targets at 25,000 feet at up to 388 nautical miles</span>.`,
             legend: '',
             location: {
                 center: [110.09, 12.30],
