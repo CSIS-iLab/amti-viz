@@ -1,10 +1,10 @@
-# AMTI Range Rings Map
+# By Air, Land, And Sea: China's Maritime Power Projection Network
 
 ## Quick-start Instructions
 
 ```shell
 $ git clone https://github.com/CSIS-iLab/amti-viz
-$ cd range-rings-scrolly
+$ cd range-rings-scrolly/src
 $ npm install
 $ npm start
 ```
