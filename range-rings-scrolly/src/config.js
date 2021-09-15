@@ -4,7 +4,7 @@ var config = {
     showMarkers: false,
     alignment: 'left',
     theme: 'light',
-    image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1627308950/header-background-imagesDesktop_revised.png',
+    linkedLogo: '<a href="https://amti.csis.org/" alt="Asia Maritime Transparency Intiative website"><img src="https://res.cloudinary.com/csisideaslab/image/upload/v1627308950/header-background-imagesDesktop_revised.png" alt="AMTI logo"/></a>',
     title: 'Asia Maritime Transparency Initaitve',
     subtitle: '',
     logo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628110683/long.svg',
@@ -25,7 +25,7 @@ var config = {
             id: 'stepintro',
             title: 'By Air, Land, and Sea: China’s Maritime Power Projection Network',
             description: `China’s deployment of radar, anti-ship and anti-air missile platforms, and combat aircraft to its outposts in the South China Sea has greatly expanded its ability to project power in waters far from its own coast.  This feature will illustrate how these three capabilities are fundamentally linked, and how China’s aircraft carriers can take advantage of them to comfortably conduct operations at greater distances.`,
-            updated: 'Last Updated January 1, 2021',
+            updated: 'Last Updated September 15, 2021',
             location: {
                 center: [111.09, 15.30],
                 zoom: 4.50,

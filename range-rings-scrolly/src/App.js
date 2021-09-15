@@ -109,9 +109,15 @@ class App extends Component {
       const createCreditMarkup = (c) => {
         return {__html: c};
       }
+
       const createTitleMarkup = (footerTitle) => {
         return {__html: footerTitle};
       }
+
+      const createLogoMarkup = (linkedLogo) => {
+        return {__html: linkedLogo};
+      }
+
       const config = this.props;
       const theme = config.theme;
       const currentChapterID = this.state.currentChapter.id;
@@ -123,8 +129,12 @@ class App extends Component {
                 {config.title &&
                 <div id="header" className={theme}>
                   <h1>{config.title}</h1>
-                    {config.image &&
-                      <img src={config.image} alt={config.title}></img>
+                    {config.linkedLogo &&
+                      // <a href="https://amti.csis.org/" alt="Asia Maritime Transparency Intiative website">
+                      //   <img src={config.image} alt={config.title}></img>
+                      // </a>
+                      // <a href="https://amti.csis.org/" alt="Asia Maritime Transparency Initiative site" className="logo"><img src={config.image} alt="" /></a>
+                      <div className="footer__title" dangerouslySetInnerHTML={createLogoMarkup(config.linkedLogo)} />
                     }
                 </div>
                 }
