@@ -329,7 +329,7 @@ var config = {
                 pitch: 0.00,
                 bearing: 0.00,
                 mapAnimation: 'easeTo',
-                speed: 0.3,
+                speed: 0.1,
                 curve: 1
             },
             onChapterEnter: [
@@ -373,7 +373,7 @@ var config = {
                 pitch: 0.00,
                 bearing: 0.00,
                 mapAnimation: 'easeTo',
-                speed: 0.3,
+                speed: 0.1,
                 curve: 1
             },
             onChapterEnter: [
