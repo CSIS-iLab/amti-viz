@@ -8,7 +8,7 @@ let map,
   interestsData,
   exclude = ['Introduction', 'Conclusion'],
   nations = ['United States', 'Australia', 'New Zealand', 'France', 'China'],
-  allowedContent = [`port-or-base${window.lang}`, `description${window.lang}`]
+  allowedContent = [`port-or-base_${window.lang}`, `description_${window.lang}`]
 
 const chapterColors = {
   'United States': `#6688b9`,
@@ -18,23 +18,10 @@ const chapterColors = {
   China: `#e06b91`
 }
 
-const spreadsheetID = '1gLJo_Bniuy1RoMJCxO_Bj0pOCLLC12mkrCg67m1QTcY'
-
-let islandURL =
-  'https://spreadsheets.google.com/feeds/list/' +
-  spreadsheetID +
-  '/2/public/values?alt=json'
-
-const makeMap = () => {
+const makeMap = (dataWebgl) => {
   window.map.on('load', function() {
-    fetchPolyfill(islandURL)
-      .then(function(response) {
-        return response.json()
-      })
-      .then(function(json) {
-        interestsData = parseInterestsData(json.feed.entry)
-        initIslands()
-      })
+    interestsData = parseInterestsData(dataWebgl)
+    initIslands()
   })
   window.map.setView([-12, 180], 4)
 
@@ -47,7 +34,7 @@ function initIslands() {
   )
 
   addInterestsLayer()
-  // addAnimatedPointLayer()
+  addAnimatedPointLayer()
 }
 
 function addInterestsLayer() {
@@ -165,17 +152,8 @@ function pointOnCircle(loc = 0) {
 }
 
 function parseInterestsData(rawData) {
-  let featureData = rawData.map(r => {
-    let row = r
-    let islandData = {}
-    Object.keys(row).forEach(c => {
-      let column = c
-      if (column.indexOf('gsx$') > -1) {
-        let columnName = column.replace('gsx$', '')
-        islandData[columnName] = row[column]['$t']
-      }
-    })
-
+  let featureData = rawData.map(islandData => {
+    console.log(islandData)
     let objs = [{}, islandData]
     let islandDataSansCoordinates = objs.reduce(function(r, o) {
       Object.keys(o).forEach(function(k) {
