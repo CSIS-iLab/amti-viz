@@ -542,7 +542,7 @@ var config = {
         },
         {
             id: 'step12',
-            title: 'Power Projection in the Region',
+            title: 'Carrier Limitations',
             subtitle: '',
             image: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628884129/amti/yellow.png',
             description: `Large AEW&C aircraft like the KJ-500 can’t launch from China’s existing aircraft carriers. In order to make use of a KJ-500’s sensing capabilities, carriers need to stay within the aircraft’s <span class="highlight--yellow"> maximum range </span>from Chinese runways on the mainland or in the South China Sea. `,
@@ -606,7 +606,7 @@ var config = {
         },
         {
             id: 'step14',
-            title: '',
+            title: 'Completing the Network',
             subtitle: '',
             image: '',
             description: `China’s aircraft carriers can operate within this area while maintaining a safe, 400-nautical mile distance from divert airfields currently available for use.`,
