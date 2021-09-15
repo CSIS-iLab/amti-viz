@@ -1,6 +1,6 @@
 {
   "homepage": ".",
-  "name": "By Air, Land, And Sea: China's Maritime Power Projection Network",
+  "name": "chinas-maritime-power-projection-network",
   "description": "A React and Mapbox GL powered visualization showing China's maritime power projection over the South China Sea.",
   "version": "0.1.0",
   "private": true,
