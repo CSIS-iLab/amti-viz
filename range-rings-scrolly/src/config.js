@@ -5,7 +5,7 @@ var config = {
     alignment: 'left',
     theme: 'light',
     linkedLogo: '<a href="https://amti.csis.org/" alt="Asia Maritime Transparency Intiative website"><img src="https://res.cloudinary.com/csisideaslab/image/upload/v1627308950/header-background-imagesDesktop_revised.png" alt="AMTI logo"/></a>',
-    title: 'Asia Maritime Transparency Initaitve',
+    title: 'Asia Maritime Transparency Initiative',
     subtitle: '',
     logo: 'https://res.cloudinary.com/csisideaslab/image/upload/v1628110683/long.svg',
     footerTitle: '<a href="https://amti.csis.org/" alt="Asia Maritime Transparency Intiative website">Asia Maritime Transparency Initiative</a>',
