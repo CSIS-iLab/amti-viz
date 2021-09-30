@@ -45,7 +45,7 @@ L.control
 L.control.zoomslider().addTo(map);
 
 var client = new carto.Client({
-  apiKey: "VIKGbtgYDbaBvbByM9W8gg",
+  apiKey: "khMzL3OslgY3MUmO0qjBCA",
   username: "csis"
 });
 
@@ -142,7 +142,7 @@ function initResources() {
   });
 
   resources = new carto.source.SQL(
-    "SELECT * FROM table_2018_allcountries_oilandgas_production ORDER BY country1 DESC"
+    "SELECT * FROM oil_and_gas_blocks_map ORDER BY country1 DESC"
   );
 
   resources.addFilter(countryDataFilter);
@@ -258,7 +258,7 @@ function initResources() {
 }
 
 function initClaims() {
-  var claimLines = new carto.source.SQL("SELECT * FROM cs_claims");
+  var claimLines = new carto.source.SQL("SELECT * FROM cs_claims_2021");
   claim_style = new carto.style.CartoCSS(
     "#layer {line-width: 0;line-color: #7F3C8D;line-opacity: 1;}"
   );
