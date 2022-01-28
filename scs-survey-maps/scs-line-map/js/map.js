@@ -36,8 +36,18 @@ const client = new carto.Client({
   username: "csis",
 });
 
-const mapSource = new carto.source.SQL(`SELECT * FROM 
-scs_surverys_line`);
+const mapSource = new carto.source.SQL(`
+  SELECT
+    cartodb_id,
+    the_geom,
+    the_geom_webmercator,
+    layer,
+    path,
+    to_char(date, \'MM-DD-YYYY\') as date,
+    to_char(end_date, \'MM-DD-YYYY\') as end_date
+  FROM
+    scs_surverys_line`
+);
 
 const mapStyle = new carto.style.CartoCSS(`#layer {
   line-width: 1.5;
@@ -62,7 +72,15 @@ function createPopup(event) {
 
   if (!popup.isOpen()) {
     var data = event.data;
-    console.log(event.data);
+    let start_date
+    let end_date
+    if (data.date == null || data.end_date == null) {
+      start_date = 'No Date'
+      end_date = 'No End Date'
+    } else {
+      start_date = data.date
+      end_date = data.end_date
+    }
     var content = "<div>";
 
     content += `
@@ -70,8 +88,8 @@ function createPopup(event) {
       ${data.layer}
     </div>
     <div class="popupEntryStyle">
-      ${data.date}
-      ${data.end_date}
+      ${start_date} |
+      ${end_date}
     </div>
     `;
     popup.setContent("" + content);
