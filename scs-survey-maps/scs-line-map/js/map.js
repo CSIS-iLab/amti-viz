@@ -32,21 +32,21 @@ var map = L.map("map", {
 });
 
 const client = new carto.Client({
-  apiKey: "YctydLsZy6l2cnqMBagE5A",
+  apiKey: "c0p2NyjIBCjp5BSH7un2MQ",
   username: "csis",
 });
 
 const mapSource = new carto.source.SQL(`
-  SELECT
-    cartodb_id,
-    the_geom,
-    the_geom_webmercator,
-    layer,
-    path,
-    to_char(date, \'MM-DD-YYYY\') as date,
-    to_char(end_date, \'MM-DD-YYYY\') as end_date
-  FROM
-    scs_surverys_line`
+  SELECT 
+  cartodb_id,
+  the_geom,
+  the_geom_webmercator,
+  layer,
+  path,
+  to_char(start_date, \'MM-DD-YYYY\') as start_date,
+  to_char(end_date, \'MM-DD-YYYY\') as end_date,
+  date_range
+  FROM scslinemap`
 );
 
 const mapStyle = new carto.style.CartoCSS(`#layer {
@@ -56,7 +56,7 @@ const mapStyle = new carto.style.CartoCSS(`#layer {
 }`);
 
 const mapLayer = new carto.layer.Layer(mapSource, mapStyle, {
-  featureOverColumns: ["date", "end_date", "layer"],
+  featureOverColumns: ["start_date", "end_date", "layer", "date_range"],
 });
 
 client.addLayer(mapLayer);
@@ -74,13 +74,13 @@ function createPopup(event) {
     var data = event.data;
     let start_date
     let end_date
-    if (data.date == null || data.end_date == null) {
-      start_date = 'No Date'
-      end_date = 'No End Date'
-    } else {
-      start_date = data.date
-      end_date = data.end_date
-    }
+    // if (data.date == null || data.end_date == null) {
+    //   start_date = 'No Date'
+    //   end_date = 'No End Date'
+    // } else {
+    //   start_date = data.date
+    //   end_date = data.end_date
+    // }
     var content = "<div>";
 
     content += `
@@ -88,8 +88,10 @@ function createPopup(event) {
       ${data.layer}
     </div>
     <div class="popupEntryStyle">
-      ${start_date} |
-      ${end_date}
+      <div>Start Date: ${start_date}</div> 
+   
+      <div>End Date:${end_date}</div> 
+      
     </div>
     `;
     popup.setContent("" + content);
