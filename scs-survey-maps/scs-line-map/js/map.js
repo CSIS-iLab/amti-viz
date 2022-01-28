@@ -71,17 +71,11 @@ function createPopup(event) {
   popup.setLatLng(event.latLng);
 
   if (!popup.isOpen()) {
-    var data = event.data;
-    let start_date
-    let end_date
-    if (data.start_date == null || data.end_date == null) {
-      start_date = 'No Start Date'
-      end_date = 'No End Date'
-    } else {
-      start_date = data.start_date
-      end_date = data.end_date
-    }
-    var content = "<div>";
+    const data = event.data;
+    const start_date = (data.start_date ? data.start_date : 'No Start Date')
+    const end_date = (data.end_date ? data.end_date : 'No End Date')
+
+    let content = "<div>";
 
     content += `
     <div class="popupHeaderStyle">
@@ -89,9 +83,7 @@ function createPopup(event) {
     </div>
     <div class="popupEntryStyle">
       <div>Start Date: ${start_date}</div> 
-   
-      <div>End Date: ${end_date}</div> 
-      
+      <div>End Date: ${end_date}</div>      
     </div>
     `;
     popup.setContent("" + content);
