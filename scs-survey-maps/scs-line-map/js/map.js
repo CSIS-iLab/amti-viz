@@ -46,7 +46,7 @@ const mapStyle = new carto.style.CartoCSS(`#layer {
 }`);
 
 const mapLayer = new carto.layer.Layer(mapSource, mapStyle, {
-  featureOverColumns: ["date", "end_date", "toggle", "layer"],
+  featureOverColumns: ["date", "end_date", "layer"],
 });
 
 client.addLayer(mapLayer);
