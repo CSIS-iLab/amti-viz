@@ -74,23 +74,23 @@ function createPopup(event) {
     var data = event.data;
     let start_date
     let end_date
-    // if (data.date == null || data.end_date == null) {
-    //   start_date = 'No Date'
-    //   end_date = 'No End Date'
-    // } else {
-    //   start_date = data.date
-    //   end_date = data.end_date
-    // }
+    if (data.start_date == null || data.end_date == null) {
+      start_date = 'No Start Date'
+      end_date = 'No End Date'
+    } else {
+      start_date = data.start_date
+      end_date = data.end_date
+    }
     var content = "<div>";
 
     content += `
     <div class="popupHeaderStyle">
-      ${data.layer}
+      Survey Vessel: ${data.layer}
     </div>
     <div class="popupEntryStyle">
       <div>Start Date: ${start_date}</div> 
    
-      <div>End Date:${end_date}</div> 
+      <div>End Date: ${end_date}</div> 
       
     </div>
     `;
