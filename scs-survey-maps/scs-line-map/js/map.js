@@ -51,8 +51,7 @@ const mapSource = new carto.source.SQL(`
 
 const mapStyle = new carto.style.CartoCSS(`#layer {
   line-width: 1.5;
-  line-color: #4CC8A3;
-  line-opacity: 1;
+  line-color: ramp([date_range], (#3969ac, #11a579), (2021, 2020), "=", category);
 }`);
 
 const mapLayer = new carto.layer.Layer(mapSource, mapStyle, {
@@ -79,17 +78,67 @@ function createPopup(event) {
 
     content += `
     <div class="popupHeaderStyle">
-      Survey Vessel: ${data.layer}
+      ${data.layer}
     </div>
     <div class="popupEntryStyle">
-      <div>Start Date: ${start_date}</div> 
-      <div>End Date: ${end_date}</div>      
+      <p>Start Date: <span>${start_date}</span></p> 
+      <p>End Date: <span>${end_date}</span></p>      
     </div>
     `;
     popup.setContent("" + content);
     popup.openOn(map);
   }
 }
+
+var checks = Array.from(
+  document.querySelectorAll(".date_range ul input")
+).map(function (checkbox) {
+  return checkbox.name;
+});
+
+var filter_checks = new carto.filter.Category("date_range", {
+  notIn: checks
+});
+
+document
+  .querySelector(".date_range ul")
+  .addEventListener("click", function (e) {
+    var checkbox = e.target.type === "checkbox" ? e.target : null;
+
+    if (checkbox) {
+      var checked = Array.from(
+        document.querySelectorAll(".date_range ul input:checked")
+      ).map(function (checkbox) {
+        return checkbox.name;
+      });
+
+      var notChecked = checks.filter(function (name) {
+        return checked.indexOf(name) < 0;
+      });
+
+      var filter_checked = new carto.filter.Category("date_range", {
+        in: checked
+      });
+
+      var filter_notChecked = new carto.filter.Category("date_range", {
+        notIn: notChecked
+      });
+
+      var filters =
+        checkbox.name === "OTHERS" && checkbox.checked
+          ? [filter_checks, filter_checked]
+          : checkbox.name === "OTHERS" && !checkbox.checked
+            ? [filter_checked]
+            : [filter_notChecked];
+
+      mapSource.getFilters().forEach(function (f) {
+        mapSource.removeFilter(f);
+      });
+
+      mapSource.addFilter(new carto.filter.OR(filters));
+    }
+  });
+
 
 L.control
   .attribution({

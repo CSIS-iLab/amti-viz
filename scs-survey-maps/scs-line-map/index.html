@@ -28,20 +28,88 @@
 
 <body>
   <div id="map" class="map" tabindex="0"></div>
-
   <aside class="toolbox">
+    <input type="checkbox" checked class="ui mobile-only" />
 
-    <section class="box">
+    <div class="hamburger mobile-only">
+      <div class="icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-translate">
+        SCS Survey Map
+      </div>
+    </div>
+
+    <div class="box">
+      <header class="mobile-toggle">
+        <h1 class="translate">
+          SCS Survey Map
+        </h1>
+
+        <a href="https://amti.csis.org" target="_blank"
+          style="background-image: url(&quot;https://raw.githubusercontent.com/CSIS-iLab/amti-viz/master/logo.jpeg&quot;)"
+          class="mobile-toggle" id="logo"></a>
+      </header>
+
+      <section>
+        <p class="translate description open-sans mobile-toggle"> Hover over the interactive map to learn more details
+          about scs survey ships in the South China Sea. Toggle different years on and off by checking the boxes below.
+        </p>
+        <div class="separator mobile-toggle"></div>
+        <div id="controls" />
+        <div id="info" />
+      </section>
+
+      <section class="widget date_range">
+        <h3 class="mobile-toggle translate subheading">Date Range</h3>
+        <ul class="actions">
+          <li>
+            <label for="2020">
+              <input class="widget checkbox" type="checkbox" name="2020" id="2020" checked="" />
+              <span class="colorKey"></span>
+              <span class="itemText" style="transform: translateY(14.1667%);">2020</span>
+            </label>
+          </li>
+
+          <li>
+            <label for="2021">
+              <input class="widget checkbox" type="checkbox" name="2021" id="2021" checked="" />
+              <span class="colorKey"></span>
+              <span class="itemText" style="transform: translateY(14.1667%);">2021</span>
+            </label>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+
+    <footer class="js-footer">
+      <div class="hidden"></div>
+    </footer>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- <section class="box">
       <header>
         <h1>Title of Map</h1>
       </header>
       <section>
         <p class="description open-sans">
-          Hover over the interactive map to learn more detail about scs survey ships in the SOuth China Sea
+          Hover over the interactive map to learn more details about scs survey ships in the SOuth China Sea
         </p>
         <hr />
       </section>
-      <footer class="js-footer"></footer>
+      <footer class="js-footer"></footer> -->
   </aside>
 
   <script src="js/map.js"></script>
