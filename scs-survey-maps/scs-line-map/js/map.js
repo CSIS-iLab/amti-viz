@@ -20,9 +20,9 @@ if (lang && lang.indexOf("zh-") > -1) {
 }
 
 var map = L.map("map", {
-  center: [13.7237264, 110.6814572],
-  zoom: 5,
-  maxZoom: 6,
+  center: [14.7237264, 115.6814572],
+  zoom: 6,
+  maxZoom: 7,
   scrollWheelZoom: true,
   minZoom: 4,
   zoomControl: true,
