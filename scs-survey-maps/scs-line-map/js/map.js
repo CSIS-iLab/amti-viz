@@ -50,7 +50,7 @@ const mapSource = new carto.source.SQL(`
 );
 
 const mapStyle = new carto.style.CartoCSS(`#layer {
-  line-width: 1.5;
+  line-width: 2;
   line-color: ramp([date_range], (#3969ac, #11a579), (2021, 2020), "=", category);
 }`);
 
