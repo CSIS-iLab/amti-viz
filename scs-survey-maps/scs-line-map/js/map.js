@@ -64,6 +64,9 @@ client.getLeafletLayer().bringToFront().addTo(map);
 
 const popup = L.popup({ closeButton: true });
 
+mapLayer.on('load', function() {
+  console.log('loaded');
+})
 mapLayer.on(carto.layer.events.FEATURE_CLICKED, createPopup);
 
 function createPopup(event) {
@@ -139,6 +142,83 @@ document
     }
   });
 
+  // Handle select element
+  const element = document.querySelector('.choices');
+  const choices = new Choices(element, {
+    removeItems: true,
+    removeItemButton: true,
+    choices: [
+      {
+        value: 'Tan Suo 2',
+        label: 'Tan Suo 2',
+        selected: false,
+        disabled: false,
+      },
+      {
+        value: 'Jia Geng',
+        label: 'Jia Geng',
+        selected: false,
+        disabled: false,
+      },
+      {
+        value: 'Option 3',
+        label: 'Option 3',
+        selected: false,
+        disabled: false,
+      },
+    ],
+    // renderSelectedChoices: 'always'
+  });
+
+  element.addEventListener(
+    'addItem',
+    function (e) {
+      console.log(e.detail.value)
+      if (e.detail.value) {
+        mapSource.setQuery(`
+        SELECT
+          cartodb_id,
+          the_geom,
+          the_geom_webmercator,
+          layer,
+          path,
+          to_char(start_date, \'MM-DD-YYYY\') as start_date,
+          to_char(end_date, \'MM-DD-YYYY\') as end_date,
+          date_range
+        FROM scslinemap
+        WHERE layer LIKE '${e.detail.value}'`) 
+      }
+    }
+  )
+
+  element.addEventListener(
+    'removeItem',
+    function(e) {
+      mapSource.setQuery(`
+      SELECT
+        cartodb_id,
+        the_geom,
+        the_geom_webmercator,
+        layer,
+        path,
+        to_char(start_date, \'MM-DD-YYYY\') as start_date,
+        to_char(end_date, \'MM-DD-YYYY\') as end_date,
+        date_range
+      FROM scslinemap`) 
+    }
+  )
+
+
+const shipsDataview = new carto.dataview.Category(mapSource, 'layer', {limit: 100})
+shipsDataview.on('dataChanged', data => {
+  const ships = data.categorie.map(category => category.name)
+  doSomething(ships)
+})
+
+function doSomething(shipNames) {
+  shipNames.forEach( name => console.log(name))
+}
+client.addDataview(shipsDataview)
 
 L.control
   .attribution({

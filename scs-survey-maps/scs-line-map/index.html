@@ -21,6 +21,13 @@
   <script src="https://libs.cartocdn.com/carto.js/v4.1.11/carto.min.js"></script>
   <link href="https://carto.com/developers/carto-js/examples/maps/public/style.css" rel="stylesheet" />
 
+  <!-- Include ChoicesJS -->
+  <script src="https://cdn.jsdelivr.net/npm/choices.js@10.1.0/public/assets/scripts/choices.min.js"></script>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/choices.js@10.1.0/public/assets/styles/choices.min.css"
+  />
+
   <link rel="preconnect stylesheet" href="https://use.typekit.net/ats0hoc.css" />
 
   <link href="css/map.css" rel="stylesheet" />
@@ -62,6 +69,15 @@
         <div id="info" />
       </section>
 
+      <!-- TODO: update the class name for section -->
+      <section class="widget select">
+        <h3 class="mobile-toggle translate subheading">Select</h3>
+        <label for="ship-select" aria-label="Select" aria-hidden="true" hidden>Select</label>
+        <select class="choices" name="ships" id="ship-select"data-type="select-multiple" multiple>
+            <option value="">--Please choose an option--</option>
+        </select>
+        
+      </section>
       <section class="widget date_range">
         <h3 class="mobile-toggle translate subheading">Date Range</h3>
         <ul class="actions">
