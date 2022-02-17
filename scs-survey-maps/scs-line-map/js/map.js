@@ -144,8 +144,9 @@ document
     }
   });
 
+  // Populates the shipsNames array
   const shipsDataview = new carto.dataview.Category(mapSource, 'layer', {limit: 100})
-  shipsDataview.on('dataChanged', (data, shipsNames) => {
+  shipsDataview.on('dataChanged', (data) => {
     const ships = data.categories.map(category => category.name)
     addShipNames(ships)
   })
@@ -153,10 +154,6 @@ document
   function addShipNames(ships) {
     // ships.forEach( s => shipsNames.push(s))
     ships.forEach( s => addSelectValues(s))
-  }
-  
-  function removeDuplicates(array) {
-    return [...new Set(array)]
   }
 
   function addSelectValues(shipName) {
@@ -181,53 +178,18 @@ document
   // }
 
   console.log(shipsNames)
-  const testVal = [
-    {
-      value: 'Tan Suo 2',
-      label: 'Tan Suo 2',
-      selected: false,
-      disabled: false,
-    },
-    {
-      value: 'Jia Geng',
-      label: 'Jia Geng',
-      selected: false,
-      disabled: false,
-    },
-  ]
-  // console.log(formatChoices(shipsNames))
-  // Handle select element
+  
+  // Select Options for choicesJS
   const selectOptions = {
     removeItems: true,
     removeItemButton: true,
   }
   const shipsSelect = document.querySelector('.choices')
+  // initialize choicesJS passing the element & options
   const choices = new Choices(shipsSelect, selectOptions)
-  // const choices = new Choices(element, {
-  //   removeItems: true,
-  //   removeItemButton: true,
-    // choices: [
-    //   {
-    //     value: 'Tan Suo 2',
-    //     label: 'Tan Suo 2',
-    //     selected: false,
-    //     disabled: false,
-    //   },
-    //   {
-    //     value: 'Jia Geng',
-    //     label: 'Jia Geng',
-    //     selected: false,
-    //     disabled: false,
-    //   },
-    //   {
-    //     value: 'Option 3',
-    //     label: 'Option 3',
-    //     selected: false,
-    //     disabled: false,
-    //   },
-    // ],
-    // renderSelectedChoices: 'always'
-  // });
+  
+  // adds harcode values to populate
+  // the select element
   // choices.setChoices(
   //   [
   //     { value: 'One', label: 'Label One'},
@@ -238,10 +200,28 @@ document
   //   'label',
   //   false,
   // )
-
-  // choices.setChoices([...shipsNames], 'value', 'label', true)
   
-  choices.setChoices(testVal, 'value', 'label', true)
+  // passing the variable shipsNames that is created dynamically
+  // this way isn't working and here lays the problem :'(
+  choices.setChoices(shipsNames, 'value', 'label', true)
+  
+  // array of objects with harcode values to populate the
+  // select element passing a variable to the setChoices() method
+  // const testValues = [
+  //   {
+  //     value: 'Tan Suo 2',
+  //     label: 'Tan Suo 2',
+  //     selected: false,
+  //     disabled: false,
+  //   },
+  //   {
+  //     value: 'Jia Geng',
+  //     label: 'Jia Geng',
+  //     selected: false,
+  //     disabled: false,
+  //   },
+  // ]
+  // choices.setChoices(testValues, 'value', 'label', true)
   
   client.addDataview(shipsDataview)
   
