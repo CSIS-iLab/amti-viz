@@ -19,6 +19,8 @@ if (lang && lang.indexOf("zh-") > -1) {
   );
 }
 
+var shipsNames = []
+
 var map = L.map("map", {
   center: [14.7237264, 115.6814572],
   zoom: 6,
@@ -142,35 +144,78 @@ document
     }
   });
 
+  const shipsDataview = new carto.dataview.Category(mapSource, 'layer', {limit: 100})
+  shipsDataview.on('dataChanged', (data, shipsNames) => {
+    const ships = data.categories.map(category => category.name)
+    addShipNames(ships)
+  })
+  
+  function addShipNames(ships) {
+    // ships.forEach( s => shipsNames.push(s))
+    ships.forEach( s => formatChoices(s))
+  }
+  
+  function removeDuplicates(array) {
+    return [...new Set(array)]
+  }
+
+  function formatChoices(shipName) {
+    shipsNames.push(shipName)
+    // shipsNames.push({
+    //   value: shipName,
+    //   label: shipName,
+    //   selected: false,
+    //   disabled: false,
+    // })
+  }
+  console.log(shipsNames)
   // Handle select element
-  const element = document.querySelector('.choices');
-  const choices = new Choices(element, {
+  const selectOptions = {
     removeItems: true,
     removeItemButton: true,
-    choices: [
-      {
-        value: 'Tan Suo 2',
-        label: 'Tan Suo 2',
-        selected: false,
-        disabled: false,
-      },
-      {
-        value: 'Jia Geng',
-        label: 'Jia Geng',
-        selected: false,
-        disabled: false,
-      },
-      {
-        value: 'Option 3',
-        label: 'Option 3',
-        selected: false,
-        disabled: false,
-      },
-    ],
+  }
+  const shipsSelect = document.querySelector('.choices')
+  const choices = new Choices(shipsSelect, selectOptions)
+  // const choices = new Choices(element, {
+  //   removeItems: true,
+  //   removeItemButton: true,
+    // choices: [
+    //   {
+    //     value: 'Tan Suo 2',
+    //     label: 'Tan Suo 2',
+    //     selected: false,
+    //     disabled: false,
+    //   },
+    //   {
+    //     value: 'Jia Geng',
+    //     label: 'Jia Geng',
+    //     selected: false,
+    //     disabled: false,
+    //   },
+    //   {
+    //     value: 'Option 3',
+    //     label: 'Option 3',
+    //     selected: false,
+    //     disabled: false,
+    //   },
+    // ],
     // renderSelectedChoices: 'always'
-  });
-
-  element.addEventListener(
+  // });
+  // choices.setChoices(
+  //   [
+  //     { value: 'One', label: 'Label One'},
+  //     { value: 'Two', label: 'Label Two'},
+  //     { value: 'Three', label: 'Label Three'},
+  //   ],
+  //   'value',
+  //   'label',
+  //   false,
+  // )
+  choices.setChoices(shipsNames, 'value', 'label', true)
+  // choices.setChoices([...shipsNames], 'value', 'label', true)
+  client.addDataview(shipsDataview)
+  
+  shipsSelect.addEventListener(
     'addItem',
     function (e) {
       console.log(e.detail.value)
@@ -191,7 +236,7 @@ document
     }
   )
 
-  element.addEventListener(
+  shipsSelect.addEventListener(
     'removeItem',
     function(e) {
       mapSource.setQuery(`
@@ -207,18 +252,6 @@ document
       FROM scslinemap`) 
     }
   )
-
-
-const shipsDataview = new carto.dataview.Category(mapSource, 'layer', {limit: 100})
-shipsDataview.on('dataChanged', data => {
-  const ships = data.categorie.map(category => category.name)
-  doSomething(ships)
-})
-
-function doSomething(shipNames) {
-  shipNames.forEach( name => console.log(name))
-}
-client.addDataview(shipsDataview)
 
 L.control
   .attribution({
