@@ -152,23 +152,50 @@ document
   
   function addShipNames(ships) {
     // ships.forEach( s => shipsNames.push(s))
-    ships.forEach( s => formatChoices(s))
+    ships.forEach( s => addSelectValues(s))
   }
   
   function removeDuplicates(array) {
     return [...new Set(array)]
   }
 
-  function formatChoices(shipName) {
-    shipsNames.push(shipName)
-    // shipsNames.push({
-    //   value: shipName,
-    //   label: shipName,
-    //   selected: false,
-    //   disabled: false,
-    // })
+  function addSelectValues(shipName) {
+    // shipsNames.push(shipName)
+    shipsNames.push({
+      value: shipName,
+      label: shipName,
+      selected: false,
+      disabled: false,
+    })
   }
+
+  // const formatChoices = (array) => {
+  //   return array.map(s => {
+  //     return {
+  //       value: s,
+  //       label: s,
+  //       selected: false,
+  //       disabled: false,
+  //     }
+  //   })
+  // }
+
   console.log(shipsNames)
+  const testVal = [
+    {
+      value: 'Tan Suo 2',
+      label: 'Tan Suo 2',
+      selected: false,
+      disabled: false,
+    },
+    {
+      value: 'Jia Geng',
+      label: 'Jia Geng',
+      selected: false,
+      disabled: false,
+    },
+  ]
+  // console.log(formatChoices(shipsNames))
   // Handle select element
   const selectOptions = {
     removeItems: true,
@@ -211,9 +238,13 @@ document
   //   'label',
   //   false,
   // )
-  choices.setChoices(shipsNames, 'value', 'label', true)
+
   // choices.setChoices([...shipsNames], 'value', 'label', true)
+  
+  choices.setChoices(testVal, 'value', 'label', true)
+  
   client.addDataview(shipsDataview)
+  
   
   shipsSelect.addEventListener(
     'addItem',
@@ -261,3 +292,9 @@ L.control
     '<a href="https://www.csis.org/programs/PROGRAMNAME">CSIS PROGRAM</a>, <a href="https://leafletjs.com/">Leaflet</a>'
   )
   .addTo(map);
+
+
+  // choices.setChoices(shipsNames, 'value', 'label', true)
+  // document.addEventListener('DOMContentLoaded', () => {
+  //   choices.setChoices(shipsNames, 'value', 'label', true)
+  // })
