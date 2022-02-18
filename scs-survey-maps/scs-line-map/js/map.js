@@ -6,6 +6,8 @@ var url =
 var href = /lang=([^&]+)/.exec(url);
 var lang = href ? href[1] : null;
 
+let dataLoaded = false
+
 var basemap;
 if (lang && lang.indexOf("zh-") > -1) {
   basemap = L.tileLayer(
@@ -18,8 +20,6 @@ if (lang && lang.indexOf("zh-") > -1) {
     {}
   );
 }
-
-var shipsNames = []
 
 var map = L.map("map", {
   center: [14.7237264, 115.6814572],
@@ -51,6 +51,8 @@ const mapSource = new carto.source.SQL(`
   FROM scslinemap`
 );
 
+console.log(mapSource)
+
 const mapStyle = new carto.style.CartoCSS(`#layer {
   line-width: 2;
   line-color: ramp([date_range], (#3969ac, #11a579), (2021, 2020), "=", category);
@@ -66,9 +68,85 @@ client.getLeafletLayer().bringToFront().addTo(map);
 
 const popup = L.popup({ closeButton: true });
 
-mapLayer.on('load', function() {
+mapLayer.on('load', function () {
   console.log('loaded');
 })
+
+
+// Populates the shipsNames array
+let selectedShips = []
+
+const shipsDataview = new carto.dataview.Category(mapSource, 'layer', { limit: 100 })
+
+shipsDataview.on('dataChanged', (data) => {
+  if (dataLoaded) { return }
+  console.log('yoza')
+  const ships = data.categories.map(category => category.name)
+  const shipNames = ships.map(s => ({
+    value: s,
+    label: s,
+    selected: false,
+    disabled: false,
+  }))
+
+  choices.setChoices(shipNames, 'value', 'label', true)
+})
+
+// Select Options for choicesJS
+const selectOptions = {
+  removeItems: true,
+  removeItemButton: true,
+}
+const shipsSelect = document.querySelector('.choices')
+const choices = new Choices(shipsSelect, selectOptions)
+client.addDataview(shipsDataview)
+
+
+shipsSelect.addEventListener(
+  'addItem',
+  function (e) {
+    dataLoaded = true
+    selectedShips.push(e.detail.value)
+    const shipLayers = selectedShips.map(s => `'%${s}%'`)
+    if (e.detail.value) {
+      mapSource.setQuery(`
+        SELECT
+          cartodb_id,
+          the_geom,
+          the_geom_webmercator,
+          layer,
+          path,
+          to_char(start_date, \'MM-DD-YYYY\') as start_date,
+          to_char(end_date, \'MM-DD-YYYY\') as end_date,
+          date_range
+        FROM scslinemap
+        WHERE layer LIKE ${shipLayers.join(' OR layer LIKE ')}`)
+    }
+  }
+)
+
+shipsSelect.addEventListener(
+  'removeItem',
+  function (e) {
+    selectedShips = selectedShips.filter(s => s !== e.detail.value)
+    const shipLayers = selectedShips.map(s => `'%${s}%'`)
+    let query = selectedShips.length > 0 ? `FROM scslinemap WHERE layer LIKE ${shipLayers.join(' OR layer LIKE ')}` : `FROM scslinemap`
+
+    mapSource.setQuery(`
+        SELECT
+          cartodb_id,
+          the_geom,
+          the_geom_webmercator,
+          layer,
+          path,
+          to_char(start_date, \'MM-DD-YYYY\') as start_date,
+          to_char(end_date, \'MM-DD-YYYY\') as end_date,
+          date_range
+        ${query}`)
+  }
+)
+
+
 mapLayer.on(carto.layer.events.FEATURE_CLICKED, createPopup);
 
 function createPopup(event) {
@@ -95,6 +173,7 @@ function createPopup(event) {
   }
 }
 
+// Code for filters
 var checks = Array.from(
   document.querySelectorAll(".date_range ul input")
 ).map(function (checkbox) {
@@ -144,126 +223,7 @@ document
     }
   });
 
-  // Populates the shipsNames array
-  const shipsDataview = new carto.dataview.Category(mapSource, 'layer', {limit: 100})
-  shipsDataview.on('dataChanged', (data) => {
-    const ships = data.categories.map(category => category.name)
-    addShipNames(ships)
-  })
-  
-  function addShipNames(ships) {
-    // ships.forEach( s => shipsNames.push(s))
-    ships.forEach( s => addSelectValues(s))
-  }
-
-  function addSelectValues(shipName) {
-    // shipsNames.push(shipName)
-    shipsNames.push({
-      value: shipName,
-      label: shipName,
-      selected: false,
-      disabled: false,
-    })
-  }
-
-  // const formatChoices = (array) => {
-  //   return array.map(s => {
-  //     return {
-  //       value: s,
-  //       label: s,
-  //       selected: false,
-  //       disabled: false,
-  //     }
-  //   })
-  // }
-
-  console.log(shipsNames)
-  
-  // Select Options for choicesJS
-  const selectOptions = {
-    removeItems: true,
-    removeItemButton: true,
-  }
-  const shipsSelect = document.querySelector('.choices')
-  // initialize choicesJS passing the element & options
-  const choices = new Choices(shipsSelect, selectOptions)
-  
-  // adds harcode values to populate
-  // the select element
-  // choices.setChoices(
-  //   [
-  //     { value: 'One', label: 'Label One'},
-  //     { value: 'Two', label: 'Label Two'},
-  //     { value: 'Three', label: 'Label Three'},
-  //   ],
-  //   'value',
-  //   'label',
-  //   false,
-  // )
-  
-  // passing the variable shipsNames that is created dynamically
-  // this way isn't working and here lays the problem :'(
-  choices.setChoices(shipsNames, 'value', 'label', true)
-  
-  // array of objects with harcode values to populate the
-  // select element passing a variable to the setChoices() method
-  // const testValues = [
-  //   {
-  //     value: 'Tan Suo 2',
-  //     label: 'Tan Suo 2',
-  //     selected: false,
-  //     disabled: false,
-  //   },
-  //   {
-  //     value: 'Jia Geng',
-  //     label: 'Jia Geng',
-  //     selected: false,
-  //     disabled: false,
-  //   },
-  // ]
-  // choices.setChoices(testValues, 'value', 'label', true)
-  
-  client.addDataview(shipsDataview)
-  
-  
-  shipsSelect.addEventListener(
-    'addItem',
-    function (e) {
-      console.log(e.detail.value)
-      if (e.detail.value) {
-        mapSource.setQuery(`
-        SELECT
-          cartodb_id,
-          the_geom,
-          the_geom_webmercator,
-          layer,
-          path,
-          to_char(start_date, \'MM-DD-YYYY\') as start_date,
-          to_char(end_date, \'MM-DD-YYYY\') as end_date,
-          date_range
-        FROM scslinemap
-        WHERE layer LIKE '${e.detail.value}'`) 
-      }
-    }
-  )
-
-  shipsSelect.addEventListener(
-    'removeItem',
-    function(e) {
-      mapSource.setQuery(`
-      SELECT
-        cartodb_id,
-        the_geom,
-        the_geom_webmercator,
-        layer,
-        path,
-        to_char(start_date, \'MM-DD-YYYY\') as start_date,
-        to_char(end_date, \'MM-DD-YYYY\') as end_date,
-        date_range
-      FROM scslinemap`) 
-    }
-  )
-
+// Attribution
 L.control
   .attribution({
     position: "bottomright",
@@ -273,8 +233,3 @@ L.control
   )
   .addTo(map);
 
-
-  // choices.setChoices(shipsNames, 'value', 'label', true)
-  // document.addEventListener('DOMContentLoaded', () => {
-  //   choices.setChoices(shipsNames, 'value', 'label', true)
-  // })
