@@ -93,12 +93,12 @@ body {
   margin: 4px;
 }
 
-input[name='2020'] + .colorKey {
-  background-color: #3969ac;
+input[name='Seabed'] + .colorKey {
+  background-color: #1D6996;
 }
 
-input[name='2021'] + .colorKey {
-  background-color: #11a579;
+input[name='Other'] + .colorKey {
+  background-color: #0C8D79;
 }
 
 aside.toolbox {

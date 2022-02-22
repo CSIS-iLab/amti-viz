@@ -47,19 +47,22 @@ const mapSource = new carto.source.SQL(`
   path,
   to_char(start_date, \'MM-DD-YYYY\') as start_date,
   to_char(end_date, \'MM-DD-YYYY\') as end_date,
-  date_range
+  date_range,
+  survey_type
   FROM scslinemap`
 );
 
 console.log(mapSource)
 
-const mapStyle = new carto.style.CartoCSS(`#layer {
-  line-width: 2;
-  line-color: ramp([date_range], (#3969ac, #11a579), (2021, 2020), "=", category);
-}`);
+const mapStyle = new carto.style.CartoCSS(
+  `#layer {
+    line-width: 1.5;
+    line-color: ramp([survey_type], (#0C8D79, #1D6996), ("Other", "Seabed"), "=");
+  }`
+);
 
 const mapLayer = new carto.layer.Layer(mapSource, mapStyle, {
-  featureOverColumns: ["start_date", "end_date", "layer", "date_range"],
+  featureOverColumns: ["start_date", "end_date", "layer", "date_range", "survey_type"],
 });
 
 client.addLayer(mapLayer);
@@ -80,7 +83,6 @@ const shipsDataview = new carto.dataview.Category(mapSource, 'layer', { limit: 1
 
 shipsDataview.on('dataChanged', (data) => {
   if (dataLoaded) { return }
-  console.log('yoza')
   const ships = data.categories.map(category => category.name)
   const shipNames = ships.map(s => ({
     value: s,
@@ -118,7 +120,8 @@ shipsSelect.addEventListener(
           path,
           to_char(start_date, \'MM-DD-YYYY\') as start_date,
           to_char(end_date, \'MM-DD-YYYY\') as end_date,
-          date_range
+          date_range,
+          survey_type
         FROM scslinemap
         WHERE layer LIKE ${shipLayers.join(' OR layer LIKE ')}`)
     }
@@ -141,11 +144,11 @@ shipsSelect.addEventListener(
           path,
           to_char(start_date, \'MM-DD-YYYY\') as start_date,
           to_char(end_date, \'MM-DD-YYYY\') as end_date,
-          date_range
+          date_range,
+          survey_type
         ${query}`)
   }
 )
-
 
 mapLayer.on(carto.layer.events.FEATURE_CLICKED, createPopup);
 
@@ -175,23 +178,23 @@ function createPopup(event) {
 
 // Code for filters
 var checks = Array.from(
-  document.querySelectorAll(".date_range ul input")
+  document.querySelectorAll(".survey_type ul input")
 ).map(function (checkbox) {
   return checkbox.name;
 });
 
-var filter_checks = new carto.filter.Category("date_range", {
+var filter_checks = new carto.filter.Category("survey_type", {
   notIn: checks
 });
 
 document
-  .querySelector(".date_range ul")
+  .querySelector(".survey_type ul")
   .addEventListener("click", function (e) {
     var checkbox = e.target.type === "checkbox" ? e.target : null;
 
     if (checkbox) {
       var checked = Array.from(
-        document.querySelectorAll(".date_range ul input:checked")
+        document.querySelectorAll(".survey_type ul input:checked")
       ).map(function (checkbox) {
         return checkbox.name;
       });
@@ -200,11 +203,11 @@ document
         return checked.indexOf(name) < 0;
       });
 
-      var filter_checked = new carto.filter.Category("date_range", {
+      var filter_checked = new carto.filter.Category("survey_type", {
         in: checked
       });
 
-      var filter_notChecked = new carto.filter.Category("date_range", {
+      var filter_notChecked = new carto.filter.Category("survey_type", {
         notIn: notChecked
       });
 
