@@ -93,12 +93,28 @@ body {
   margin: 4px;
 }
 
-input[name='Seabed'] + .colorKey {
-  background-color: #1D6996;
+input[name='Other'] + .colorKey {
+  background-color: #023950;
 }
 
-input[name='Other'] + .colorKey {
+input[name='Seabed'] + .colorKey {
   background-color: #0C8D79;
+}
+
+.choices__item--selectable {
+  background-color: #023950 !important; 
+  color: #fff !important;
+  border: 2px solid #0C8D79 !important;
+}
+
+.choices__item--selectable button {
+  border-left: 1px solid #0C8D79 !important;
+}
+
+.choices__item--choice {
+  background-color: unset !important;
+  color: unset !important;
+  border: unset !important
 }
 
 aside.toolbox {

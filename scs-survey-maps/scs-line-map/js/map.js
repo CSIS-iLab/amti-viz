@@ -57,7 +57,7 @@ console.log(mapSource)
 const mapStyle = new carto.style.CartoCSS(
   `#layer {
     line-width: 1.5;
-    line-color: ramp([survey_type], (#0C8D79, #1D6996), ("Other", "Seabed"), "=");
+    line-color: ramp([survey_type], (#023950, #0C8D79), ("Other", "Seabed"), "=");
   }`
 );
 
@@ -102,7 +102,6 @@ const selectOptions = {
 const shipsSelect = document.querySelector('.choices')
 const choices = new Choices(shipsSelect, selectOptions)
 client.addDataview(shipsDataview)
-
 
 shipsSelect.addEventListener(
   'addItem',
@@ -149,6 +148,10 @@ shipsSelect.addEventListener(
         ${query}`)
   }
 )
+
+let choicesInput = document.querySelector('.choices__input--cloned')
+console.log(choicesInput)
+choicesInput.placeholder = 'What should go here?'
 
 mapLayer.on(carto.layer.events.FEATURE_CLICKED, createPopup);
 
