@@ -150,8 +150,7 @@ shipsSelect.addEventListener(
 )
 
 let choicesInput = document.querySelector('.choices__input--cloned')
-console.log(choicesInput)
-choicesInput.placeholder = 'What should go here?'
+choicesInput.placeholder = 'Select a survey vessel'
 
 mapLayer.on(carto.layer.events.FEATURE_CLICKED, createPopup);
 
