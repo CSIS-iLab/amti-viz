@@ -234,7 +234,7 @@ L.control
     position: "bottomright",
   })
   .setPrefix(
-    '<a href="https://www.csis.org/programs/PROGRAMNAME">CSIS PROGRAM</a>, <a href="https://leafletjs.com/">Leaflet</a>'
+    '<a href="https://amti.csis.org/" alt="Link to AMTI website">Asia Maritime Transparency Initiative</a>, <a href="https://dskbd.org/" alt="Link to South China Sea Chronicle website">South China Sea Chronicle Initiative</a> <a href="https://leafletjs.com/">Leaflet</a>'
   )
   .addTo(map);
 
