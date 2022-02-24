@@ -53,8 +53,6 @@ const mapSource = new carto.source.SQL(`
   ORDER BY survey_type`
 );
 
-console.log(mapSource)
-
 const mapStyle = new carto.style.CartoCSS(
   `#layer {
     line-width: 1.5;
@@ -71,11 +69,6 @@ client.addLayer(mapLayer);
 client.getLeafletLayer().bringToFront().addTo(map);
 
 const popup = L.popup({ closeButton: true });
-
-mapLayer.on('load', function () {
-  console.log('loaded');
-})
-
 
 // Populates the shipsNames array
 let selectedShips = []
