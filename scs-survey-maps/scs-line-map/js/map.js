@@ -49,7 +49,8 @@ const mapSource = new carto.source.SQL(`
   to_char(end_date, \'MM-DD-YYYY\') as end_date,
   date_range,
   survey_type
-  FROM scslinemap`
+  FROM scslinemap
+  ORDER BY survey_type`
 );
 
 console.log(mapSource)
@@ -122,7 +123,8 @@ shipsSelect.addEventListener(
           date_range,
           survey_type
         FROM scslinemap
-        WHERE layer LIKE ${shipLayers.join(' OR layer LIKE ')}`)
+        WHERE layer LIKE ${shipLayers.join(' OR layer LIKE ')}
+        ORDER BY survey_type`)
     }
   }
 )
@@ -132,7 +134,7 @@ shipsSelect.addEventListener(
   function (e) {
     selectedShips = selectedShips.filter(s => s !== e.detail.value)
     const shipLayers = selectedShips.map(s => `'%${s}%'`)
-    let query = selectedShips.length > 0 ? `FROM scslinemap WHERE layer LIKE ${shipLayers.join(' OR layer LIKE ')}` : `FROM scslinemap`
+    let query = selectedShips.length > 0 ? `FROM scslinemap WHERE layer LIKE ${shipLayers.join(' OR layer LIKE ')} ORDER BY survey_type` : `FROM scslinemap ORDER BY survey_type`
 
     mapSource.setQuery(`
         SELECT
