@@ -220,6 +220,23 @@ leaflet-control {
 }
 
 @media (max-width: 425px) {
+  .menu-translate {
+    margin-left: 12px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    padding: 12px 6px;
+    font-family: "PT Sans Narrow", sans-serif;
+    color: #000;
+  }
+
+  .icon span {
+    width: 29px;
+    height: 3px;
+  }
+}
+
+@media (max-width: 425px) {
   .mobile-only {
     visibility: visible;
     height: 50px;
@@ -239,7 +256,7 @@ leaflet-control {
 
 @media (max-width: 425px) {
   .box {
-    padding: 50px 24px 24px;
+    padding: 66px 24px 16px;
   }
 }
 
