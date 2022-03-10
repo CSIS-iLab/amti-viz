@@ -227,22 +227,22 @@ function Chapter({ id, theme, image, imageTwo, imageThree, title, description, l
 }
 
 
-function ChapterHeading({ id, theme, title, image, currentChapterID }) {
-  const classList = id === currentChapterID ? "step active" : "step";
-  return (
-    <div id={id} className={classList}>
-      {title &&
-        <h2 className="title">{title}</h2>
-      }
-      <div className={theme}>
-        <div className="content">
-          {image &&
-            <img src={image} alt={title}></img>
-          }
-        </div>
-      </div>
-    </div>
-  )
-}
+// function ChapterHeading({ id, theme, title, image, currentChapterID }) {
+//   const classList = id === currentChapterID ? "step active" : "step";
+//   return (
+//     <div id={id} className={classList}>
+//       {title &&
+//         <h2 className="title">{title}</h2>
+//       }
+//       <div className={theme}>
+//         <div className="content">
+//           {image &&
+//             <img src={image} alt={title}></img>
+//           }
+//         </div>
+//       </div>
+//     </div>
+//   )
+// }
 
 export default App;
