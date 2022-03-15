@@ -260,11 +260,6 @@ li {
   font-weight: 400;
 }
 
-
-/* .image {
-  text-align: right;
-} */
-
 #features {
   padding-top: 10vh;
   padding-bottom: 10vh;
@@ -300,16 +295,6 @@ li {
 .step div {
   line-height: 25px;
 }
-
-/* .step img {
-  display: block;
-  width: 100%;
-  max-width: 200px;
-  padding: 0px 16px;
-  position: relative;
-  bottom: 18rem;
-  margin-left: auto;
-} */
 
 .light {
   max-width: unset;
