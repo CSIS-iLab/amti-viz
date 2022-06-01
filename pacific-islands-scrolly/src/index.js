@@ -23,7 +23,7 @@ if (window.location.href.indexOf('amti') != -1) {
   dataDir = './data'
 }
 
-console.log(window.location.href.indexOf('amti') != -1)
+// console.log(window.location.href.indexOf('amti') != -1)
 
 const chaptersPorts = d3Fetch.csv(`${dataDir}/chapter-ports-2.csv`)
 const chaptersWebgl = d3Fetch.csv(`${dataDir}/chapters-webgl-3.csv`)
@@ -113,7 +113,7 @@ const parseChapterData = (rawData) => {
   let d = rawData.map(item => {
     let chapterData = {
       name: item.name,
-      color: '#e06b91'
+      color: item.color
     }
 
     let latKey, lngKey
@@ -287,10 +287,7 @@ const highlightGLChapter = chapterData => {
       : ['match', ['get', 'chinese-involvement'], '', 'transparent', '#fff']
 
     nations.forEach(nation => {
-      console.log(chapterName, nation)
-      console.log(nations.indexOf(chapterName))
       if (nation === chapterName && nations.indexOf(chapterName) > -1) {
-        console.log('say hi')
         window.map.setPaintProperty(
           `${nation}_clusters`,
           'circle-color',
