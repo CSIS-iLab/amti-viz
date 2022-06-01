@@ -21,7 +21,7 @@ module.exports = {
     indent: ['error', 2],
     'linebreak-style': ['error', 'unix'],
     quotes: ['warn', 'single'],
-    semi: ['error', 'always'],
+    semi: ['error', 'never'],
     'no-unused-vars': [
       'warn',
       { vars: 'all', args: 'none', ignoreRestSiblings: false }

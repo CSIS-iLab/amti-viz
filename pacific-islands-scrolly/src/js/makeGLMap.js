@@ -261,8 +261,8 @@ const clickInterests = e => {
   let coordinates = e.features[0].geometry.coordinates.slice()
   let feature = interestsData.features.find(
     feature =>
-      feature.properties['port-or-baseen'] ===
-      e.features[0].properties['port-or-baseen']
+      feature.properties['port-or-base_en'] ===
+      e.features[0].properties['port-or-base_en']
   )
   let properties = feature.properties
 

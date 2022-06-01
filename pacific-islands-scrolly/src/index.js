@@ -1,14 +1,14 @@
+/* eslint-disable no-undef */
 import interactiveSetup from './js/interactive-setup'
 import Scrolling from './js/scrolling'
-import breakpoints from './js/breakpoints'
+// import breakpoints from './js/breakpoints'
 import makeGLMap from './js/makeGLMap'
 import makeLLMap from './js/makeLLMap'
 import mapboxgl from 'mapbox-gl'
 import { polyfill } from 'es6-promise'
 polyfill()
-import { fetch as fetchPolyfill } from 'whatwg-fetch'
+// import { fetch as fetchPolyfill } from 'whatwg-fetch'
 import * as d3Fetch from 'd3-fetch'
-
 
 import './scss/main.scss'
 
@@ -17,17 +17,17 @@ const spreadsheetID = '1gLJo_Bniuy1RoMJCxO_Bj0pOCLLC12mkrCg67m1QTcY'
 window.useLeaflet =
   /*@cc_on!@*/ false || !!document.documentMode || !mapboxgl.supported()
 
-  let dataDir = './data'
+let dataDir = './data'
 
-  if (window.location.href.indexOf('amti') != -1) {
-    dataDir = './data'
-  }
+if (window.location.href.indexOf('amti') != -1) {
+  dataDir = './data'
+}
 
-  console.log(window.location.href.indexOf('amti') != -1)
+// console.log(window.location.href.indexOf('amti') != -1)
 
-  const chaptersPorts = d3Fetch.csv(`${dataDir}/chapter-ports-2.csv`)
-  const chaptersWebgl = d3Fetch.csv(`${dataDir}/chapters-webgl-3.csv`)
-  const chaptersLeaflet = d3Fetch.csv(`${dataDir}/chapters-leaflet-4.csv`)
+const chaptersPorts = d3Fetch.csv(`${dataDir}/chapter-ports-2.csv`)
+const chaptersWebgl = d3Fetch.csv(`${dataDir}/chapters-webgl-3.csv`)
+const chaptersLeaflet = d3Fetch.csv(`${dataDir}/chapters-leaflet-4.csv`)
 
 const container = document.getElementById('scrolly-island-interactive')
 
@@ -51,56 +51,56 @@ const init = () => {
     return
   }
 
+  let dataset = Promise.all([chaptersLeaflet, chaptersWebgl, chaptersPorts])
+    .then(res => {
+      const [dataLeaflet, dataWebgl, dataPorts] = res
 
-let dataset = Promise.all([chaptersLeaflet, chaptersWebgl, chaptersPorts]).then(res => {
-  const [dataLeaflet, dataWebgl, dataPorts] = res
+      let chapterData = dataWebgl
 
-  let chapterData = dataWebgl
+      if (window.useLeaflet) {
+        chapterData = dataLeaflet
+      }
 
-  if (window.useLeaflet) {
-    chapterData = dataLeaflet
-  }
+      window.isMobile = window.innerWidth < 1040
+      window.stepActions = parseChapterData(chapterData)
 
-  window.isMobile = window.innerWidth < 1040
-  window.stepActions = parseChapterData(chapterData)
-
-  countryColors = window.stepActions
+      countryColors = window.stepActions
         .filter(c => !(exclude.indexOf(c.name) > -1))
         .map(c => [c.name, c.color])
         .reduce((a, b) => a.concat(b))
 
-  paintMap = ['match', ['get', 'country']]
-    .concat(countryColors)
-    .concat(['#e06b91'])
-
-    return {dataLeaflet, dataWebgl, dataPorts}
-  }).then(function(ex) {
-    let values = Object.keys(window.stepActions).map(function(key) {
-      return window.stepActions[key]
+      paintMap = ['match', ['get', 'country']]
+        .concat(countryColors)
+        .concat(['#e06b91'])
+      return { dataLeaflet, dataWebgl, dataPorts }
     })
-  interactiveSetup({
-    container: container,
-    initialDesc: `${
-      window.stepActions[0]
-        ? `${window.stepActions[0][`text_${window.lang}`]}`
-        : ``
-    }`,
-    steps: values
-  })
+    .then(function(ex) {
+      let values = Object.keys(window.stepActions).map(function(key) {
+        return window.stepActions[key]
+      })
+      interactiveSetup({
+        container: container,
+        initialDesc: `${
+          window.stepActions[0]
+            ? `${window.stepActions[0][`text_${window.lang}`]}`
+            : ``
+        }`,
+        steps: values
+      })
 
-    Scrolling({ stepActions: window.stepActions })
+      Scrolling({ stepActions: window.stepActions })
 
-    if (window.useLeaflet) {
-      makeLLMap(ex.dataWebgl)
-    } else {
-      makeGLMap(ex.dataPorts)
-    }
-    window.addEventListener('resize', resize)
-    return ex
-  })
-  .catch(function(ex) {
-    console.log('parsing failed', ex)
-  })
+      if (window.useLeaflet) {
+        makeLLMap(ex.dataWebgl)
+      } else {
+        makeGLMap(ex.dataPorts)
+      }
+      window.addEventListener('resize', resize)
+      return ex
+    })
+    .catch(function(ex) {
+      console.log('parsing failed', ex)
+    })
 }
 
 init()
@@ -111,8 +111,10 @@ const resize = () => {
 
 const parseChapterData = (rawData) => {
   let d = rawData.map(item => {
-
-    let chapterData = {name: item.name, color: '#e06b91' }
+    let chapterData = {
+      name: item.name,
+      color: item.color
+    }
 
     let latKey, lngKey
 
@@ -134,9 +136,7 @@ const parseChapterData = (rawData) => {
 
     chapterData.center = [chapterData.lng, chapterData.lat]
 
-    chapterData.text = `<h3 class="title">${
-      item[`title_${window.lang}`]
-    }</h3>
+    chapterData.text = `<h3 class="title">${item[`title_${window.lang}`]}</h3>
     <p class="story">${item[`text_${window.lang}`]}</p>`
 
     chapterData.fly = () => {
@@ -162,7 +162,7 @@ const parseChapterData = (rawData) => {
 
 const setLLPopup = chapterData => {
   if (window.nation.indexOf('China') > -1) {
-    let index = parseInt(window.nation.replace('China-', ''), 10)
+    // let index = parseInt(window.nation.replace('China-', ''), 10)
     let layers = nation_marker_clusters['China'].getLayers()
     layers.forEach((layer, i) => {
       let coordinates = layer.toGeoJSON().geometry.coordinates
@@ -179,7 +179,6 @@ const setLLPopup = chapterData => {
 
 const setGLPopup = chapterData => {
   let chapterName = chapterData.name
-
 
   let features = window.map.getSource('interests')._data.features
 
@@ -228,10 +227,10 @@ const fly = chapterData => {
 }
 
 const chapterColors = {
-  'United States': `#6688b9`,
-  'France': `#f89c74`,
-  'New Zealand': `#00ad3b`,
-  'Australia': `#f6cf71`,
+  'United States': '#6688b9',
+  'France': '#f89c74',
+  'New Zealand': '#00ad3b',
+  'Australia': '#f6cf71',
   'China': '#e06b91'
 }
 
@@ -267,28 +266,26 @@ const highlightLLChapter = chapterData => {
 }
 
 const highlightGLChapter = chapterData => {
- 
   let chapterName =
     chapterData.name.indexOf('-') > -1
       ? chapterData.name.substring(0, chapterData.name.indexOf('-'))
       : chapterData.name
- 
+
   if (!(exclude.indexOf(chapterName) > -1)) {
     let newFillMap = !(chapterName.indexOf('China') > -1)
       ? [
-          'match',
-          ['get', 'country'],
-          `${chapterName}`,
-          `${window.stepActions.find(c => c.name === chapterName).color}`,
-          'transparent'
-        ]
+        'match',
+        ['get', 'country'],
+        `${chapterName}`,
+        `${window.stepActions.find(c => c.name === chapterName).color}`,
+        'transparent'
+      ]
       : ['match', ['get', 'chinese-involvement'], '', 'transparent', '#e06b91']
 
     let newStrokeMap = !(chapterName.indexOf('China') > -1)
       ? ['match', ['get', 'country'], `${chapterName}`, '#fff', 'transparent']
       : ['match', ['get', 'chinese-involvement'], '', 'transparent', '#fff']
 
-    
     nations.forEach(nation => {
       if (nation === chapterName && nations.indexOf(chapterName) > -1) {
         window.map.setPaintProperty(
