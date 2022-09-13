@@ -5,8 +5,8 @@ var basemap = L.tileLayer(
 
 var map = L.map("map", {
   center: [35.27, 129.05],
-  zoom: 4,
-  maxZoom: 7,
+  zoom: 6,
+  maxZoom: 9,
   scrollWheelZoom: true,
   minZoom: 1,
   zoomControl: true,
@@ -51,13 +51,13 @@ const joinDevelopmentZoneSource = new carto.source.SQL(
 
 const mapStyle = new carto.style.CartoCSS(`
   #layer {
-    marker-width: 11;
-    marker-fill: #63a7ec;
-    marker-fill-opacity: 0.9;
-    marker-allow-overlap: true;
-    marker-line-width: 1;
-    marker-line-color: #FFFFFF;
-    marker-line-opacity: 1;
+  marker-width: 11;
+  marker-fill: ramp([rig_name], (#63a7ec, #63a7ec, #63a7ec, #63a7ec, #7d4391, #63a7ec, #63a7ec, #63a7ec, #63a7ec, #63a7ec, #63a7ec), ("Oriental Discovery", "Platform #1 ", "Platform #11", "Platform #12", "Platform #13", "Platform #2", "Platform #3", "Platform #4", "Platform #5", "Platform #6"), "=");
+  marker-fill-opacity: 1;
+  marker-allow-overlap: true;
+  marker-line-width: 1;
+  marker-line-color: #FFFFFF;
+  marker-line-opacity: 1;
   }
 `);
 
