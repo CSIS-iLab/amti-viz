@@ -16,39 +16,39 @@ var map = L.map("map", {
 });
 
 const client = new carto.Client({
-  apiKey: "y4YHHEDrimkbpx2uTRnLmw",
+  apiKey: "d04CdzdOaRbyl8fgmt7wHQ",
   username: "csis",
 });
 
 const clientChinaShelf = new carto.Client({
-  apiKey: "wKvWlecNlfJkIWRlonmmGw",
+  apiKey: "VgCKCvaxBiG8EizMoaXPZQ",
   username: "csis",
 });
 
 const clientJapanShelf = new carto.Client({
-  apiKey: "cGP_z0za2UplA4Zhh3NYnQ",
+  apiKey: "Csd-n3r-MxX5FVkeNqeWoQ",
   username: "csis",
 });
 
 const clientJointDevelopmentZone = new carto.Client({
-  apiKey: "KXP9_nSJPT7GU5MCrL38Aw",
+  apiKey: "8Rsd_jhMzTGj7MriFytmQg",
   username: "csis",
 });
 
 const mapSource = new carto.source.SQL(
-  `SELECT * FROM ecs_oil_rig_locations ORDER BY cartodb_id DESC`
+  `SELECT * FROM east_china_sea_oil_rig_locations_map ORDER BY cartodb_id DESC`
 );
 
 const chinaContinentalShelfSource = new carto.source.SQL(
-  `SELECT * FROM china_continental_shelf`
+  `SELECT * FROM china_continental_shelf_line`
 );
 
 const japanContinentalShelfSource = new carto.source.SQL(
-  `SELECT * FROM japan_continental_shelf`
+  `SELECT * FROM japan_continental_shelf_line`
 );
 
 const joinDevelopmentZoneSource = new carto.source.SQL(
-  `SELECT * FROM table_161013_joint_development_zonecsv`
+  `SELECT * FROM joint_development_zone_line`
 );
 
 const mapStyle = new carto.style.CartoCSS(`
