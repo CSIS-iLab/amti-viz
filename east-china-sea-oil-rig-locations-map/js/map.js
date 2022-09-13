@@ -53,7 +53,7 @@ const joinDevelopmentZoneSource = new carto.source.SQL(
 
 const mapStyle = new carto.style.CartoCSS(`
   #layer {
-  marker-width: 20;
+  marker-width: 16;
   marker-fill: ramp([rig_name], (#63a7ec, #63a7ec, #63a7ec, #63a7ec, #7d4391, #63a7ec, #63a7ec, #63a7ec, #63a7ec, #63a7ec, #63a7ec), ("Oriental Discovery", "Platform #1 ", "Platform #11", "Platform #12", "Platform #13", "Platform #2", "Platform #3", "Platform #4", "Platform #5", "Platform #6"), "=");
   marker-fill-opacity: 1;
   marker-allow-overlap: true;
