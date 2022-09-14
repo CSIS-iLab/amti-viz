@@ -2,6 +2,13 @@ body {
   overflow: hidden;
 }
 
+/* remove the class map for production */
+.map {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .toolbox {
   position: absolute;
   left: 2rem;
@@ -180,4 +187,42 @@ a:hover {
   position: fixed;
   bottom: 20px;
   left: 2rem;
+}
+
+.popupHeaderStyle {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.popupEntryStyle {
+  padding: 0;
+  margin: 0;
+  font: 12px "Source Sans Pro", sans-serif;
+  color: rgba(0, 0, 0, 0.8);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.popupEntryStyle p {
+  margin: 4px;
+}
+
+.popupEntryStyle span {
+  font-weight: 600;
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: white;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
+  color: #333;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background-color: #e4e3e3;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
 }

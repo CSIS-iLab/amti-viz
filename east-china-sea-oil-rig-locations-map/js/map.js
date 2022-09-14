@@ -125,26 +125,25 @@ clientChinaShelf.getLeafletLayer().bringToFront().addTo(map);
 clientJapanShelf.getLeafletLayer().bringToFront().addTo(map);
 clientJointDevelopmentZone.getLeafletLayer().bringToFront().addTo(map);
 
-const sidePanel = L.popup({ closeButton: true });
+const popup = L.popup({ closeButton: true });
 
-mapLayer.on(carto.layer.events.FEATURE_CLICKED, createSidePanel);
+mapLayer.on(carto.layer.events.FEATURE_CLICKED, createPopup)
 
-function createSidePanel(event) {
-  sidePanel.setLatLng(event.latLng);
-
-  const panel = document.querySelector('.panel');
-  const panelContent = document.querySelector('.panel-content');
-  panel.classList.add('open');
-
-  if (!sidePanel.isOpen()) {
+function createPopup(event) {
+  popup.setLatLng(event.latLng);
+  // const panel = document.querySelector('.panel');
+  // const panelContent = document.querySelector('.panel-content');
+  // panel.classList.add('open');
+  if (!popup.isOpen()) {
     var data = event.data;
-    var content = '';
+    var content = "";
 
     content += `
-    <h2 class="sidePanelHeaderStyle">
+    <div class="popupHeaderStyle">
       ${data.rig_name}
-    </h2>
-    <p class="side-panel-value">Description: <span>${data.new_or_old}</span> </p>
+    </div>
+    <!--  <h2 class="sidePanelHeaderStyle"></h2> -->
+    <p>${data.new_or_old}</p>
     `;
     // if (data.source) {
     //   content += `<p class="side-panel-value"><span class="source">${data.source}</span> </p>`
@@ -155,7 +154,10 @@ function createSidePanel(event) {
     // <p class="side-panel-value">Major Recipients: <span>${data.major_recipients}</span> </p>
     // <p class="side-panel-link">For more details, click <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxYNVcd_DsRaJzHo6c3dN78Y9uOypX2jX4VzEaJZpgX_t9qXFfCzNENobD7aFXB-HeVawqjFXtslKI/pubhtml" target="_blank">here</a>.</p>
     // `;
-    panelContent.innerHTML = content;
+    // panelContent.innerHTML = content;
+    popup.setContent("" + content);
+    popup.openOn(map);
+    console.log(map.getZoom());
   }
 }
 
