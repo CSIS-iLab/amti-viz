@@ -177,6 +177,7 @@ a:hover {
   padding: 0;
   margin: 0;
   position: relative;
+  display: flex;
 }
 
 .legend li span::before {
@@ -190,16 +191,31 @@ a:hover {
   background: var(--bg);
 }
 
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, .15fr);
+}
+
+#ramp1 {
+  margin-right: 9px;
+}
+
+#ramp2 {
+  margin-right: 9px;
+}
+
 #ramp1::before {
   background-color: var(--newRig);
   border: 3px solid var(--newRig);
   border-radius: 50%;
+  margin-left: 4px;
 }
 
 #ramp2::before {
   background-color: var(--oldRig);
   border: 3px solid var(--oldRig);
   border-radius: 50%;
+  margin-left: 4px;
 }
 
 #ramp3::before {
@@ -223,14 +239,14 @@ a:hover {
   height: 3px;
 }
 
-.legend-text {
+/* .legend-text {
   position: relative;
   margin-left: 10px;
 }
 
 .legend__value>span {
   margin-left: 10px;
-}
+} */
 
 @media screen and (max-width: 768px) {
   .panel {
