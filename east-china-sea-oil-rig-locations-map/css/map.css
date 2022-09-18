@@ -152,6 +152,48 @@ a:hover {
 }
 
 
+.container {
+  display: grid;
+  grid-template-columns: 30px auto;
+  column-gap: 16px;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 auto;
+  align-self: center;
+}
+
+.line {
+  width: 25px;
+  height: 2px;
+  margin: 0 auto;
+  align-self: center;
+}
+
+
+.new {
+  background-color: #7d4391;
+}
+
+.old {
+  background-color: #63a7ec;
+}
+
+.japan {
+  background-color: #caa16d;
+}
+
+.china {
+  background-color: #0078b2;
+}
+
+.joint {
+  background-color: #0c8d79;
+}
+
 .legend {
   position: relative;
   top: .313rem;
@@ -189,11 +231,6 @@ a:hover {
   width: 10px;
   height: 10px;
   background: var(--bg);
-}
-
-.container {
-  display: grid;
-  grid-template-columns: repeat(2, .15fr);
 }
 
 #ramp1 {
