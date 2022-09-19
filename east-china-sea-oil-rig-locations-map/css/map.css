@@ -2,19 +2,12 @@ body {
   overflow: hidden;
 }
 
-/* remove the class map for production */
-.map {
-  width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .toolbox {
   position: absolute;
   left: 2rem;
   top: 2rem;
   border-radius: 3px;
-  font-family: 'Spectral', serif;
+  font-family: 'PT Sans', sans-serif;
   max-width: 315px;
   min-width: 315px;
   z-index: 2;
@@ -23,12 +16,13 @@ body {
   box-shadow: -4px 4px 8px rgb(0 0 0 / 20%);
 }
 
-.toolbox header h1{
+.toolbox header h1 {
   line-height: 1.1;
   color: #353535;
-  font-weight: 600;
-  border-bottom: 1px solid rgba(0,0,0,0.5);
+  font-weight: bold;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   padding-bottom: 0.75rem;
+  font-family: "PT Sans Narrow", sans-serif;
 }
 
 .box-header {
@@ -44,112 +38,84 @@ body {
   color: #353535;
 }
 
-.panel {
-  position: absolute;
-  font-family: "Source Sans Pro", sans-serif;
-  top: 0;
-  right: -33%;
-  padding: 1rem 2.5rem;
-  height: 100vh;
-  width: 33%;
-  background: white;
-  box-shadow: 2px 2px 2px 7px rgba(0, 0, 0, 0.1);
-  transition: 0.5s all ease;
-  overflow-y: auto;
-  border-radius: 3px;
-  z-index: 3;
-}
-
-.panel-content {
-  max-height: 100%;
-}
-
-.panel-content h2 {
-  font-family: 'Spectral', serif;
-  text-transform: uppercase;
-  font-size: 1.15rem;
-  opacity: .8;
-}
-
-.panel-content span {
-  font-family: 'Spectral', serif;
-}
-
-.open {
-  right: 0%;
-}
-
-.close-btn {
-  position: absolute;
-  right: 36px;
-  top: 27px;
-  z-index: 1;
-  font-family: "Source Sans Pro", sans-serif;
-  color: #353535;
-  background-color: white;
-  transition: 0.3s all ease;
-  border: none;
-  opacity: 0.8;
-  font-size: 1.5rem;
-}
-
-.close-btn:hover {
-  color: #077283;
-}
-
-
-.sidePanelHeaderStyle {
-  text-transform: uppercase;
-  color: #353535;
-  border-bottom: 1px solid rgba(0,0,0,0.5);
-  padding-bottom: 1rem;
-  margin-bottom: 2rem;
-}
-
-.side-panel-value {
-  text-transform: uppercase;
-  color:#077283;
-  font-size: 15px;
-}
-
-p.side-panel-link {
-  text-transform: none;
-  font-family: 'Spectral', serif;
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 1.4;
-  color:  #353535;
-}
-
-.side-panel-value span {
-  text-transform: none;
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 1.4;
-  color:  #353535;
-}
-
-.side-panel-value span.source{
-  display: block;
-  color:  #353535;
-  font-size: .9rem;
-  font-style: italic;
-  margin-top: .25rem;
-  opacity: 85%;
-}
-
 a {
-  color: #077283;
+  color: #036997;
 }
 
 a:hover {
   text-decoration: none;
-  color: #032A30;
+  color: #02354b;
 }
 
 .leaflet-left {
   margin-top: 1.5rem;
   border-radius: 3px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 30px auto;
+  column-gap: 16px;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 auto;
+  align-self: center;
+}
+
+.line {
+  width: 25px;
+  height: 2px;
+  margin: 0 auto;
+  align-self: center;
+}
+
+.new {
+  background-color: #7d4391;
+}
+
+.old {
+  background-color: #63a7ec;
+}
+
+.japan {
+  background-color: #caa16d;
+}
+
+.china {
+  background-color: #0078b2;
+}
+
+.joint {
+  background-color: #0c8d79;
+}
+
+.text {
+  font-size: 14px;
+}
+
+.subtitle {
+  padding-top: 16px;
+  font-family: "PT Sans Narrow";
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.popupHeaderStyle {
+  font-family: "PT Sans Narrow", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 1.2;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.leaflet-popup-content p {
+  font-family: "PT Sans", sans-serif;
 }
 
 @media screen and (max-width: 768px) {
@@ -183,46 +149,9 @@ a:hover {
   margin-left: 0;
 }
 
-.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
+.leaflet-touch .leaflet-control-layers,
+.leaflet-touch .leaflet-bar {
   position: fixed;
   bottom: 20px;
   left: 2rem;
-}
-
-.popupHeaderStyle {
-  font-family: "PT Sans", sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 14px;
-  line-height: 1.2;
-  margin-bottom: 8px;
-}
-
-.popupEntryStyle {
-  padding: 0;
-  margin: 0;
-  font: 12px "Source Sans Pro", sans-serif;
-  color: rgba(0, 0, 0, 0.8);
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-.popupEntryStyle p {
-  margin: 4px;
-}
-
-.popupEntryStyle span {
-  font-weight: 600;
-}
-
-.leaflet-popup-content-wrapper {
-  background-color: white;
-  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
-  color: #333;
-}
-
-.leaflet-popup-content-wrapper,
-.leaflet-popup-tip {
-  background-color: #e4e3e3;
-  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
-  border-radius: 3px;
 }

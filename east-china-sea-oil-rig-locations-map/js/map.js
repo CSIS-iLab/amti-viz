@@ -161,12 +161,6 @@ function createPopup(event) {
   }
 }
 
-const closeBtn = document.querySelector('.close-btn');
-closeBtn.addEventListener('click', function(e) {
-  const panel = document.querySelector('.panel');
-  panel.classList.remove('open');
-})
-
 L.control
   .attribution({
     position: "bottomright",
