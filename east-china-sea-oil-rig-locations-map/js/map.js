@@ -146,15 +146,6 @@ function createSidePanel(event) {
     </h2>
     <p class="side-panel-value">Description: <span>${data.new_or_old}</span> </p>
     `;
-    // if (data.source) {
-    //   content += `<p class="side-panel-value"><span class="source">${data.source}</span> </p>`
-    // }
-    // content +=
-    // `
-    // <p class="side-panel-value">Focus Areas: <span>${data.focus_areas}</span> </p>
-    // <p class="side-panel-value">Major Recipients: <span>${data.major_recipients}</span> </p>
-    // <p class="side-panel-link">For more details, click <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxYNVcd_DsRaJzHo6c3dN78Y9uOypX2jX4VzEaJZpgX_t9qXFfCzNENobD7aFXB-HeVawqjFXtslKI/pubhtml" target="_blank">here</a>.</p>
-    // `;
     panelContent.innerHTML = content;
   }
 }
