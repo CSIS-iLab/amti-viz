@@ -125,36 +125,27 @@ clientChinaShelf.getLeafletLayer().bringToFront().addTo(map);
 clientJapanShelf.getLeafletLayer().bringToFront().addTo(map);
 clientJointDevelopmentZone.getLeafletLayer().bringToFront().addTo(map);
 
-const sidePanel = L.popup({ closeButton: true });
+const popup = L.popup({ closeButton: true });
 
-mapLayer.on(carto.layer.events.FEATURE_CLICKED, createSidePanel);
+mapLayer.on(carto.layer.events.FEATURE_CLICKED, createPopup)
 
-function createSidePanel(event) {
-  sidePanel.setLatLng(event.latLng);
-
-  const panel = document.querySelector('.panel');
-  const panelContent = document.querySelector('.panel-content');
-  panel.classList.add('open');
-
-  if (!sidePanel.isOpen()) {
+function createPopup(event) {
+  popup.setLatLng(event.latLng);
+  if (!popup.isOpen()) {
     var data = event.data;
-    var content = '';
+    var content = "";
 
     content += `
-    <h2 class="sidePanelHeaderStyle">
+    <div class="popupHeaderStyle">
       ${data.rig_name}
-    </h2>
-    <p class="side-panel-value">Description: <span>${data.new_or_old}</span> </p>
+    </div>
+    <p>${data.new_or_old}</p>
     `;
-    panelContent.innerHTML = content;
+    popup.setContent("" + content);
+    popup.openOn(map);
+    console.log(map.getZoom());
   }
 }
-
-const closeBtn = document.querySelector('.close-btn');
-closeBtn.addEventListener('click', function(e) {
-  const panel = document.querySelector('.panel');
-  panel.classList.remove('open');
-})
 
 L.control
   .attribution({
