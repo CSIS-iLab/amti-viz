@@ -53,7 +53,7 @@ const joinDevelopmentZoneSource = new carto.source.SQL(
 
 const mapStyle = new carto.style.CartoCSS(`
   #layer {
-  marker-width: 16;
+  marker-width: 13;
   marker-fill: ramp([rig_name], (#63a7ec, #63a7ec, #63a7ec, #63a7ec, #7d4391, #63a7ec, #63a7ec, #63a7ec, #63a7ec, #63a7ec, #63a7ec), ("Oriental Discovery", "Platform #1 ", "Platform #11", "Platform #12", "Platform #13", "Platform #2", "Platform #3", "Platform #4", "Platform #5", "Platform #6"), "=");
   marker-fill-opacity: 1;
   marker-allow-overlap: true;
@@ -131,9 +131,6 @@ mapLayer.on(carto.layer.events.FEATURE_CLICKED, createPopup)
 
 function createPopup(event) {
   popup.setLatLng(event.latLng);
-  // const panel = document.querySelector('.panel');
-  // const panelContent = document.querySelector('.panel-content');
-  // panel.classList.add('open');
   if (!popup.isOpen()) {
     var data = event.data;
     var content = "";
@@ -142,19 +139,8 @@ function createPopup(event) {
     <div class="popupHeaderStyle">
       ${data.rig_name}
     </div>
-    <!--  <h2 class="sidePanelHeaderStyle"></h2> -->
     <p>${data.new_or_old}</p>
     `;
-    // if (data.source) {
-    //   content += `<p class="side-panel-value"><span class="source">${data.source}</span> </p>`
-    // }
-    // content +=
-    // `
-    // <p class="side-panel-value">Focus Areas: <span>${data.focus_areas}</span> </p>
-    // <p class="side-panel-value">Major Recipients: <span>${data.major_recipients}</span> </p>
-    // <p class="side-panel-link">For more details, click <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxYNVcd_DsRaJzHo6c3dN78Y9uOypX2jX4VzEaJZpgX_t9qXFfCzNENobD7aFXB-HeVawqjFXtslKI/pubhtml" target="_blank">here</a>.</p>
-    // `;
-    // panelContent.innerHTML = content;
     popup.setContent("" + content);
     popup.openOn(map);
     console.log(map.getZoom());

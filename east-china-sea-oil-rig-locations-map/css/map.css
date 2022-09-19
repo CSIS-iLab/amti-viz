@@ -13,6 +13,7 @@ body {
   z-index: 2;
   background-color: #fff;
   padding: 0.5rem 1.5rem;
+  padding-bottom: 1.25rem;
   box-shadow: -4px 4px 8px rgb(0 0 0 / 20%);
 }
 
@@ -27,7 +28,7 @@ body {
 
 .box-header {
   margin-top: .5rem;
-  margin-bottom: .5rem;
+  margin-bottom: 1.25rem;
 }
 
 .box-header span {
@@ -56,21 +57,24 @@ a:hover {
   display: grid;
   grid-template-columns: 30px auto;
   column-gap: 16px;
+  row-gap: 4px;
 }
 
 .circle {
-  width: 10px;
-  height: 10px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   margin: 0 auto;
   align-self: center;
+  justify-self: center;
 }
 
 .line {
-  width: 25px;
-  height: 2px;
+  width: 31px;
+  height: 4px;
   margin: 0 auto;
   align-self: center;
+  justify-self: center;
 }
 
 .new {
@@ -98,7 +102,6 @@ a:hover {
 }
 
 .subtitle {
-  padding-top: 16px;
   font-family: "PT Sans Narrow";
   font-size: 16px;
   font-weight: bold;
@@ -114,33 +117,11 @@ a:hover {
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
+/* Override leaflet default styles */
 .leaflet-popup-content p {
   font-family: "PT Sans", sans-serif;
 }
 
-@media screen and (max-width: 768px) {
-  .panel {
-    width: 80%;
-    right: -80%
-  }
-
-  .open {
-    right: 0%
-  }
-}
-
-@media all and (min-width: 768px) and (max-width: 1024px) {
-  .panel {
-    width: 40%;
-    right: -40%
-  }
-
-  .open {
-    right: 0%
-  }
-}
-
-/* Override leaflet default styles */
 .leaflet-top {
   position: relative !important
 }
