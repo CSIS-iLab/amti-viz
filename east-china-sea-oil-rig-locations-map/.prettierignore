@@ -1,3 +1,4 @@
+# Ignore artifacts:
 # Logs
 .DS_Store
 logs
@@ -77,6 +78,7 @@ typings/
 .env.test.local
 .env.production.local
 .parcel-cache
+dist
 package-lock.json
 
 npm-debug.log*
