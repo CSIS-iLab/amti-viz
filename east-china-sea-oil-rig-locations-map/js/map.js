@@ -53,9 +53,12 @@ const joinDevelopmentZoneSource = new carto.source.SQL(
 
 const mapStyle = new carto.style.CartoCSS(`
   #layer {
-  marker-width: 13;
-  marker-fill: ramp([rig_name], (#63a7ec, #63a7ec, #63a7ec, #63a7ec, #7d4391, #63a7ec, #63a7ec, #63a7ec, #63a7ec, #63a7ec, #63a7ec), ("Oriental Discovery", "Platform #1 ", "Platform #11", "Platform #12", "Platform #13", "Platform #2", "Platform #3", "Platform #4", "Platform #5", "Platform #6"), "=");
+  marker-width: 11;
+  marker-fill: ramp([mobile], (#63a7ec, #E53E3A), (false, true), "=");
+  marker-fill: ramp([rig_name], (#7d4391),
+  ("Platform #13"), "=");
   marker-fill-opacity: 1;
+  marker-file: ramp([mobile], (url('https://s3.amazonaws.com/com.cartodb.users-assets.production/maki-icons/square-18.svg')), (true), "=");
   marker-allow-overlap: true;
   marker-line-width: 1;
   marker-line-color: #FFFFFF;
@@ -88,7 +91,7 @@ const joinDevelopmentZoneStyle = new carto.style.CartoCSS(`
 `);
 
 const mapLayer = new carto.layer.Layer(mapSource, mapStyle, {
-  featureOverColumns: ["rig_name", "new_or_old"],
+  featureOverColumns: ["rig_name", "new_or_old", "mobile"],
 });
 
 const mapLayerChinaShelf = new carto.layer.Layer(
@@ -127,7 +130,7 @@ clientJointDevelopmentZone.getLeafletLayer().bringToFront().addTo(map);
 
 const popup = L.popup({ closeButton: true });
 
-mapLayer.on(carto.layer.events.FEATURE_CLICKED, createPopup)
+mapLayer.on(carto.layer.events.FEATURE_CLICKED, createPopup);
 
 function createPopup(event) {
   popup.setLatLng(event.latLng);
@@ -143,7 +146,6 @@ function createPopup(event) {
     `;
     popup.setContent("" + content);
     popup.openOn(map);
-    console.log(map.getZoom());
   }
 }
 

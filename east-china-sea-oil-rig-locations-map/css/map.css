@@ -7,7 +7,7 @@ body {
   left: 2rem;
   top: 2rem;
   border-radius: 3px;
-  font-family: 'PT Sans', sans-serif;
+  font-family: "PT Sans", sans-serif;
   max-width: 315px;
   min-width: 315px;
   z-index: 2;
@@ -27,7 +27,7 @@ body {
 }
 
 .box-header {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   margin-bottom: 1.25rem;
 }
 
@@ -67,6 +67,18 @@ a:hover {
   margin: 0 auto;
   align-self: center;
   justify-self: center;
+}
+
+.square {
+  width: 16px;
+  height: 16px;
+  margin: 0 auto;
+  align-self: center;
+  justify-self: center;
+}
+
+.mobile {
+  background-color: #e53e3a;
 }
 
 .line {
@@ -123,7 +135,7 @@ a:hover {
 }
 
 .leaflet-top {
-  position: relative !important
+  position: relative !important;
 }
 
 .leaflet-left .leaflet-control {
