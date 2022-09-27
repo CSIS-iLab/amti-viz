@@ -53,7 +53,7 @@ const joinDevelopmentZoneSource = new carto.source.SQL(
 
 const mapStyle = new carto.style.CartoCSS(`
   #layer {
-  marker-width: 11;
+  marker-width: 13;
   marker-fill: ramp([mobile], (#63a7ec, #E53E3A), (false, true), "=");
   marker-fill: ramp([rig_name], (#7d4391),
   ("Platform #13"), "=");
@@ -61,7 +61,7 @@ const mapStyle = new carto.style.CartoCSS(`
   marker-file: ramp([mobile], (url('https://s3.amazonaws.com/com.cartodb.users-assets.production/maki-icons/square-18.svg')), (true), "=");
   marker-allow-overlap: true;
   marker-line-width: 1;
-  marker-line-color: #FFFFFF;
+  marker-line-color: #3076B5;
   marker-line-opacity: 1;
   }
 `);
