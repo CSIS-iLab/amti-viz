@@ -1,0 +1,150 @@
+body {
+  overflow: hidden;
+}
+
+.toolbox {
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
+  border-radius: 3px;
+  font-family: "PT Sans", sans-serif;
+  max-width: 315px;
+  min-width: 315px;
+  z-index: 2;
+  background-color: #fff;
+  padding: 0.5rem 1.5rem;
+  padding-bottom: 1.25rem;
+  box-shadow: -4px 4px 8px rgb(0 0 0 / 20%);
+}
+
+.toolbox header h1 {
+  line-height: 1.1;
+  color: #353535;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  padding-bottom: 0.75rem;
+  font-family: "PT Sans Narrow", sans-serif;
+}
+
+.box-header {
+  margin-top: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.box-header span {
+  display: block;
+}
+
+.description {
+  color: #353535;
+}
+
+a {
+  color: #036997;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #02354b;
+}
+
+.leaflet-left {
+  margin-top: 1.5rem;
+  border-radius: 3px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 30px auto;
+  column-gap: 16px;
+  row-gap: 4px;
+}
+
+.circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin: 0 auto;
+  align-self: center;
+  justify-self: center;
+}
+
+.square {
+  width: 16px;
+  height: 16px;
+  margin: 0 auto;
+  align-self: center;
+  justify-self: center;
+}
+
+.mobile {
+  background-color: #e53e3a;
+}
+
+.line {
+  width: 31px;
+  height: 4px;
+  margin: 0 auto;
+  align-self: center;
+  justify-self: center;
+}
+
+.new {
+  background-color: #7d4391;
+}
+
+.old {
+  background-color: #63a7ec;
+}
+
+.japan {
+  background-color: #caa16d;
+}
+
+.china {
+  background-color: #0078b2;
+}
+
+.joint {
+  background-color: #0c8d79;
+}
+
+.text {
+  font-size: 16px;
+}
+
+.subtitle {
+  font-family: "PT Sans Narrow";
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.popupHeaderStyle {
+  font-family: "PT Sans Narrow", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 1.2;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+/* Override leaflet default styles */
+.leaflet-popup-content p {
+  font-family: "PT Sans", sans-serif;
+}
+
+.leaflet-top {
+  position: relative !important;
+}
+
+.leaflet-left .leaflet-control {
+  margin-left: 0;
+}
+
+.leaflet-touch .leaflet-control-layers,
+.leaflet-touch .leaflet-bar {
+  position: fixed;
+  bottom: 20px;
+  left: 2rem;
+}
