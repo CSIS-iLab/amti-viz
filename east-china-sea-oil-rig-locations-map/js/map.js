@@ -5,7 +5,7 @@ var basemap = L.tileLayer(
 
 var map = L.map("map", {
   center: [30.27, 125.05],
-  zoom: 6,
+  zoom: 7,
   maxZoom: 9,
   scrollWheelZoom: true,
   minZoom: 1,
@@ -145,7 +145,6 @@ function createPopup(event) {
     <div class="popupHeaderStyle">
       ${data.rig_name}
     </div>
-    <p>${data.new_or_old}</p>
     `;
     popup.setContent("" + content);
     popup.openOn(map);
