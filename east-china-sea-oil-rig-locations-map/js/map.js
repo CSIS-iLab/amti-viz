@@ -4,7 +4,7 @@ var basemap = L.tileLayer(
 );
 
 var map = L.map("map", {
-  center: [30.27, 125.05],
+  center: [29.26, 125.05],
   zoom: 7,
   maxZoom: 12,
   scrollWheelZoom: true,
@@ -56,7 +56,7 @@ const mapStyle = new carto.style.CartoCSS(`
   marker-width: 13;
   marker-fill: ramp([mobile], (#63a7ec, #e53e3a), (false, true), "=");
   marker-fill: ramp([rig_name], (#7d4391),
-  ("Platform 13"), "=");
+  ("Platform 13 and Kan Tan 7"), "=");
   marker-fill-opacity: 1;
   marker-file: ramp([mobile], (url('https://s3.amazonaws.com/com.cartodb.users-assets.production/production/csis/assets/20220927191107square_icon.svg')), (true), "=");
   marker-allow-overlap: true;
