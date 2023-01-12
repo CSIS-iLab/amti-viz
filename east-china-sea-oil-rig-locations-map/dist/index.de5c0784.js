@@ -114,15 +114,6 @@ function createSidePanel(event) {
     </h2>
     <p class="side-panel-value">Description: <span>${data.new_or_old}</span> </p>
     `;
-        // if (data.source) {
-        //   content += `<p class="side-panel-value"><span class="source">${data.source}</span> </p>`
-        // }
-        // content +=
-        // `
-        // <p class="side-panel-value">Focus Areas: <span>${data.focus_areas}</span> </p>
-        // <p class="side-panel-value">Major Recipients: <span>${data.major_recipients}</span> </p>
-        // <p class="side-panel-link">For more details, click <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxYNVcd_DsRaJzHo6c3dN78Y9uOypX2jX4VzEaJZpgX_t9qXFfCzNENobD7aFXB-HeVawqjFXtslKI/pubhtml" target="_blank">here</a>.</p>
-        // `;
         panelContent.innerHTML = content;
     }
 }
@@ -135,4 +126,4 @@ L.control.attribution({
     position: "bottomright"
 }).setPrefix('<a href="https://amti.csis.org/">CSIS - AMTI</a>, <a href="https://leafletjs.com/">Leaflet</a>').addTo(map);
 
-//# sourceMappingURL=index.237be95d.js.map
+//# sourceMappingURL=index.de5c0784.js.map

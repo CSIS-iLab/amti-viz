@@ -4,7 +4,7 @@
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "start": "parcel --open firefox",
-    "build": "parcel build"
+    "build": "parcel build src/index.html"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.7.0",

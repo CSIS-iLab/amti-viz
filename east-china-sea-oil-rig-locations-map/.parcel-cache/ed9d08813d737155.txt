@@ -1,7 +1,7 @@
 4313
-89/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/dist/index.html1663533756178804215 0
-96/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/dist/index.c844dd8c.js1663533756178804215 0
-101/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/dist/index.6921a203.css.map1663533756182804194 0
+89/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/dist/index.html1663534214340300273 0
+96/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/dist/index.c844dd8c.js1663534214340300273 0
+101/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/dist/index.6921a203.css.map1663534214340300273 0
 105/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/globals/index.d.ts1663532798052174048 0
 107/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/globals/globals.json1663532797992174393 0
 94/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/globals1663532798040174117 1
@@ -2601,7 +2601,7 @@
 130/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/@parcel/workers/lib/threads/ThreadsChild.js1663532798144173522 0
 131/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/@parcel/workers/src/process/ProcessWorker.js1663532798136173569 0
 125/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/css-tree/lib/syntax/node/Identifier.js1663532798208173155 0
-100/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/dist/index.c844dd8c.js.map1663533756182804194 0
+100/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/dist/index.c844dd8c.js.map1663534214340300273 0
 109/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/timsort/src/timsort.js1663532798072173935 0
 128/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/@swc/helpers/src/_to_consumable_array.mjs1663532798236172995 0
 169/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/@parcel/node-resolver-core/test/fixture/node_modules/package-alias-exclude/main.js1663532798228173041 0
@@ -2826,7 +2826,7 @@
 99/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/css-tree/lib1663532798216173111 1
 128/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/@parcel/transformer-posthtml/package.json1663532798028174186 0
 117/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/detect-libc/bin/detect-libc.js1663532798036174140 0
-86/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/package.json1663529846560987587 0
+86/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/package.json1663534199184382585 0
 129/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/@parcel/core/src/requests/DevDepRequest.js1663532798200173201 0
 140/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/@parcel/runtime-js/src/helpers/browser/wasm-loader.js1663532798164173409 0
 163/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/@parcel/node-resolver-core/test/fixture/node_modules/package-browser-exclude1663532798264172835 1
@@ -2994,7 +2994,7 @@
 172/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/@parcel/node-resolver-core/test/fixture/node_modules/package-browser-alias/subfolder11663532798256172882 1
 105/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/get-port/readme.md1663532797996174369 0
 150/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/@parcel/core/test/fixtures/custom-format-infer-ext/package.json1663532798284172722 0
-97/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/dist/index.6921a203.css1663533756178804215 0
+97/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/dist/index.6921a203.css1663534214340300273 0
 132/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/caniuse-lite/data/features/offscreencanvas.js1663532798312172562 0
 121/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/@parcel/core/test/fixtures/plugins1663532798220173087 1
 124/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/terser/lib/compress/native-objects.js1663532798208173155 0
@@ -3530,7 +3530,7 @@
 129/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/css-tree/lib/syntax/function/expression.js1663532798200173201 0
 106/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/type-fest/base.d.ts1663532798040174117 0
 107/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/buffer-from/index.js1663532797960174575 0
-73/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map1663533756150804369 1
+73/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map1663534214332300316 1
 117/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/type-fest/ts41/camel-case.d.ts1663532798068173957 0
 122/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/css-tree/lib/syntax/function/var.js1663532798256172882 0
 115/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/css-tree/lib/syntax/index.js1663532798220173087 0
@@ -3866,7 +3866,7 @@
 112/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/domutils/lib/stringify.js1663532798068173957 0
 149/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/abortcontroller-polyfill/dist/abortcontroller-polyfill-only.js1663532798012174277 0
 114/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/domutils/lib/feeds.d.ts.map1663532798084173866 0
-78/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/dist1663533756182804194 1
+78/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/dist1663534214340300273 1
 115/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/domutils/lib/manipulation.js1663532798040174117 0
 123/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/caniuse-lite/data/features/tls1-1.js1663532798324172493 0
 133/home/jose/dev/iLab/dataviz/amti-viz/east-china-sea-oil-rig-locations-map/node_modules/@jridgewell/trace-mapping/dist/types/sort.d.ts1663532798108173728 0
