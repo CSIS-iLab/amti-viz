@@ -28,14 +28,14 @@ body {
       font-weight: bold;
       border-bottom: 1px solid rgba(0, 0, 0, 0.5);
       padding-bottom: 0.75rem;
-      font-family: "PT Sans Narrow", sans-serif;
+      font-family: 'PT Sans Narrow', sans-serif;
     }
   }
 }
 
 .box-header {
-  margin-top: .5rem;
-  margin-bottom: .5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 
   span {
     display: block;
@@ -65,10 +65,10 @@ body {
     max-height: 100%;
 
     h2 {
-      font-family: "PT Sans Narrow", sans-serif;
+      font-family: 'PT Sans Narrow', sans-serif;
       text-transform: uppercase;
       font-size: 1.15rem;
-      opacity: .8;
+      opacity: 0.8;
     }
 
     span {
@@ -106,7 +106,7 @@ body {
   margin-bottom: 2rem;
 
   &::after {
-    content: "";
+    content: '';
     display: block;
     border-bottom: 2px solid #02354b;
     width: 34px;
@@ -116,7 +116,7 @@ body {
 
 .side-panel-value {
   text-transform: uppercase;
-  color:#02354b;
+  color: #02354b;
   font-size: 15px;
 
   span {
@@ -129,9 +129,9 @@ body {
     .source {
       display: block;
       color: #353535;
-      font-size: .9rem;
+      font-size: 0.9rem;
       font-style: italic;
-      margin-top: .25rem;
+      margin-top: 0.25rem;
       opacity: 85%;
     }
   }
@@ -154,14 +154,13 @@ a {
 
 a:hover {
   text-decoration: none;
-  color: #02354b; 
+  color: #02354b;
 }
 
 .leaflet-left {
   margin-top: 1.5rem;
   border-radius: 3px;
 }
-
 
 .container {
   display: grid;
@@ -184,7 +183,6 @@ a:hover {
   align-self: center;
 }
 
-
 .new {
   background-color: $new-rig-color;
 }
@@ -205,40 +203,39 @@ a:hover {
   background-color: $joint-development-zone-color;
 }
 
-
-
 @media screen and (max-width: 768px) {
   .panel {
     width: 80%;
-    right: -80%
+    right: -80%;
   }
 
   .open {
-    right: 0%
+    right: 0%;
   }
 }
 
 @media all and (min-width: 768px) and (max-width: 1024px) {
   .panel {
     width: 40%;
-    right: -40%
+    right: -40%;
   }
 
   .open {
-    right: 0%
+    right: 0%;
   }
 }
 
 /* Override leaflet default styles */
 .leaflet-top {
-  position: relative !important
+  position: relative !important;
 }
 
 .leaflet-left .leaflet-control {
   margin-left: 0;
 }
 
-.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
+.leaflet-touch .leaflet-control-layers,
+.leaflet-touch .leaflet-bar {
   position: fixed;
   bottom: 20px;
   left: 2rem;
