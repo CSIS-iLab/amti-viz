@@ -4,7 +4,7 @@ const URL = `https://content-sheets.googleapis.com/v4/spreadsheets/1BfIDHH5pwXrk
 async function getData() {
   const RESPONSE = await fetch(URL)
   const DATA = await RESPONSE.json()
-  return formatData(DATA.values).slice(0, 15)
+  return formatData(DATA.values)
 }
 
 function formatData(data) {
