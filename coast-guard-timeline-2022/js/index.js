@@ -35,7 +35,6 @@ async function drawChart() {
   var container = document.getElementById("timeline-tooltip");
   var chart = new google.visualization.Timeline(container);
   var dataTable = new google.visualization.DataTable();
-  // var dateFormat = new google.visualization.DateFormat({ pattern: 'd.M.yy' })
 
   dataTable.addColumn({ type: "string", id: "Location" });
   dataTable.addColumn({ type: "string", id: "Name" });
@@ -56,30 +55,51 @@ async function drawChart() {
   })
 
   for (var i = 0; i < dataTable.getNumberOfRows(); i++) {
-    var duration =
-      (
-        dataTable.getValue(i, 4).getTime() - dataTable.getValue(i, 3).getTime()
-      ) / 1000
-      console.log(duration)
-    // duration = new Date(duration).toString()
+    let durationSuffix = ' day'
+    var duration = Math.floor(
+      (dataTable.getValue(i, 4).getTime() -
+        dataTable.getValue(i, 3).getTime()) /
+        1000
+    )
     var days = parseInt(duration / (3600*24))
-    var hours = parseInt(duration / 3600) % 24;
-    var minutes = parseInt(duration / 60) % 60;
-    var seconds = duration % 60;
-    console.log(days, 'days', hours, 'hours', minutes,'minutes');
+    if ( days > 1) {
+      durationSuffix = " days";
+    }
+    // console.log(days, durationSuffix)
+    // console.log('date: ',dataTable.getValue(i, 4).getDate())
+    // console.log('month: ',dataTable.getValue(i, 4).getMonth())
+    let startDateLenght = dataTable.getValue(i, 3).toDateString().length
+    let endDateLenght = dataTable.getValue(i, 4).toDateString().length
+    let startDateFormatted = dataTable
+      .getValue(i, 3)
+      .toDateString()
+      .substring(4, startDateLenght)
+    let endDateFormatted = dataTable
+      .getValue(i, 4)
+      .toDateString()
+      .substring(4, endDateLenght)
+    // console.log(dateFormat.formatValue(dataTable.getValue(i, 4)).length)
+    // console.log(
+    //   "date string: ",
+    //   dateFormat
+    //     .formatValue(dataTable.getValue(i, 4))
+    //     .substring(0, 12)
+    // );
     var tooltip =
       '<div class="ggl-tooltip"><span>' +
       dataTable.getValue(i, 1) +
       '</span></div><div class="ggl-tooltip"><span>' +
       dataTable.getValue(i, 0) +
       "</span>: " +
-      dateFormat.formatValue(dataTable.getValue(i, 3)) +
+      startDateFormatted +
       " - " +
-      dateFormat.formatValue(dataTable.getValue(i, 4)) +
+      endDateFormatted +
       "</div>" +
       '<div class="ggl-tooltip"><span>' +
-      'Duration' +
-      '</span>: ' + duration  +
+      "Duration" +
+      "</span>: " +
+      days +
+      durationSuffix;
       '</div>';
 
     dataTable.setValue(i, 2, tooltip);
