@@ -32,9 +32,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 async function drawChart() {
   const dataFormatted = await getData()
-  var container = document.getElementById("timeline-tooltip");
-  var chart = new google.visualization.Timeline(container);
-  var dataTable = new google.visualization.DataTable();
+  let container = document.getElementById("timeline-tooltip");
+  let chart = new google.visualization.Timeline(container);
+  let dataTable = new google.visualization.DataTable();
 
   dataTable.addColumn({ type: "string", id: "Location" });
   dataTable.addColumn({ type: "string", id: "Name" });
@@ -50,24 +50,45 @@ async function drawChart() {
     p: { html: true },
   })
 
-  var dateFormat = new google.visualization.DateFormat({
+  let dateFormat = new google.visualization.DateFormat({
     formatType: 'medium'
   })
 
-  for (var i = 0; i < dataTable.getNumberOfRows(); i++) {
-    let durationSuffix = ' day'
-    var duration = Math.floor(
+  for (let i = 0; i < dataTable.getNumberOfRows(); i++) {
+    let monthsSuffix = ' month'
+    let daysSuffix = ' day'
+    let durationFormatted = ''
+    // It calculates the time difference and it converts into seconds
+    let duration = Math.floor(
       (dataTable.getValue(i, 4).getTime() -
         dataTable.getValue(i, 3).getTime()) /
         1000
     )
-    var days = parseInt(duration / (3600*24))
-    if ( days > 1) {
-      durationSuffix = " days";
+
+    let days = parseInt(duration / (3600*24)) //Converts duration into days
+    const durationCalculated = calculateDuration(days)
+    const yearsCalculated = durationCalculated[0]
+    const monthsCalculated = durationCalculated[1]
+    const daysCalculated = durationCalculated[2]
+
+    if ( monthsCalculated > 1 ) {
+      monthsSuffix = ' months'
     }
-    // console.log(days, durationSuffix)
-    // console.log('date: ',dataTable.getValue(i, 4).getDate())
-    // console.log('month: ',dataTable.getValue(i, 4).getMonth())
+
+    if ( daysCalculated > 1 ) {
+      daysSuffix = ' days'
+    }
+
+    if ( monthsCalculated ) {
+      durationFormatted = monthsCalculated + monthsSuffix + ' '
+    }
+
+    if ( daysCalculated ) {
+      durationFormatted +=  daysCalculated + daysSuffix
+    }
+
+    // console.log(durationFormatted)
+
     let startDateLenght = dataTable.getValue(i, 3).toDateString().length
     let endDateLenght = dataTable.getValue(i, 4).toDateString().length
     let startDateFormatted = dataTable
@@ -78,14 +99,8 @@ async function drawChart() {
       .getValue(i, 4)
       .toDateString()
       .substring(4, endDateLenght)
-    // console.log(dateFormat.formatValue(dataTable.getValue(i, 4)).length)
-    // console.log(
-    //   "date string: ",
-    //   dateFormat
-    //     .formatValue(dataTable.getValue(i, 4))
-    //     .substring(0, 12)
-    // );
-    var tooltip =
+
+    let tooltip =
       '<div class="ggl-tooltip"><span>' +
       dataTable.getValue(i, 1) +
       '</span></div><div class="ggl-tooltip"><span>' +
@@ -98,14 +113,37 @@ async function drawChart() {
       '<div class="ggl-tooltip"><span>' +
       "Duration" +
       "</span>: " +
-      days +
-      durationSuffix;
-      '</div>';
+      durationFormatted
+      '</div>'
 
-    dataTable.setValue(i, 2, tooltip);
+    dataTable.setValue(i, 2, tooltip)
   }
 
-  var options = {
+  function calculateDuration(value) {
+    // console.log(value)
+    let year, months, week, days;
+
+    year = value >= 365 ? Math.floor(value / 365) : 0;
+    value = year ? value - year * 365 : value;
+
+    months = value >= 30 ? Math.floor((value % 365) / 30) : 0;
+    value = months ? value - months * 30 : value;
+    // console.log('value after month is: ', value )
+    // week = value >= 7 ? Math.floor((value % 365) / 7) : 0;
+    // value = week ? value - week * 7 : value;
+    // console.log('value after week is: ', value )
+
+    days = value
+    // days = value < 7 ? Math.floor((value % 365) % 7) : 0;
+
+    // console.log("years = ", year)
+    // console.log("months = ", months)
+    // console.log("weeks = ", week);
+    // console.log("days = ", days)
+    return [year, months, days]
+  }
+
+  let options = {
     // colors: ["#58a897", "#83badc", "#3b75bb", "#c79bd3", "#FCF1AB"],
     colors: ["#58a897", "#83badc", "#3b75bb", "#c79bd3", "#ca6d92"],
     timeline: {
