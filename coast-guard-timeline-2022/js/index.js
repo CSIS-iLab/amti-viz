@@ -14,7 +14,11 @@ function formatData(data) {
     let row = []
     data[index].forEach((element, i) => {
       if (i > 1) {
-        row.push(new Date(element))
+        const dateArray = element.split('-')
+        const year = dateArray[0]
+        const month = parseInt(dateArray[1], 10) - 1;
+        const day = dateArray[2]
+        row.push(new Date(year, month, day))
       } else {
         row.push(element)
       }
@@ -42,8 +46,6 @@ async function drawChart() {
   dataTable.addColumn({ type: "date", id: "End" });
   dataTable.addRows(dataFormatted)
 
-  // pseudo code
-  // show the duration in this format: Duration: xx month, xx days
   dataTable.insertColumn(2, {
     type: "string",
     role: "tooltip",
@@ -87,10 +89,9 @@ async function drawChart() {
       durationFormatted +=  daysCalculated + daysSuffix
     }
 
-    // console.log(durationFormatted)
-
     let startDateLenght = dataTable.getValue(i, 3).toDateString().length
     let endDateLenght = dataTable.getValue(i, 4).toDateString().length
+
     let startDateFormatted = dataTable
       .getValue(i, 3)
       .toDateString()
@@ -128,23 +129,14 @@ async function drawChart() {
 
     months = value >= 30 ? Math.floor((value % 365) / 30) : 0;
     value = months ? value - months * 30 : value;
-    // console.log('value after month is: ', value )
     // week = value >= 7 ? Math.floor((value % 365) / 7) : 0;
     // value = week ? value - week * 7 : value;
-    // console.log('value after week is: ', value )
-
     days = value
     // days = value < 7 ? Math.floor((value % 365) % 7) : 0;
-
-    // console.log("years = ", year)
-    // console.log("months = ", months)
-    // console.log("weeks = ", week);
-    // console.log("days = ", days)
     return [year, months, days]
   }
 
   let options = {
-    // colors: ["#58a897", "#83badc", "#3b75bb", "#c79bd3", "#FCF1AB"],
     colors: ["#58a897", "#83badc", "#3b75bb", "#c79bd3", "#ca6d92"],
     timeline: {
       rowLabelStyle: {
