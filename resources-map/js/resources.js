@@ -45,8 +45,8 @@ L.control
 L.control.zoomslider().addTo(map);
 
 var client = new carto.Client({
-  apiKey: "khMzL3OslgY3MUmO0qjBCA",
-  username: "csis"
+  apiKey: "dSZOYz_p4TxYtNobsUO_dQ",
+  username: "csis",
 });
 
 var spreadsheetID = "1k3NtTK79jZpXK3qzg53-wQFM_KeF6qhXSXzwh8E1IVk";
@@ -142,7 +142,7 @@ function initResources() {
   });
 
   resources = new carto.source.SQL(
-    "SELECT * FROM oil_and_gas_blocks_map ORDER BY country1 DESC"
+    `SELECT * FROM oil_and_gas_blocks_map_1 ORDER BY country1 DESC`
   );
 
   resources.addFilter(countryDataFilter);
