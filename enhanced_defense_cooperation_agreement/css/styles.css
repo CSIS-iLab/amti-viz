@@ -67,12 +67,12 @@ div#results {
   border-radius: 20px;
 }
 
-.colorKey[name='Naval Force'] {
+.colorKey[name='2023'] {
   background-color: #3969ac;
   border-radius: 50%;
 }
 
-.colorKey[name='Air Force'] {
+.colorKey[name='2016'] {
   background-color: #11a579;
   border-radius: 50%;
 }

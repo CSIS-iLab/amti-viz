@@ -70,7 +70,7 @@ sql
           </div>`
           if (marker.planned_facilities) {
             content += `<p class="popupEntryStyle">
-              <b>Planned facilities: </b>
+              <b>EDCA projects: </b>
               ${marker.planned_facilities}</p>`
           }
           if (marker.recent_upgrades) {
@@ -114,15 +114,15 @@ const populatedPlacesSource = new carto.source.SQL(
 const populatedPlacesStyle = new carto.style.CartoCSS(`
   #layer {
     marker-width: 12;
-    marker-fill: ramp([base_type], (#11a579, #3969ac,#ca6d92),
-    ("Air Force", "Naval Force", "Armed Force"), "=");
+    marker-fill: ramp([date_of_acquisition], (#11a579, #3969ac),
+    (2016, 2023), "=");
     marker-fill-opacity: 1;
     marker-allow-overlap: true;
     marker-line-width: 0.5;
     marker-line-color: #fff;
     marker-line-opacity: 0.5;
   }
-`);
+`)
 
 const populatedPlacesLayer = new carto.layer.Layer(
   populatedPlacesSource,
