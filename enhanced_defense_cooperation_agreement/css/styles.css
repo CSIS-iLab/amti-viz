@@ -2,6 +2,8 @@ body {
   font-family: "Open Sans Condensed", sans-serif;
 }
 
+/* TODO: move necessary styles from makemap to styles. */
+
 div#searchbox input {
   width: 75%;
 }
@@ -246,7 +248,7 @@ leaflet-control {
 @media (max-width: 425px) {
   .mobile-only {
     visibility: visible;
-    height: 50px;
+    height: fit-content;
     color: #747d82;
     font-size: 12px;
     line-height: 16px;
@@ -306,23 +308,3 @@ leaflet-control {
   border-radius: 50%;
   border: 1px solid gray; 
 }
-
-/* hide zoom bar level
-.leaflet-control-zoomslider-wrap {
-  display: none;
-} */
-
-/* Override leaflet default styles */
-/* .leaflet-top {
-  position: relative !important
-}
-
-.leaflet-left .leaflet-control {
-  margin-left: 0;
-}
-
-.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
-  position: fixed;
-  bottom: 20px;
-  left: 2rem;
-} */
