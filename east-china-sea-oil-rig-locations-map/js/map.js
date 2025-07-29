@@ -15,8 +15,9 @@ var map = L.map("map", {
   attributionControl: false,
 });
 
+// east_china_sea_oil_rig_locations_map
 const client = new carto.Client({
-  apiKey: "d04CdzdOaRbyl8fgmt7wHQ",
+  apiKey: "gxUSqXmdh78lPP7IughoGg",
   username: "csis",
 });
 
@@ -36,7 +37,7 @@ const clientJointDevelopmentZone = new carto.Client({
 });
 
 const mapSource = new carto.source.SQL(
-  `SELECT * FROM east_china_sea_oil_rig_locations_map ORDER BY cartodb_id DESC`
+  `SELECT * FROM east_china_sea_oil_rig_locations_map_sheet1 ORDER BY cartodb_id DESC`
 );
 
 const chinaContinentalShelfSource = new carto.source.SQL(
@@ -54,18 +55,9 @@ const joinDevelopmentZoneSource = new carto.source.SQL(
 const mapStyle = new carto.style.CartoCSS(`
   #layer {
   marker-width: 13;
-  marker-fill: ramp([mobile], (#63a7ec, #e53e3a), (false, true), "=");
-  marker-fill: ramp([rig_name], (#7d4391),
-  ("Platform 13 and Kan Tan 7"), "=");
+  marker-fill: ramp([new_or_old], (#7d4391, #63a7ec), ("New", "Old"), "=");
   marker-fill-opacity: 1;
-  marker-file: ramp([mobile], (url('https://s3.amazonaws.com/com.cartodb.users-assets.production/production/csis/assets/20220927191107square_icon.svg')), (true), "=");
   marker-allow-overlap: true;
-  marker-line-width: 1;
-  marker-line-color: #3076B5;
-  marker-line-color: ramp([rig_name], (#551C68),
-  ("Platform #13"), "=");
-  marker-line-color: ramp([new_or_old], (#99100D), ("New, Mobile"), "=");
-  marker-line-opacity: 1;
   }
 `);
 
@@ -94,7 +86,7 @@ const joinDevelopmentZoneStyle = new carto.style.CartoCSS(`
 `);
 
 const mapLayer = new carto.layer.Layer(mapSource, mapStyle, {
-  featureOverColumns: ["rig_name", "new_or_old", "mobile"],
+  featureOverColumns: ["rig_name", "new_or_old"],
 });
 
 const mapLayerChinaShelf = new carto.layer.Layer(
