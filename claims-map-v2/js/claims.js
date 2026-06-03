@@ -13,7 +13,7 @@ export async function china() {
     apiKey: 'Ap3d-y2wVCHiA9XtCGBwUg',
     program: 'Asia Maritime Transparency Initiative',
     website: 'https://amti.csis.org/',
-    title: 'Maritime Claims of the Indo-Pacific testing',
+    title: 'Maritime Claims of the Indo-Pacific',
     description:  'Search claimants by name or click the search bar to see the full list. Up to six can be selected at once. Use the boxes below to toggle different claim types. Zoom in or out using the buttons on the side of the map. Click and drag to move across the map.',
     mapboxStyle:   lang && lang.indexOf("zh-") > -1
     ? "citui3waw00162jo1zcsf1urj"
