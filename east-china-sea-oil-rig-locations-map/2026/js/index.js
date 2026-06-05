@@ -17,7 +17,7 @@ var map = L.map("map", {
 
 // api-name: east_china_sea_oil_rigs_2026
 const client = new carto.Client({
-  apiKey: "-buppCDOl26jLwlmBWrvYQ",
+  apiKey: "OVdTjtk58d6Phru67gRkww",
   username: "csis",
 });
 
@@ -37,7 +37,7 @@ const clientJointDevelopmentZone = new carto.Client({
 });
 
 const mapSource = new carto.source.SQL(
-  `SELECT * FROM east_china_sea_oil_rigs_2026_2026 ORDER BY cartodb_id DESC`
+  `SELECT * FROM east_china_sea_oil_rigs_2026 ORDER BY cartodb_id DESC`
 );
 
 const chinaContinentalShelfSource = new carto.source.SQL(
