@@ -37,7 +37,7 @@ L.control
 
 L.control.zoomslider().addTo(map);
 
-var apiKey = "wSX_v1e4-P45ernhjNuLgg";
+var apiKey = "zjf3uzZHqXFGchloOBURhQ";
 
 var nations = {
   china: { color: "#3969AC" },
