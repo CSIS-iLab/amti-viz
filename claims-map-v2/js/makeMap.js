@@ -3573,7 +3573,7 @@ function _china() {
               clusterDistance: 15,
               Attribution: 'Data by <a href="https://amti.csis.org" target="_blank">CSIS AMTI</a>, © OpenStreetMap, Leaflet contributors, © CARTO',
               table: 'claims_allclaims',
-              apiKey: 'Ap3d-y2wVCHiA9XtCGBwUg',
+              apiKey: 'GoscQbOfl8TRfvz5yJKD3w',
               program: 'Asia Maritime Transparency Initiative',
               website: 'https://amti.csis.org/',
               title: 'Maritime Claims of the Indo-Pacific',
