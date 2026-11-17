@@ -17,22 +17,22 @@ var map = L.map("map", {
 
 // api-name: east_china_sea_oil_rigs_2026
 const client = new carto.Client({
-  apiKey: "OVdTjtk58d6Phru67gRkww",
+  apiKey: "WJyYQD9buLyDHEgv51NsZw",
   username: "csis",
 });
 
 const clientChinaShelf = new carto.Client({
-  apiKey: "VgCKCvaxBiG8EizMoaXPZQ",
+  apiKey: "7fgB4jlWoq84O8MTat2QJw",
   username: "csis",
 });
 
 const clientJapanShelf = new carto.Client({
-  apiKey: "Csd-n3r-MxX5FVkeNqeWoQ",
+  apiKey: "1Lfld0NnyOIFhRpps5-6ig",
   username: "csis",
 });
 
 const clientJointDevelopmentZone = new carto.Client({
-  apiKey: "8Rsd_jhMzTGj7MriFytmQg",
+  apiKey: "Dr6dIDupqG8ft_QwmRqfmA",
   username: "csis",
 });
 
